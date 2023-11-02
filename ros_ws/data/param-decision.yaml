@@ -5,4 +5,4 @@ weights:
   hro: 1000
   sty: 300
   size: 0.125
-  dist: -1
+  dist: 1

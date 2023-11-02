@@ -33,7 +33,8 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
+  #${OpenCV_INCLUDE_DIRS}
+  /usr/include/opencv4
 )
 
 add_executable(simple_tracker
@@ -59,6 +60,15 @@ target_link_libraries(weighted_tracker
 
 add_dependencies(weighted_tracker ${catkin_EXPORTED_TARGETS})
 
+# Publisher 
+
+add_executable(publisher 
+  src/publisher.cpp
+)
+
+target_link_libraries(publisher
+  ${catkin_LIBRARIES}
+)
 #############
 ## Testing ##
 #############
