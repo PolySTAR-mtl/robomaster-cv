@@ -27,8 +27,6 @@
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }
 
-enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
-
 class WeightedTracker {
 
   public:
