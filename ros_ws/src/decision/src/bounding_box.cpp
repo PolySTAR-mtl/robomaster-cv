@@ -2,18 +2,21 @@
 
 enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
 
+ //Default Constructor 
+BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
+    float left_edge, float right_edge, int clss, const std::string id) 
+    : x(x), y(y), upper_edge(upper_edge), lower_edge(lower_edge), left_edge(left_edge), 
+      right_edge(right_edge), clss(clss), id(id){
+        width = right_edge - left_edge;
+        height = upper_edge - lower_edge;
+      } 
+
 // Construction from tracklet
 BoundingBox::BoundingBox(tracking::Tracklet& bbox) 
     : x(bbox.x), y(bbox.y), upper_edge(bbox.y + bbox.h / 2.f),
       lower_edge(bbox.y - bbox.h / 2.f), left_edge(bbox.x - bbox.w / 2.f),
       right_edge(bbox.x + bbox.w / 2.f), clss(bbox.clss), width(bbox.w),
       height(bbox.h), id(bbox.id) {}
-
- //Default Constructor 
-BoundingBox::BoundingBox() 
-    : x(0.f), y(0.f), upper_edge(0.f), lower_edge(1.f), left_edge(0.f),
-      right_edge(1.f), clss(0), width(1),
-      height(1), id("Default"){}
 
 int BoundingBox::getSize() { return this->width * this->height; }
 
@@ -67,13 +70,11 @@ float BoundingBox::scoreReturn(int enemy_color, float scoreToReturn, const track
     return 0;                   
 }
 
-
-// TO-DO Return box scaled to 1.2 times where 1.2 is a static param of class that we can modify
-    // BoundingBox::scaled(){
-    //     return
-    // }
-
+// We check to see if a BoundingBox is contained within another (scaled up by a scale factor)
 bool BoundingBox::contains(BoundingBox& inner) { // Checks to see if all bounds of a bounding box are within another one's bounds
-    return ((this->upper_edge > inner.y) && (this->lower_edge < inner.y) &&
-        (this->left_edge < inner.x) && (this->right_edge > inner.x));
+    BoundingBox temp = BoundingBox(this-> x, this-> y, this->upper_edge * scaleFactor, 
+                                   this->lower_edge / scaleFactor, this->left_edge / scaleFactor,
+                                   this->right_edge * scaleFactor);
+    return ((temp.upper_edge > inner.y) && (temp.lower_edge < inner.y) &&
+        (temp.left_edge < inner.x) && (temp.right_edge > inner.x));
 }
