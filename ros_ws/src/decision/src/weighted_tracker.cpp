@@ -144,58 +144,83 @@ class WeightedTracker {
     };
 
     serial::Target toTarget(tracking::Tracklet& trk) {
+        // simple tracker version 
+
         serial::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";
 
-        cv::Mat pixel_image({trk.x, trk.y});
-        cv::Mat pixel_undistort(2, 1, CV_32FC1);
+        auto x_c = trk.x + trk.w / 2 - im_w / 2;
+        auto y_c = trk.y + trk.h / 2 - im_h / 2;
 
-        pixel_undistort.at<float>(0) = mat1.at<float>(trk.y, trk.x);
-        pixel_undistort.at<float>(1) = mat2.at<float>(trk.y, trk.x);
+        std::cout << "x_c = " << x_c << " ; y_c = " << y_c << '\n';
 
-        cv::Mat x(cv::Point3f{pixel_undistort.at<float>(0),
-                              pixel_undistort.at<float>(1), 1.f});
-
-        cv::Mat y;
-        cv::solve(new_c, x, y);
-
-        std::cout << "solve\n" << y << '\n';
-
-        y.at<float>(0) /= y.at<float>(2);
-        y.at<float>(1) /= y.at<float>(2);
-
-        tf2::Quaternion qTarget, qTurret;
-        qTarget.setRPY(0., std::atan(y.at<float>(1)),
-                       std::atan(y.at<float>(0)));
-
-        auto transformTurret =
-            tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
-        tf2::convert(transformTurret.transform.rotation, qTurret);
-
-        qTarget *= qTurret;
-
-        tf2::Matrix3x3 m(qTarget);
-
-        double roll, pitch, yaw;
-        m.getRPY(roll, pitch, yaw);
-
-        int16_t theta = radToMillirad(pitch);
-        int16_t phi = radToMillirad(yaw);
-
-        std::cout << "    Trk : \n"
-                  << pixel_image << "\n    Undistord\n"
-                  << pixel_undistort << "\n    y\n"
-                  << y << '\n';
+        // Simple approximation .. if we consider x_c & y_c to be low enough
+        int16_t theta = std::floor(y_c * alpha_y * 1000.f);
+        int16_t phi = std::floor(x_c * alpha_x * 1000.f);
 
         target.theta = theta;
-        target.phi = -phi;
+        target.phi = phi;
         target.dist = 2000u; // 2 m
         target.located = true;
         target.stamp = ros::Time::now();
 
         return target;
+        
+        // weighted tracker version
+        // serial::Target target;
+
+        // std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
+        //           << " ( " << trk.h << " )\n";
+
+        // cv::Mat pixel_image({trk.x, trk.y});
+        // cv::Mat pixel_undistort(2, 1, CV_32FC1);
+
+        // pixel_undistort.at<float>(0) = mat1.at<float>(trk.y, trk.x);
+        // pixel_undistort.at<float>(1) = mat2.at<float>(trk.y, trk.x);
+
+        // cv::Mat x(cv::Point3f{pixel_undistort.at<float>(0),
+        //                       pixel_undistort.at<float>(1), 1.f});
+
+        // cv::Mat y;
+        // cv::solve(new_c, x, y);
+
+        // std::cout << "solve\n" << y << '\n';
+
+        // y.at<float>(0) /= y.at<float>(2);
+        // y.at<float>(1) /= y.at<float>(2);
+
+        // tf2::Quaternion qTarget, qTurret;
+        // qTarget.setRPY(0., std::atan(y.at<float>(1)),
+        //                std::atan(y.at<float>(0)));
+
+        // auto transformTurret =
+        //     tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
+        // tf2::convert(transformTurret.transform.rotation, qTurret);
+
+        // qTarget *= qTurret;
+
+        // tf2::Matrix3x3 m(qTarget);
+
+        // double roll, pitch, yaw;
+        // m.getRPY(roll, pitch, yaw);
+
+        // int16_t theta = radToMillirad(pitch);
+        // int16_t phi = radToMillirad(yaw);
+
+        // std::cout << "    Trk : \n"
+        //           << pixel_image << "\n    Undistord\n"
+        //           << pixel_undistort << "\n    y\n"
+        //           << y << '\n';
+
+        // target.theta = theta;
+        // target.phi = -phi;
+        // target.dist = 2000u; // 2 m
+        // target.located = true;
+        // target.stamp = ros::Time::now();
+
+        // return target;
     }
 
     void initMap() {
@@ -235,6 +260,10 @@ class WeightedTracker {
 
     int im_w;
     int im_h;
+    
+    // Scaling factor
+    float alpha_y = 0.001;
+    float alpha_x = 0.01;
 
     float focal_length;
     float pixel_size;
