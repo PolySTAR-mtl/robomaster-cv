@@ -15,7 +15,7 @@ class BoundingBox {
     float score;
 
     BoundingBox* container;
-    std::vector<BoundingBox> containedArray;
+    std::vector<BoundingBox*> containedArray;
 
     const std::string id;
     int clss;
@@ -29,14 +29,14 @@ class BoundingBox {
 
     static float constexpr scaleFactor = 1.2f;
 
-    BoundingBox(const float x = 0.f, const float y = 0.f, const float upper_edge = 0.f, const float lower_edge = 0.f, 
-                const float left_edge = 0.f, const float right_edge = 0.f, const int clss = 0, const std::string id = "Basic");
+    BoundingBox(float x = 0.f, float y = 0.f, float upper_edge = 0.f, float lower_edge = 0.f, 
+                float left_edge = 0.f, float right_edge = 0.f, std::uint8_t clss = 0, std::string id = "Basic", float score = 0);
     BoundingBox(tracking::Tracklet& bbox);
 
     int getSize();
     float roboType(int enemy_color, const tracking::TrackletsConstPtr& trks);
-    std::vector<BoundingBox> findBoxes(const tracking::TrackletsConstPtr& trks);
+    std::vector<BoundingBox*> findBoxes(const tracking::TrackletsConstPtr& trks);
     float scoreReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks);
     BoundingBox scaled(BoundingBox other);
-    bool contains(BoundingBox& inner);
+    bool contains(BoundingBox* inner);
 };

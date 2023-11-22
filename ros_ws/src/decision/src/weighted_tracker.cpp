@@ -83,12 +83,14 @@ class WeightedTracker {
 
             std::cout << "Received Tracklet. \n" << "id: " << trk.id << 
             " x: "<< trk.x << " y: "<< trk.y << " w: "<< trk.w << " h: "<< 
-            trk.h << " class: "<< trk.clss << " score: "<< trk.score << "\n";
+            trk.h << " class: "<< static_cast<int>(trk.clss) << " score: "<< trk.score << "\n";
 
             // The roboType function also assigns parents and children boxes
             // A type score is 0 if the tracklet is an armor module or doesn't contain enemy armor modules 
             auto type = tracklet.roboType(enemy_color, trks); 
             tracklet.score += type; 
+
+            std::cout << "Score before children: " << tracklet.score << "\n";
 
             BoundingBox* best_contained;
 
@@ -99,19 +101,19 @@ class WeightedTracker {
                 std::cout << "Finding best contained box for : " << trk.id << "\n";
 
                 // For each bounding box within this one, find the one with the highest score and add its score to the container
-                for(BoundingBox contained : tracklet.containedArray){ 
-                    float size = contained.getSize();          
-                    auto dist = distance(*best_target, contained); 
+                for(BoundingBox* contained : tracklet.containedArray){ 
+                    float size = contained->getSize();          
+                    auto dist = distance(*best_target, *contained); 
                     
-                    contained.score += size * BoundingBox::weightSize;
-                    contained.score += dist * BoundingBox::weightDist;
+                    contained->score += size * BoundingBox::weightSize;
+                    contained->score += dist * BoundingBox::weightDist;
 
-                    if(contained.score > best_score){
-                        best_contained = &contained;
-                        best_contained_score = contained.score;
+                    if(contained->score > best_score){
+                        best_contained = contained;
+                        best_contained_score = contained->score;
                     }
 
-                    std::cout << "Contained bounding box score: " << contained.score << "\n";
+                    std::cout << "Contained bounding box score: " << contained->score << "\n";
                 }
 
                 tracklet.score += best_contained_score; 

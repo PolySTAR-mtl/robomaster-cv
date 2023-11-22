@@ -4,9 +4,9 @@ enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
 
  //Default Constructor 
 BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
-    float left_edge, float right_edge, int clss, const std::string id) 
+    float left_edge, float right_edge, std::uint8_t clss, const std::string id, float score) 
     : x(x), y(y), upper_edge(upper_edge), lower_edge(lower_edge), left_edge(left_edge), 
-      right_edge(right_edge), clss(clss), id(id){
+      right_edge(right_edge), clss(clss), id(id), score(score){
         width = right_edge - left_edge;
         height = upper_edge - lower_edge;
       } 
@@ -33,17 +33,17 @@ float BoundingBox::roboType(int enemy_color, const tracking::TrackletsConstPtr& 
     case static_cast<int>(RoboType::Sentry):
         return scoreReturn(enemy_color, weightSentry, trks);
     default:
-        return 0;
+        return 0.f;
     }
 }
 
 // We select all bounding boxes that are within this one
-std::vector<BoundingBox> BoundingBox::findBoxes(const tracking::TrackletsConstPtr& trks) {
-    std::vector<BoundingBox> contained_boxes;
+std::vector<BoundingBox*> BoundingBox::findBoxes(const tracking::TrackletsConstPtr& trks) {
+    std::vector<BoundingBox*> contained_boxes;
     for (auto trk : trks->tracklets) { 
-        BoundingBox outer(trk);
-        if (this->contains(outer)) {
-            contained_boxes.push_back(outer); 
+        BoundingBox inner(trk);
+        if (this->contains(&inner)) {
+            contained_boxes.push_back(&inner); 
         }
     }
     return contained_boxes;
@@ -53,13 +53,14 @@ std::vector<BoundingBox> BoundingBox::findBoxes(const tracking::TrackletsConstPt
 // If we found any, we return the correct type score
 float BoundingBox::scoreReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks) {
 
-    std::vector<BoundingBox> contained_boxes = this->findBoxes(trks); 
+    std::vector<BoundingBox*> contained_boxes = this->findBoxes(trks); 
 
     bool found = false;
 
     for (auto& box : contained_boxes) {
-        if (box.clss == enemy_color) {       
-            box.container = this;            
+        if (box->clss == enemy_color) {       
+            box->container = this;   
+            std::cout << this->id << " contains " << box->id << "\n";         
             this->containedArray.push_back(box);  
             found = true;
         }
@@ -71,10 +72,10 @@ float BoundingBox::scoreReturn(int enemy_color, float scoreToReturn, const track
 }
 
 // We check to see if a BoundingBox is contained within another (scaled up by a scale factor)
-bool BoundingBox::contains(BoundingBox& inner) { // Checks to see if all bounds of a bounding box are within another one's bounds
-    BoundingBox temp = BoundingBox(this-> x, this-> y, this->upper_edge * scaleFactor, 
+bool BoundingBox::contains(BoundingBox* inner) { // Checks to see if all bounds of a bounding box are within another one's bounds
+    BoundingBox outer = BoundingBox(this-> x, this-> y, this->upper_edge * scaleFactor, 
                                    this->lower_edge / scaleFactor, this->left_edge / scaleFactor,
                                    this->right_edge * scaleFactor);
-    return ((temp.upper_edge > inner.y) && (temp.lower_edge < inner.y) &&
-        (temp.left_edge < inner.x) && (temp.right_edge > inner.x));
+    return ((outer.upper_edge > inner->y) && (outer.lower_edge < inner->y) &&
+        (outer.left_edge < inner->x) && (outer.right_edge > inner->x));
 }
