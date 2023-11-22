@@ -38,10 +38,10 @@ class WeightedTracker {
         pub_target = nh.advertise<serial::Target>("target", 1);
 
         // Init weights
-        BoundingBox::weightBase = nh.param("weights/base", 200.f);
-        BoundingBox::weightStandard = nh.param("weights/std", 400.f);
-        BoundingBox::weightHero = nh.param("weights/hro", 1000.f);
-        BoundingBox::weightSentry = nh.param("weights/sty", 300.f);
+        BoundingBox::weightBase = nh.param("weights/base", 20.f);
+        BoundingBox::weightStandard = nh.param("weights/std", 40.f);
+        BoundingBox::weightHero = nh.param("weights/hro", 100.f);
+        BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
         BoundingBox::weightSize = nh.param("weights/size", 0.125);
         BoundingBox::weightDist = nh.param("weights/dist", 1.f);
 
