@@ -4,5 +4,5 @@ weights:
   std: 40
   hro: 100
   sty: 30
-  size: 0.125
+  size: 0.05
   dist: 1

@@ -42,7 +42,7 @@ class WeightedTracker {
         BoundingBox::weightStandard = nh.param("weights/std", 40.f);
         BoundingBox::weightHero = nh.param("weights/hro", 100.f);
         BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
-        BoundingBox::weightSize = nh.param("weights/size", 0.125);
+        BoundingBox::weightSize = nh.param("weights/size", 0.01);
         BoundingBox::weightDist = nh.param("weights/dist", 1.f);
 
         // Init camera matrix and distortion coefficients
@@ -94,7 +94,7 @@ class WeightedTracker {
                 float dist = tracklet.getDistance(*best_target); 
                     
                 tracklet.score += size * BoundingBox::weightSize;
-                tracklet.score += dist * BoundingBox::weightDist;
+                tracklet.score += 1000/(dist * BoundingBox::weightDist);
             }
 
             boxes.push_back(tracklet);
