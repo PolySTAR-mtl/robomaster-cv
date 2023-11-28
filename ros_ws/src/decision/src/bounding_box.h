@@ -1,6 +1,9 @@
 #pragma once
 #include "tracking/Tracklets.h"
 
+
+enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
+
 class BoundingBox {
     friend class WeightedTracker;
     
@@ -10,14 +13,11 @@ class BoundingBox {
     const float right_edge;
     float width;
     float height;
-    const float x;
-    const float y;
+    float x;
+    float y;
     float score;
 
-    BoundingBox* container;
-    std::vector<BoundingBox*> containedArray;
-
-    const std::string id;
+    std::string id;
     int clss;
 
     static float weightBase;
@@ -33,10 +33,9 @@ class BoundingBox {
                 float left_edge = 0.f, float right_edge = 0.f, std::uint8_t clss = 0, std::string id = "Basic", float score = 0);
     BoundingBox(tracking::Tracklet& bbox);
 
-    int getSize();
+    float getSize();
+    float getDistance(BoundingBox other);
     float roboType(int enemy_color, const tracking::TrackletsConstPtr& trks);
-    std::vector<BoundingBox*> findBoxes(const tracking::TrackletsConstPtr& trks);
-    float scoreReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks);
-    BoundingBox scaled(BoundingBox other);
+    float scoreToReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks);
     bool contains(BoundingBox* inner);
 };

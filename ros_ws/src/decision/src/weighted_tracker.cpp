@@ -71,15 +71,13 @@ class WeightedTracker {
         BoundingBox basic;
         BoundingBox* best_target = &basic;
 
-        auto distance = [](auto d1, auto d2) {
-            return std::sqrt(std::pow(d1.x - d2.x, 2) +
-                             std::pow(d1.y - d2.y, 2));
-        };
+        std::vector<BoundingBox> boxes;
 
-        float best_score = 0;
-
-        for (auto trk : trks->tracklets) {
+        // Assign individual scores to all bounding boxes
+        for (auto trk : trks->tracklets){
             BoundingBox tracklet(trk);
+
+            tracklet.score = 0;
 
             std::cout << "Received Tracklet. \n" << "id: " << trk.id << 
             " x: "<< trk.x << " y: "<< trk.y << " w: "<< trk.w << " h: "<< 
@@ -87,44 +85,49 @@ class WeightedTracker {
 
             // The roboType function also assigns parents and children boxes
             // A type score is 0 if the tracklet is an armor module or doesn't contain enemy armor modules 
-            auto type = tracklet.roboType(enemy_color, trks); 
+            float type = tracklet.roboType(enemy_color, trks);
+
             tracklet.score += type; 
 
-            std::cout << "Score before children: " << tracklet.score << "\n";
-
-            BoundingBox* best_contained;
-
-            // We find the best armor module to shoot within a given enemy robot
-            if((tracklet.clss == 3 or tracklet.clss == 4 or tracklet.clss == 5 or tracklet.clss == 6) && tracklet.score != 0){
-                float best_contained_score = 0;
-
-                std::cout << "Finding best contained box for : " << trk.id << "\n";
-
-                // For each bounding box within this one, find the one with the highest score and add its score to the container
-                for(BoundingBox* contained : tracklet.containedArray){ 
-                    float size = contained->getSize();          
-                    auto dist = distance(*best_target, *contained); 
+            if(tracklet.clss == enemy_color){
+                float size = tracklet.getSize();          
+                float dist = tracklet.getDistance(*best_target); 
                     
-                    contained->score += size * BoundingBox::weightSize;
-                    contained->score += dist * BoundingBox::weightDist;
-
-                    if(contained->score > best_score){
-                        best_contained = contained;
-                        best_contained_score = contained->score;
-                    }
-
-                    std::cout << "Contained bounding box score: " << contained->score << "\n";
-                }
-
-                tracklet.score += best_contained_score; 
-                
-                std::cout << "Container score: " << tracklet.score << "\n";
+                tracklet.score += size * BoundingBox::weightSize;
+                tracklet.score += dist * BoundingBox::weightDist;
             }
 
-            // We assign the best target as the best armor module within the container with the highest score
-            if (tracklet.score > best_score) {  
-                best_score = tracklet.score;
-                best_target = best_contained;
+            boxes.push_back(tracklet);
+
+        }
+
+        // Add outer score to armor modules
+        for(BoundingBox box : boxes){
+
+            std::cout << box.id << ": " << box.score << "\n";
+
+            if(box.clss == static_cast<int>(RoboType::Base) || box.clss == static_cast<int>(RoboType::Standard) || 
+                box.clss == static_cast<int>(RoboType::Hero) || box.clss == static_cast<int>(RoboType::Sentry)){
+                
+                for(int i = 0; i < boxes.size(); i++){
+                    if(box.contains(&(boxes.at(i))) && boxes.at(i).clss == enemy_color){
+                        boxes.at(i).score += box.score;
+                    }
+                }
+            }
+        }
+
+        for(BoundingBox box : boxes){
+            std::cout << box.id << ": " << box.score << "\n";
+
+            if(box.score > best_target->score){
+                best_target->id = box.id;
+                best_target->x = box.x;
+                best_target->y = box.y;
+                best_target->width = box.width;
+                best_target->height = box.height;
+                best_target->clss = box.clss;
+                best_target->score = box.score;
             }
         }
         
@@ -136,11 +139,11 @@ class WeightedTracker {
         target.w = best_target->width;
         target.h = best_target->height;
         target.clss = best_target->clss;
-        target.score = best_score;
+        target.score = best_target->score;
 
         std::cout << "Published Tracklet. \n" << "id: " << target.id << 
         " x: "<< target.x << " y: "<< target.y << " w: "<< target.w << " h: "<< 
-        target.h << " class: "<< target.clss << " score: "<< target.score << "\n";
+        target.h << " class: "<< static_cast<int>(target.clss) << " score: "<< target.score << "\n";
         pub_target.publish(toTarget(target));
         
     };

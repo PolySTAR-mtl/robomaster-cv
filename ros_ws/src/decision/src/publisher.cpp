@@ -33,18 +33,18 @@ int main(int argc, char **argv)
   while (ros::ok())
   {
 
-    auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
-    auto container2 = createTracklet("Hero", 500, 500, 100, 100, static_cast<std::uint8_t>(5), 0);
     auto contained1 = createTracklet("ArmureStd", 25, 25, 10, 10, static_cast<std::uint8_t>(1), 0); 
     auto contained2 = createTracklet("ArmureHero1", 525, 525, 1, 1, static_cast<std::uint8_t>(1), 0);  
     auto contained3 = createTracklet("ArmureHero2", 525, 525, 10, 10, static_cast<std::uint8_t>(1), 0);
+    auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
+    auto container2 = createTracklet("Hero", 500, 500, 100, 100, static_cast<std::uint8_t>(5), 0);
 
     tracking::Tracklets trks;
-    trks.tracklets.push_back(container1);
-    trks.tracklets.push_back(container2);
     trks.tracklets.push_back(contained1);
     trks.tracklets.push_back(contained2);
     trks.tracklets.push_back(contained3);  
+    trks.tracklets.push_back(container1);
+    trks.tracklets.push_back(container2);
 
     chatter_pub.publish(trks);
 
