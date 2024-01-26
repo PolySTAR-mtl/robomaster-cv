@@ -89,7 +89,6 @@ struct PositionFeedback : Header<PositionFeedback> {
     int16_t v_enc_2;
     int16_t v_enc_3;
     int16_t v_enc_4;
-    int8_t padding;
 } __attribute__((packed));
 
 struct TargetOrder : Header<TargetOrder> {

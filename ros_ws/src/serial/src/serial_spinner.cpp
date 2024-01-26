@@ -267,9 +267,19 @@ void SerialSpinner::handleSerial() {
         return;
     }
 
-    if (message.header.start_byte != serial::START_FRAME) {
-        ROS_ERROR("Start frame not recognized, dropping command");
-        return;
+    while (message.header.start_byte != serial::START_FRAME) {
+        ROS_WARN("Start frame not recognized, scanning command");
+        serial::msg::IncomingMessage rotated_message{serial::None()};
+
+        memcpy(&rotated_message, reinterpret_cast<uint8_t*>(&message) + 1,
+               serial::HEADER_SIZE);
+
+        uint8_t trailing;
+        bytes = read(fd, &trailing, 1);
+
+        rotated_message.header.data_len = trailing;
+
+        memcpy(&message, &rotated_message, serial::HEADER_SIZE);
     }
 
     uint8_t* payload =
