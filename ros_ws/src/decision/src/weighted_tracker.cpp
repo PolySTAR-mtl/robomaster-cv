@@ -79,15 +79,20 @@ class WeightedTracker {
 
             tracklet.score = 0;
 
-            std::cout << "Received Tracklet. \n" << "id: " << trk.id << 
+            std::cout << "\nReceived Tracklet: \n" << "id: " << trk.id << 
             " x: "<< trk.x << " y: "<< trk.y << " w: "<< trk.w << " h: "<< 
             trk.h << " class: "<< static_cast<int>(trk.clss) << " score: "<< trk.score << "\n";
+
+            std::cout << "Corresponding Bbox: \n" << "upper_edge: "<< tracklet.upper_edge << " lower_edge: "
+            << tracklet.lower_edge << " left_edge: "<< tracklet.left_edge << " right_edge: "<< tracklet.right_edge << "\n";
 
             // The roboType function also assigns parents and children boxes
             // A type score is 0 if the tracklet is an armor module or doesn't contain enemy armor modules 
             float type = tracklet.roboType(enemy_color, trks);
 
             tracklet.score += type; 
+
+            std::cout << "\n";
 
             if(tracklet.clss == enemy_color){
                 float size = tracklet.getSize();          
@@ -101,6 +106,8 @@ class WeightedTracker {
 
         }
 
+        std::cout << "Armor module scores: \n";
+
         // Add outer score to armor modules
         for(BoundingBox box : boxes){
 
@@ -111,11 +118,14 @@ class WeightedTracker {
                 
                 for(int i = 0; i < boxes.size(); i++){
                     if(box.contains(&(boxes.at(i))) && boxes.at(i).clss == enemy_color){
+                        std::cout << box.id << " contains " << boxes.at(i).id << "\n";
                         boxes.at(i).score += box.score;
                     }
                 }
             }
         }
+
+        std::cout << "\nUpdated scores: \n";
 
         for(BoundingBox box : boxes){
             std::cout << box.id << ": " << box.score << "\n";
@@ -141,7 +151,7 @@ class WeightedTracker {
         target.clss = best_target->clss;
         target.score = best_target->score;
 
-        std::cout << "Published Tracklet. \n" << "id: " << target.id << 
+        std::cout << "\nPublished Tracklet. \n" << "id: " << target.id << 
         " x: "<< target.x << " y: "<< target.y << " w: "<< target.w << " h: "<< 
         target.h << " class: "<< static_cast<int>(target.clss) << " score: "<< target.score << "\n";
         pub_target.publish(toTarget(target));

@@ -11,9 +11,9 @@ BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
 
 // Construction from tracklet
 BoundingBox::BoundingBox(tracking::Tracklet& bbox) 
-    : x(bbox.x), y(bbox.y), upper_edge(bbox.y + bbox.h / 2.f),
-      lower_edge(bbox.y - bbox.h / 2.f), left_edge(bbox.x - bbox.w / 2.f),
-      right_edge(bbox.x + bbox.w / 2.f), clss(bbox.clss), width(bbox.w),
+    : x(bbox.x), y(bbox.y), upper_edge(bbox.y),
+      lower_edge(bbox.y + bbox.h), left_edge(bbox.x),
+      right_edge(bbox.x + bbox.w), clss(bbox.clss), width(bbox.w),
       height(bbox.h), id(bbox.id) {}
 
 float BoundingBox::getSize() { return this->width * this->height; }
@@ -56,10 +56,24 @@ float BoundingBox::scoreToReturn(int enemy_color, float scoreToReturn, const tra
 }
 
 // We check to see if a BoundingBox is contained within another (scaled up by a scale factor)
-bool BoundingBox::contains(BoundingBox* inner) { // Checks to see if all bounds of a bounding box are within another one's bounds
-    BoundingBox outer = BoundingBox(this-> x, this-> y, this->upper_edge * scaleFactor, 
-                                   this->lower_edge / scaleFactor, this->left_edge / scaleFactor,
-                                   this->right_edge * scaleFactor);
-    return ((outer.upper_edge > inner->y) && (outer.lower_edge < inner->y) &&
-        (outer.left_edge < inner->x) && (outer.right_edge > inner->x));
+bool BoundingBox::contains(BoundingBox* inner) { // Checks to see if all bounds of inner bounding box are within this one's bounds   
+
+    if(this->id == inner->id) return false;
+    // Creating a bigger, scaled, version of this bounding box
+    float centerX = this->x + (this->width / 2);
+    int centerY = this->y + (this->height / 2);
+
+    int newH = this->height * scaleFactor;
+    int newW = this->width * scaleFactor;
+
+    int newLowerEdge = centerY + newH /2;
+    int newUpperEdge = centerY - newH /2; 
+    int newLeftEdge = centerX - newW /2;
+    int newRightEdge = centerX + newW /2; 
+
+    // Checking if inner box is within new scaled bounds
+    bool isInside = ((newUpperEdge < inner->y) && (newLowerEdge > inner->y) &&
+        (newLeftEdge < inner->x) && (newRightEdge > inner->x));
+
+    return isInside;
 }
