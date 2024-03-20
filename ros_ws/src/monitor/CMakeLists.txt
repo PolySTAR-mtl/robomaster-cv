@@ -54,6 +54,8 @@ target_link_libraries(monitor_logger
   ${catkin_LIBRARIES}
 )
 
+add_dependencies(monitor_video ${catkin_EXPORTED_TARGETS})
+
 #############
 ## Testing ##
 #############

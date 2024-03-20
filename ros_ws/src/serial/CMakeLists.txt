@@ -61,7 +61,8 @@ target_link_libraries(serial_interface
   serial_spinner
 )
 
-add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS})
+add_dependencies(serial_spinner ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 #############
 ## Testing ##

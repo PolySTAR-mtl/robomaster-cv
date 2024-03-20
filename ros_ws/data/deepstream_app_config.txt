@@ -13,12 +13,12 @@ nvbuf-memory-type=0
 
 [source0]
 enable=1
-type=5
-camera-width=1920 
-camera-height=1080
-camera-fps-n=30
+type=1
+camera-width=960
+camera-height=540
+camera-fps-n=60
 camera-fps-d=1
-camera-v4l2-dev-node=0
+camera-v4l2-dev-node=2
 num-sources=1
 gpu-id=0
 cudadec-memtype=0
