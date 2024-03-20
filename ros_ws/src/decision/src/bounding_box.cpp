@@ -1,3 +1,10 @@
+/** \file bounding_box.cpp
+ * \brief defines all boundingbox object operations
+ *
+ * \author Sébastien Darche <sebastien.darche@polymtl.ca>
+ * \author Thomas Petrie <thomas.petrie@polymtl.ca>
+ */
+
 #include "bounding_box.h"
 
  //Default Constructor 

@@ -39,6 +39,7 @@ include_directories(
 
 add_executable(simple_tracker
   src/simple_tracker.cpp
+  src/tracker.cpp
 )
 
 target_link_libraries(simple_tracker
@@ -52,6 +53,7 @@ add_dependencies(simple_tracker ${catkin_EXPORTED_TARGETS})
 add_executable(weighted_tracker
   src/weighted_tracker.cpp
   src/bounding_box.cpp
+  src/tracker.cpp
 )
 
 target_link_libraries(weighted_tracker
