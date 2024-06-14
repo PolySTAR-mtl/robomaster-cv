@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 @file shooting.py
 @brief Sends / disables shooting orders for C&S
