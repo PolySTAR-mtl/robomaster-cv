@@ -37,8 +37,12 @@ class WeightedTracker : Tracker {
     }
 
     void callbackTracklets(const tracking::TrackletsConstPtr& trks) override {
-        BoundingBox basic;
+        BoundingBox basic(center_x, center_y);
         BoundingBox* best_target = &basic;
+
+        std::cout << "\nBasic. \n" << "id: " << best_target->id << 
+        " x: "<< best_target->x << " y: "<< best_target->y << " w: "<< best_target->width << " h: "<< 
+        best_target->height << " class: "<< static_cast<int>(best_target->clss) << " score: "<< best_target->score << "\n";
 
         std::vector<BoundingBox> boxes;
 
