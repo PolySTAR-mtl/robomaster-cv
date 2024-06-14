@@ -43,8 +43,8 @@ shoot_parser.add_argument('val', choices=['on', 'off'])
 sysctl = '/bin/systemctl --user'
 
 def is_daemon_running():
-    proc = subprocess.run(f'{sysctl} status polystar', shell=True, stdout=subprocess.PIPE, text=True)
-    return 'active (running)' in proc.stdout
+    proc = subprocess.run(f'{sysctl} status polystar', shell=True, stdout=subprocess.PIPE)
+    return 'active (running)' in proc.stdout.decode()
 
 def get_params(node: str):
     try:
