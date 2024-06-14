@@ -20,120 +20,28 @@
 #include <opencv2/calib3d.hpp>
 #include <opencv2/imgproc.hpp>
 
+// Project includes
+
+#include "tracker.h"
 #include "serial/Target.h"
-#include "tracking/Tracklets.h"
+#include "bounding_box.h"
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }
 
-enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
-
-struct BoundingBox;
-
-struct BoundingBox {
-    const float upper_edge; // const
-    const float lower_edge;
-    const float left_edge;
-    const float right_edge;
-    const float width;
-    const float height;
-    const float x;
-    const float y;
-    float score = 0.f;
-
-    BoundingBox* parent;
-    std::vector<BoundingBox> enfants;
-    int nbEnfants;
-
-    int clss;
-
-    // Static weights loaded from ROS
-    static float weightBase;
-    static float weightStandard;
-    static float weightHero;
-    static float weightSentry;
-    static float weightSize;
-    static float weightDist;
-
-    int getSize() { return this->width * this->height; }
-
-    float roboType(int enemy_color, const tracking::TrackletsConstPtr& trks) {
-        switch (this->clss) { //Si le robot est X on va dans la fonction scoreToReturn
-        case static_cast<int>(RoboType::Base):
-            return scoreReturn(enemy_color, weightBase, trks); 
-        case static_cast<int>(RoboType::Standard):
-            return scoreReturn(enemy_color, weightStandard, trks);
-        case static_cast<int>(RoboType::Hero):
-            return scoreReturn(enemy_color, weightHero, trks);
-        case static_cast<int>(RoboType::Sentry):
-            return scoreReturn(enemy_color, weightSentry, trks);
-        default:
-            return 0; //Si la bbox n'est pas englobante, on ne retourne rien pour le score du type de robot
-        }
-    }
-
-    float scoreReturn(int enemy_color, float scoreToReturn,
-                      const tracking::TrackletsConstPtr& trks) {
-
-        std::vector<BoundingBox> enemy_boxes = this->findBoxes(trks); 
-        //on va chercher toutes les bbox à l'intérieur de celle-ci
-
-        bool found = false;
-
-        for (auto& box : enemy_boxes) {
-            if (box.clss == enemy_color) {    //si le module d'armure est de la couleur ennemie
-                box.parent = this;            //on désigne le parent de ce module pour être celui-ci 
-                this->enfants.push_back(box); //on ajoute aux enfants de cette bbox le module d'armure
-                this->nbEnfants++;            //on incrémente le nombre d'enfants de cette bbox 
-                found = true;
-            }
-        }
-
-        if(found)                   //Si on a trouvé au moins un module d'armure dans la bbox 
-            return scoreToReturn;   //On retourne le score qui équivaut à cette classe 
-        return 0;                   //Sinon 0
-    }
-
-    std::vector<BoundingBox>
-    findBoxes(const tracking::TrackletsConstPtr& trks) {
-        std::vector<BoundingBox> enemy_boxes;
-        for (auto trk : trks->tracklets) {
-            BoundingBox outer(trk);
-            if (this->contains(outer)) {
-                enemy_boxes.push_back(outer);
-            }
-        }
-        return enemy_boxes;
-    }
-
-    BoundingBox(tracking::Tracklet& bbox)
-        : x(bbox.x), y(bbox.y), upper_edge(bbox.y + bbox.h / 2.f),
-          lower_edge(bbox.y - bbox.h / 2.f), left_edge(bbox.x - bbox.w / 2.f),
-          right_edge(bbox.x + bbox.w / 2.f), clss(bbox.clss), width(bbox.w),
-          height(bbox.h) {}
-
-    bool contains(BoundingBox& inner) {
-        return ((this->upper_edge > inner.y) && (this->lower_edge < inner.y) &&
-                (this->left_edge < inner.x) && (this->right_edge > inner.x));
-    }
-};
-
-class WeightedTracker {
+class WeightedTracker : Tracker {
 
   public:
     WeightedTracker(ros::NodeHandle& n, int _enemy_color)
-        : tListener(tBuffer), nh(n), enemy_color(_enemy_color) {
-        sub_tracklets = nh.subscribe("tracklets", 1,
-                                     &WeightedTracker::callbackTracklets, this);
+        : Tracker(n, _enemy_color), tListener(tBuffer) {
 
-        pub_target = nh.advertise<serial::Target>("target", 1);
 
         // Init weights
-        BoundingBox::weightBase = nh.param("weights/base", 200.f);
-        BoundingBox::weightStandard = nh.param("weights/std", 400.f);
-        BoundingBox::weightHero = nh.param("weights/hro", 1000.f);
-        BoundingBox::weightSentry = nh.param("weights/sty", 300.f);
-        BoundingBox::weightSize = nh.param("weights/size", 0.125);
-        BoundingBox::weightDist = nh.param("weights/dist", -1.f);
+        BoundingBox::weightBase = nh.param("weights/base", 20.f);
+        BoundingBox::weightStandard = nh.param("weights/std", 40.f);
+        BoundingBox::weightHero = nh.param("weights/hro", 100.f);
+        BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
+        BoundingBox::weightSize = nh.param("weights/size", 0.01);
+        BoundingBox::weightDist = nh.param("weights/dist", 1.f);
 
         // Init camera matrix and distortion coefficients
         bool cam_param = true;
@@ -152,68 +60,100 @@ class WeightedTracker {
         pixel_size = nh.param("pixel_size", 1.2e-6f);
 
         initMap();
-
-        std::cout << "Enemy color set to be: "
-                  << (enemy_color == 0 ? "red" : "blue") << "\n";
     }
 
-    void callbackTracklets(const tracking::TrackletsConstPtr& trks) {
-        auto distance = [](auto d1, auto d2) {
-            return std::sqrt(std::pow(d1.x - d2.x, 2) +
-                             std::pow(d1.y - d2.y, 2));
-        };
+    void callbackTracklets(const tracking::TrackletsConstPtr& trks) override {
+        BoundingBox basic;
+        BoundingBox* best_target = &basic;
 
-        float best_score = 0;
-        int index = -1;
+        std::vector<BoundingBox> boxes;
 
-        int i = 0;
-        for (auto trk : trks->tracklets) {
+        // Assign individual scores to all bounding boxes
+        for (auto trk : trks->tracklets){
             BoundingBox tracklet(trk);
 
-            std::cout << "Received Tracklet. \n" << "id: " << trk.id << 
-            "x: "<< trk.x << "y: "<< trk.y << "w: "<< trk.w << "h: "<< 
-            trk.h << "class: "<< trk.clss << "score: "<< trk.score;
+            tracklet.score = 0;
 
-            auto type = tracklet.roboType(enemy_color, trks); //Ici on définit également quelles bbox sont des enfants et des parents
-            tracklet.score += type; //Le score du type est 0 si la bbox est un module d'armure
+            std::cout << "\nReceived Tracklet: \n" << "id: " << trk.id << 
+            " x: "<< trk.x << " y: "<< trk.y << " w: "<< trk.w << " h: "<< 
+            trk.h << " class: "<< static_cast<int>(trk.clss) << " score: "<< trk.score << "\n";
 
-            if(tracklet.clss == 3 or tracklet.clss == 4 or tracklet.clss == 5 or tracklet.clss == 6){
-                BoundingBox* best_target;
-                float best_score = 0;
+            std::cout << "Corresponding Bbox: \n" << "upper_edge: "<< tracklet.upper_edge << " lower_edge: "
+            << tracklet.lower_edge << " left_edge: "<< tracklet.left_edge << " right_edge: "<< tracklet.right_edge << "\n";
 
-                for(BoundingBox enfant : tracklet.enfants){ //Pour tous les enfants d'une bbox parent
-                    float size = enfant.getSize();          //On regarde laquelle a le meilleur score basé sur sa grandeur
-                    auto dist = distance(last_trk, enfant); //et sur sa distance avec le dernier trk
-                    enfant.score += size * BoundingBox::weightSize;
-                    enfant.score += dist * BoundingBox::weightDist;
-                    if(enfant.score > best_score){
-                        best_target = &enfant;
-                        best_score = enfant.score;
+            // The roboType function also assigns parents and children boxes
+            // A type score is 0 if the tracklet is an armor module or doesn't contain enemy armor modules 
+            float type = tracklet.roboType(enemy_color, trks);
+
+            tracklet.score += type; 
+
+            std::cout << "\n";
+
+            if(tracklet.clss == enemy_color){
+                float size = tracklet.getSize();          
+                float dist = tracklet.getDistance(*best_target); 
+                    
+                tracklet.score += size * BoundingBox::weightSize;
+                tracklet.score += 1000/(dist * BoundingBox::weightDist);
+            }
+
+            boxes.push_back(tracklet);
+
+        }
+
+        std::cout << "Armor module scores: \n";
+
+        // Add outer score to armor modules
+        for(BoundingBox box : boxes){
+
+            std::cout << box.id << ": " << box.score << "\n";
+
+            if(box.clss == static_cast<int>(RoboType::Base) || box.clss == static_cast<int>(RoboType::Standard) || 
+                box.clss == static_cast<int>(RoboType::Hero) || box.clss == static_cast<int>(RoboType::Sentry)){
+                
+                for(int i = 0; i < boxes.size(); i++){
+                    if(box.contains(&(boxes.at(i))) && boxes.at(i).clss == enemy_color){
+                        std::cout << box.id << " contains " << boxes.at(i).id << "\n";
+                        boxes.at(i).score += box.score;
                     }
                 }
-
-                tracklet.score += best_score; //On ajoute au score du tracklet parent le score du meilleur enfant
             }
-            
-
-            if (tracklet.score > best_score) {  //On vise donc sur le robot avec le meilleur score
-                index = i;                      //Ce qui combine son score de type et le score de son meilleur enfant pour la distance et la taille
-                best_score = tracklet.score;
-            }
-
-            ++i;
         }
 
-        if (index != -1) {
-            last_trk = trks->tracklets[index];
-            std::cout << "Published Tracklet. \n" << "id: " << last_trk.id << 
-            "x: "<< last_trk.x << "y: "<< last_trk.y << "w: "<< last_trk.w << "h: "<< 
-            last_trk.h << "class: "<< last_trk.clss << "score: "<< last_trk.score;
-            pub_target.publish(toTarget(last_trk));
+        std::cout << "\nUpdated scores: \n";
+
+        for(BoundingBox box : boxes){
+            std::cout << box.id << ": " << box.score << "\n";
+
+            if(box.score > best_target->score){
+                best_target->id = box.id;
+                best_target->x = box.x;
+                best_target->y = box.y;
+                best_target->width = box.width;
+                best_target->height = box.height;
+                best_target->clss = box.clss;
+                best_target->score = box.score;
+            }
         }
+        
+        // Publish the best tracklet
+        tracking::Tracklet target;
+        target.id = best_target->id;
+        target.x = best_target->x;
+        target.y = best_target->y;
+        target.w = best_target->width;
+        target.h = best_target->height;
+        target.clss = best_target->clss;
+        target.score = best_target->score;
+
+        std::cout << "\nPublished Tracklet. \n" << "id: " << target.id << 
+        " x: "<< target.x << " y: "<< target.y << " w: "<< target.w << " h: "<< 
+        target.h << " class: "<< static_cast<int>(target.clss) << " score: "<< target.score << "\n";
+        pub_target.publish(toTarget(target));
+        
     };
 
-    serial::Target toTarget(tracking::Tracklet& trk) {
+    serial::Target toTarget(tracking::Tracklet& trk) override {
         serial::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
@@ -296,16 +236,6 @@ class WeightedTracker {
     std::vector<float> distorsion_coeffs;
 
     cv::Mat new_c, mat1, mat2, im_center;
-
-    ros::NodeHandle& nh;
-    ros::Subscriber sub_tracklets;
-    ros::Publisher pub_target;
-    int enemy_color;
-
-    tracking::Tracklet last_trk;
-
-    int im_w;
-    int im_h;
 
     float focal_length;
     float pixel_size;

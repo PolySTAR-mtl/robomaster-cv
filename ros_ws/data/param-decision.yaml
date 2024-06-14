@@ -1,8 +1,8 @@
 enemy_color: 0
 weights:
-  base: 200
-  std: 400
-  hro: 1000
-  sty: 300
-  size: 0.125
-  dist: -1
+  base: 20
+  std: 40
+  hro: 100
+  sty: 30
+  size: 0.05
+  dist: 1

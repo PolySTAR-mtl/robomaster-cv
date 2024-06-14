@@ -2,38 +2,11 @@
 #include "tracking/Tracklets.h"
 
 #include <sstream>
+#include <string_view>
 
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "tracklets");
-
-  ros::NodeHandle nh("~");
-
-  ros::Publisher chatter_pub = nh.advertise<Tracklets>("tracklets", 1000);
-
-  ros::Rate loop_rate(10);
-
-  int count = 0;
-  while (ros::ok())
-  {
-
-    Tracklets container = createTracklet("Papa", 0, 0, 100, 100, 0, 0);
-    Tracklets contained = createTracklet("Bebe", 25, 25, 10, 10, 0, 0);  
-
-    chatter_pub.publish(container);
-    chatter_pub.publish(contained);
-
-    ros::spinOnce();
-
-    loop_rate.sleep();
-    ++count;
-  }
-  return 0;
-}
-
-Tracklets createTracklet(string id, float32 x, float32 y, float32 w, 
-                    float32 h, uint8 clss, float32 score){
-    Tracklets trk;
+tracking::Tracklet createTracklet(std::string_view id, float x, float y, float w, 
+                    float h, std::uint8_t clss, float score){
+    tracking::Tracklet trk;
     trk.id = id;
     trk.x = x;
     trk.y = y;
@@ -43,4 +16,45 @@ Tracklets createTracklet(string id, float32 x, float32 y, float32 w,
     trk.score = score;
 
     return trk;
+}
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "tracking");
+
+  ros::NodeHandle nh("~");
+
+  ros::Publisher chatter_pub = nh.advertise<tracking::Tracklets>("tracklets", 1000);
+
+  ros::Rate loop_rate(1);
+
+  int count = 0;
+  int i = 0;
+  while (ros::ok())
+  {
+
+    auto contained1 = createTracklet("ArmureStd", 25, 25, 10, 10, static_cast<std::uint8_t>(1), 0); 
+    auto contained2 = createTracklet("ArmureHero1", 925, 925, 1, 1, static_cast<std::uint8_t>(1), 0);  
+    auto contained3 = createTracklet("ArmureHero2", 925, 925, 10, 10, static_cast<std::uint8_t>(1), 0);
+    auto soloModule = createTracklet("ArmureSolo", 175, 175, 50, 50, 1, 0);
+    auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
+    auto container2 = createTracklet("Hero", 900, 900, 100, 100, static_cast<std::uint8_t>(5), 0);
+
+    tracking::Tracklets trks;
+    trks.tracklets.push_back(contained1);
+    trks.tracklets.push_back(contained2);
+    trks.tracklets.push_back(contained3);
+    trks.tracklets.push_back(soloModule);  
+    trks.tracklets.push_back(container1);
+    trks.tracklets.push_back(container2);
+
+    chatter_pub.publish(trks);
+
+    ros::spinOnce();
+
+    loop_rate.sleep();
+    i += 10;
+    ++count;
+  }
+  return 0;
 }
