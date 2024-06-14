@@ -1,6 +1,7 @@
 <launch>
     <!-- Args -->
     <arg name="workspace" value="$(dirname)"/>
+    <arg name="simu" default="false"/>
 
     <!-- Global parameters -->
     <rosparam command="load" file="$(arg workspace)/data/models/icra.yaml"/>
@@ -12,8 +13,14 @@
     </include>
 
     <remap from="/serial/target" to="/decision/target"/>
-    <include file="$(find serial)/launch/serial.launch">
+
+    <include file="$(find serial)/launch/serial.launch" unless="$(arg simu)">
         <arg name="params_path" value="$(arg workspace)/data/param-serial.yaml"/>
+    </include>
+
+    <include file="$(find locate)/launch/mock.launch" if="$(arg simu)">
+        <arg name="robot_dimensions" value="$(arg workspace)/data/models/icra.yaml"/>
+        <arg name="robot_model" value="$(arg workspace)/data/models/icra.xml"/>
     </include>
 
     <include file="$(find detection)/launch/detection.launch">
@@ -30,7 +37,7 @@
     <!--<remap from="/main_camera/image_raw" to="/detection/image_in"/>-->
     <!--<include file="$(find jetson_camera)/launch/jetson_camera.launch"/>-->
 
-    <include file="$(find locate)/launch/locate.launch">
+    <include file="$(find locate)/launch/locate.launch" unless="$(arg simu)">
         <arg name="ekf_config" value="$(arg workspace)/data/param-localization.yaml"/>
         <arg name="robot_dimensions" value="$(arg workspace)/data/models/icra.yaml"/>
         <arg name="robot_model" value="$(arg workspace)/data/models/icra.xml"/>
