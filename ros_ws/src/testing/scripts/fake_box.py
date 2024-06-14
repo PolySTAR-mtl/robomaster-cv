@@ -9,7 +9,7 @@
 
 import rospy
 
-from detection import Detection, Detections
+from detection.msg import Detection, Detections
 
 import sys
 import select
