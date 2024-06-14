@@ -9,12 +9,6 @@
 
 #include <algorithm>
 
-// ROS includes
-
-#include <ros/ros.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
-#include <tf2_ros/transform_listener.h>
-
 // OpenCV Includes
 
 #include <opencv2/calib3d.hpp>
@@ -23,8 +17,6 @@
 // Project includes
 
 #include "tracker.h"
-#include "serial/Target.h"
-#include "bounding_box.h"
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }
 
@@ -32,7 +24,7 @@ class WeightedTracker : Tracker {
 
   public:
     WeightedTracker(ros::NodeHandle& n, int _enemy_color)
-        : Tracker(n, _enemy_color), tListener(tBuffer) {
+        : Tracker(n, _enemy_color){
 
 
         // Init weights
@@ -42,24 +34,6 @@ class WeightedTracker : Tracker {
         BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
         BoundingBox::weightSize = nh.param("weights/size", 0.01);
         BoundingBox::weightDist = nh.param("weights/dist", 1.f);
-
-        // Init camera matrix and distortion coefficients
-        bool cam_param = true;
-        cam_param &= nh.getParam("/camera/camera_matrix/data", camera_matrix);
-        cam_param &= nh.getParam("/camera/distortion_coefficients/data",
-                                 distorsion_coeffs);
-        cam_param &= nh.getParam("/camera/image_width", im_w);
-        cam_param &= nh.getParam("/camera/image_height", im_h);
-
-        if (!cam_param) {
-            throw std::runtime_error("WeightedTracker::WeightedTracker() : "
-                                     "Could not fetch camera parameters");
-        }
-
-        focal_length = nh.param("focal_length", 3.04e-3f);
-        pixel_size = nh.param("pixel_size", 1.2e-6f);
-
-        initMap();
     }
 
     void callbackTracklets(const tracking::TrackletsConstPtr& trks) override {
@@ -152,93 +126,6 @@ class WeightedTracker : Tracker {
         pub_target.publish(toTarget(target));
         
     };
-
-    serial::Target toTarget(tracking::Tracklet& trk) override {
-        serial::Target target;
-
-        std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
-                  << " ( " << trk.h << " )\n";
-
-        cv::Mat pixel_image({trk.x, trk.y});
-        cv::Mat pixel_undistort(2, 1, CV_32FC1);
-
-        pixel_undistort.at<float>(0) = mat1.at<float>(trk.y, trk.x);
-        pixel_undistort.at<float>(1) = mat2.at<float>(trk.y, trk.x);
-
-        cv::Mat x(cv::Point3f{pixel_undistort.at<float>(0),
-                              pixel_undistort.at<float>(1), 1.f});
-
-        cv::Mat y;
-        cv::solve(new_c, x, y);
-
-        std::cout << "solve\n" << y << '\n';
-
-        y.at<float>(0) /= y.at<float>(2);
-        y.at<float>(1) /= y.at<float>(2);
-
-        tf2::Quaternion qTarget, qTurret;
-        qTarget.setRPY(0., std::atan(y.at<float>(1)),
-                       std::atan(y.at<float>(0)));
-
-        auto transformTurret =
-            tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
-        tf2::convert(transformTurret.transform.rotation, qTurret);
-
-        //qTarget *= qTurret;
-        qTurret *= qTarget;
-
-        tf2::Matrix3x3 m(qTurret);
-
-        double roll, pitch, yaw;
-        m.getRPY(roll, pitch, yaw);
-
-        int16_t theta = radToMillirad(pitch);
-        int16_t phi = radToMillirad(yaw);
-
-        std::cout << "    Trk : \n"
-                  << pixel_image << "\n    Undistord\n"
-                  << pixel_undistort << "\n    y\n"
-                  << y << '\n';
-
-        target.theta = theta;
-        target.phi = phi;
-        target.dist = 2000u; // 2 m
-        target.located = true;
-        target.stamp = ros::Time::now();
-
-        return target;
-    }
-
-    void initMap() {
-        cv::Mat c(3, 3, CV_32F, camera_matrix.data());
-        cv::Mat d(5, 1, CV_32F, distorsion_coeffs.data());
-        cv::Point im_size{im_w, im_h};
-        new_c = cv::getOptimalNewCameraMatrix(c, d, im_size, 1.f, cv::Size(), 0,
-                                              true);
-        cv::initUndistortRectifyMap(c, d, cv::Mat(), new_c, im_size, CV_32F,
-                                    mat1, mat2);
-
-        std::cout << "c\n" << c << '\n';
-        std::cout << "new_c\n" << new_c << '\n';
-
-        im_center = cv::Mat(2, 1, CV_32F);
-        im_center.at<float>(0) = new_c.at<float>(0, 2) / new_c.at<float>(0, 0);
-        im_center.at<float>(1) = new_c.at<float>(1, 2) / new_c.at<float>(1, 1);
-
-        std::cout << "im_center" << im_center << '\n';
-    }
-
-  private:
-    tf2_ros::Buffer tBuffer;
-    tf2_ros::TransformListener tListener;
-
-    std::vector<float> camera_matrix;
-    std::vector<float> distorsion_coeffs;
-
-    cv::Mat new_c, mat1, mat2, im_center;
-
-    float focal_length;
-    float pixel_size;
 };
 
 int main(int argc, char** argv) {
