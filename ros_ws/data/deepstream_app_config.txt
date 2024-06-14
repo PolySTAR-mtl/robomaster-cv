@@ -13,18 +13,24 @@ nvbuf-memory-type=0
 
 [source0]
 enable=1
-type=5
-camera-width=1920 
-camera-height=1080
+type=1
+camera-width=960
+camera-height=540
 camera-fps-n=30
 camera-fps-d=1
-camera-v4l2-dev-node=0
+camera-v4l2-dev-node=3
 num-sources=1
+# This is for video
+#enable=1
+#type=3
+#uri=file:/home/polystar/robomaster-2024-cv/detection/exemple/vid_test.mp4
+#num-sources=1
 gpu-id=0
 cudadec-memtype=0
 
 [sink0]
-enable=0
+#enable=1 # for video only
+enable=0 # for camera
 type=2
 sync=0
 gpu-id=0
@@ -50,8 +56,8 @@ gpu-id=0
 live-source=1
 batch-size=1
 batched-push-timeout=40000
-width=416
-height=416
+width=480
+height=480
 enable-padding=0
 nvbuf-memory-type=0
 
@@ -61,6 +67,15 @@ gpu-id=0
 gie-unique-id=1
 nvbuf-memory-type=0
 config-file=deepstream-infer.txt
+
+# Uncomment for tracking
+#[tracker]
+#enable=1
+#tracker-width=480
+#tracker-height=480
+#gpu-id=0
+#ll-lib-file=/opt/nvidia/deepstream/deepstream/lib/libnvds_nvmultiobjecttracker.so
+#ll-config-file=config_tracker_IOU.yml
 
 [tests]
 file-loop=0

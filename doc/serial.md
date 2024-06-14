@@ -81,7 +81,7 @@ CV -> CS
 |---------|----------------------|-------------|
 | `0x10`  | Turret target        | 4           |
 | `0x11`  | Movements            | 6           |
-| `0x12`  | Shoot order          | 0 (no data) |
+| `0x12`  | Shoot order          | 1           |
 
 ## Commands
 
@@ -223,3 +223,18 @@ Units :
 | 0       | 2    | V_x         |
 | 2       | 2    | V_y         |
 | 4       | 2    | Omega       |
+
+### Shoot order
+
+Value : `0x12`
+
+Frequency : TBD
+
+Size : 1 byte
+
+Contents : Shoot order. 0 means no, anything else is fire at will.
+
+| Offset  | Size | Desc        |
+|---------|------|-------------|
+| 0       | 1    | Shoot order |
+

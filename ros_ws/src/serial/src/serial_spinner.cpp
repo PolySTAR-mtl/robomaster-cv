@@ -267,9 +267,19 @@ void SerialSpinner::handleSerial() {
         return;
     }
 
-    if (message.header.start_byte != serial::START_FRAME) {
-        ROS_ERROR("Start frame not recognized, dropping command");
-        return;
+    while (message.header.start_byte != serial::START_FRAME) {
+        ROS_WARN("Start frame not recognized, scanning command");
+        serial::msg::IncomingMessage rotated_message{serial::None()};
+
+        memcpy(&rotated_message, reinterpret_cast<uint8_t*>(&message) + 1,
+               serial::HEADER_SIZE);
+
+        uint8_t trailing;
+        bytes = read(fd, &trailing, 1);
+
+        rotated_message.header.data_len = trailing;
+
+        memcpy(&message, &rotated_message, serial::HEADER_SIZE);
     }
 
     uint8_t* payload =
@@ -337,7 +347,7 @@ void SerialSpinner::callbackTarget(const serial::TargetConstPtr& target) {
     msg.pitch = target->theta;
     msg.yaw = target->phi;
 
-    std::cout << "Target   : " << msg.pitch << ' ' << msg.yaw << '\n';
+    std::cout << "Serial:: Target   : " << msg.pitch << ' ' << msg.yaw << '\n';
 
     sendMessage(order);
 }
@@ -352,17 +362,25 @@ void SerialSpinner::callbackMovement(const serial::MovementConstPtr& move) {
     msg.v_y = utils::toMillimeter(move->v_y);
     msg.omega = utils::toAngularSpeed(move->omega);
 
-    std::cout << "Movement : " << msg.v_x << ' ' << msg.v_y << ' ' << msg.omega
-              << '\n';
+    std::cout << "Serial:: Movement : " << msg.v_x << ' ' << msg.v_y << ' '
+              << msg.omega << '\n';
 
     sendMessage(order);
 }
 
-void SerialSpinner::callbackShoot(const serial::ShootConstPtr&) {
+void SerialSpinner::callbackShoot(const serial::ShootConstPtr& shoot) {
     using namespace serial::msg;
+
+    if (!shooting_enabled) {
+        return;
+    }
+
     OutgoingMessage order{.shoot_order = {}};
 
-    std::cout << "Shooting\n";
+    order.shoot_order.shoot = shoot->shoot ? '\xFF' : '\0';
+
+    std::cout << "Serial:: Shooting "
+              << static_cast<int>(order.shoot_order.shoot) << '\n';
     sendMessage(order);
 }
 

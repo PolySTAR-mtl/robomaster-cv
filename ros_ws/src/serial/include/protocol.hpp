@@ -89,7 +89,6 @@ struct PositionFeedback : Header<PositionFeedback> {
     int16_t v_enc_2;
     int16_t v_enc_3;
     int16_t v_enc_4;
-    int8_t padding;
 } __attribute__((packed));
 
 struct TargetOrder : Header<TargetOrder> {
@@ -109,6 +108,8 @@ struct Move : Header<Move> {
 
 struct Shoot : Header<Shoot> {
     static constexpr uint8_t ID = 0x12;
+
+    int8_t shoot; // 0 no, anything else is fire at will
 } __attribute__((packed));
 
 union IncomingMessage {
