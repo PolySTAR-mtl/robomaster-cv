@@ -14,7 +14,6 @@ BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
       right_edge(right_edge), clss(clss), id(id), score(score){
         width = right_edge - left_edge;
         height = upper_edge - lower_edge;
-        creationTime = ros::Time::now();
       } 
 
 // Construction from tracklet

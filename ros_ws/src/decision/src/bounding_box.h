@@ -1,6 +1,5 @@
 #pragma once
 #include "tracking/Tracklets.h"
-#include <ros/ros.h>
 
 
 enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
@@ -20,8 +19,6 @@ class BoundingBox {
 
     std::string id;
     int clss;
-
-    ros::Time creationTime;
 
     static float weightBase;
     static float weightStandard;

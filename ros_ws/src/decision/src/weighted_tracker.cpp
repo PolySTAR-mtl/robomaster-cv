@@ -98,6 +98,7 @@ class WeightedTracker : Tracker {
             }
 
             boxes.push_back(tracklet);
+
         }
 
         std::cout << "Armor module scores: \n";
@@ -148,7 +149,8 @@ class WeightedTracker : Tracker {
         std::cout << "\nPublished Tracklet. \n" << "id: " << target.id << 
         " x: "<< target.x << " y: "<< target.y << " w: "<< target.w << " h: "<< 
         target.h << " class: "<< static_cast<int>(target.clss) << " score: "<< target.score << "\n";
-        pub_target.publish(toTarget(target));        
+        pub_target.publish(toTarget(target));
+        
     };
 
     serial::Target toTarget(tracking::Tracklet& trk) override {
@@ -228,8 +230,6 @@ class WeightedTracker : Tracker {
   private:
     tf2_ros::Buffer tBuffer;
     tf2_ros::TransformListener tListener;
-
-    std::vector<BoundingBox> previousBoxes;
 
     std::vector<float> camera_matrix;
     std::vector<float> distorsion_coeffs;
