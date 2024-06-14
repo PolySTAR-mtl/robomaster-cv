@@ -20,7 +20,7 @@ import yaml
 # Parser
 
 parser = argparse.ArgumentParser()
-subparser = parser.add_subparsers(dest='command', help='Command to run : ', required=True)
+subparser = parser.add_subparsers(dest='command', help='Command to run : ')
 subparser.add_parser('enable', help='Enable daemon')
 subparser.add_parser('disable', help='Disable daemon')
 subparser.add_parser('start', help='Manually start daemon')
@@ -43,12 +43,12 @@ shoot_parser.add_argument('val', choices=['on', 'off'])
 sysctl = '/bin/systemctl --user'
 
 def is_daemon_running():
-    proc = subprocess.run(f'{sysctl} status polystar', shell=True, capture_output=True, text=True)
+    proc = subprocess.run(f'{sysctl} status polystar', shell=True, stdout=subprocess.PIPE, text=True)
     return 'active (running)' in proc.stdout
 
 def get_params(node: str):
     try:
-        proc = subprocess.run(f'rosrun dynamic_reconfigure dynparam get {node}', shell=True, capture_output=True, timeout=10)
+        proc = subprocess.run(f'rosrun dynamic_reconfigure dynparam get {node}', shell=True, stdout=subprocess.PIPE, timeout=10)
     except TimeoutError as te:
         print(f'Error : Unresponsive after {te.timeout} seconds')
 
@@ -56,7 +56,7 @@ def get_params(node: str):
 
 
 def call_systemd(command: str, service='polystar'):
-    proc = subprocess.run(f'{sysctl} {command} {service} --no-pager', shell=True, capture_output=True)
+    proc = subprocess.run(f'{sysctl} {command} {service} --no-pager', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if proc.returncode == 0:
         print('Success')
     else:
@@ -100,7 +100,7 @@ def stop():
 
 def dynreconf(node: str, param: str, value: any):
     try:
-        proc = subprocess.run(f'rosrun dynamic_reconfigure dynparam set {node} {param} {value}', shell=True, capture_output=True, timeout=10)
+        proc = subprocess.run(f'rosrun dynamic_reconfigure dynparam set {node} {param} {value}', shell=True, stderr=subprocess.PIPE, timeout=10)
     except TimeoutError as te:
         print(f'Error : Unresponsive after {te.timeout} seconds')
 
@@ -116,7 +116,7 @@ def set_enemy(color):
 
     color_int = 0 if color == 'red' else 1
     try:
-        proc = subprocess.run(f'sed -i "/enemy_color/c\\enemy_color: {color_int}" ros_ws/data/param-decision.yaml', shell=True, capture_output=True, timeout=10)
+        proc = subprocess.run(f'sed -i "/enemy_color/c\\enemy_color: {color_int}" ros_ws/data/param-decision.yaml', shell=True, stderr=subprocess.PIPE, timeout=10)
     except TimeoutError as te:
         pass
 

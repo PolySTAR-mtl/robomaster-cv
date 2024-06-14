@@ -2,7 +2,7 @@
 
 # Setup env
 
-export WS="/home/polystar/robomaster-2023-cv/ros_ws"
+export WS="/home/polystar/robomaster-2024-cv/ros_ws"
 
 source /home/polystar/.bashrc
 source $WS/devel/setup.bash
