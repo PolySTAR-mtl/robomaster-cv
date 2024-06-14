@@ -116,7 +116,7 @@ def set_enemy(color):
 
     color_int = 0 if color == 'red' else 1
     try:
-        proc = subprocess.run(f'sed -i "/enemy_color/c\enemy_color: {color_int}" ros_ws/data/param-decision.yaml', shell=True, capture_output=True, timeout=10)
+        proc = subprocess.run(f'sed -i "/enemy_color/c\\enemy_color: {color_int}" ros_ws/data/param-decision.yaml', shell=True, capture_output=True, timeout=10)
     except TimeoutError as te:
         pass
 
