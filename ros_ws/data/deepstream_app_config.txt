@@ -14,16 +14,16 @@ nvbuf-memory-type=0
 [source0]
 enable=1
 type=1
-camera-width=960
-camera-height=540
+camera-width=640
+camera-height=480
 camera-fps-n=30
 camera-fps-d=1
-camera-v4l2-dev-node=3
-num-sources=1
+camera-v4l2-dev-node=2
+#num-sources=1
 # This is for video
 #enable=1
 #type=3
-#uri=file:/home/polystar/robomaster-2024-cv/detection/exemple/vid_test.mp4
+#uri=file:/home/polystar/test-video.mp4
 #num-sources=1
 gpu-id=0
 cudadec-memtype=0
