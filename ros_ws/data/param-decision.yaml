@@ -1,8 +1,6 @@
-enemy_color: 0
+enemy_color: 1
 weights:
-  base: 20
-  std: 40
-  hro: 100
-  sty: 30
-  size: 0.05
-  dist: 1
+  base: 5
+  std: 20
+  hro: 40
+  sty: 10

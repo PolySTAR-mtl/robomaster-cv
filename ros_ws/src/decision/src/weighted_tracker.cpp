@@ -32,8 +32,6 @@ class WeightedTracker : Tracker {
         BoundingBox::weightStandard = nh.param("weights/std", 40.f);
         BoundingBox::weightHero = nh.param("weights/hro", 100.f);
         BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
-        BoundingBox::weightSize = nh.param("weights/size", 0.01);
-        BoundingBox::weightDist = nh.param("weights/dist", 1.f);
     }
 
     void callbackTracklets(const tracking::TrackletsConstPtr& trks) override {
@@ -68,11 +66,33 @@ class WeightedTracker : Tracker {
             std::cout << "\n";
 
             if(tracklet.clss == enemy_color){
-                float size = tracklet.getSize();          
+                float size = std::pow(tracklet.getSize(), 0.5f);
+                std::cout << "La taille d'un côté est: " << size << "\n";
+                 
+                if (size <= 25){
+                    tracklet.score += 15;
+                }
+                else if (size > 25 && size < 90) {
+                    tracklet.score += (0.006f * std::pow(size, 2) + 0.9f * size - 12);
+                }
+                else {
+                    tracklet.score += 120;
+                }
+
+                std::cout << "Le score dû à la taille est: " << tracklet.score << '\n';
+
                 float dist = tracklet.getDistance(*best_target); 
-                    
-                tracklet.score += size * BoundingBox::weightSize;
-                tracklet.score += 1000/(dist * BoundingBox::weightDist);
+                std::cout << "La distance du centre est: " << dist << "\n";
+                
+                if (dist <= 30){
+                    tracklet.score += 100;
+                }
+                else if (dist > 30 && dist < 140){
+                    tracklet.score += (0.006f * std::pow(dist, 2) - 1.85f * dist + 150);
+                }
+                else {
+                    tracklet.score += 10;
+                }
             }
 
             boxes.push_back(tracklet);
@@ -154,5 +174,3 @@ float BoundingBox::weightBase;
 float BoundingBox::weightStandard;
 float BoundingBox::weightHero;
 float BoundingBox::weightSentry;
-float BoundingBox::weightSize;
-float BoundingBox::weightDist;

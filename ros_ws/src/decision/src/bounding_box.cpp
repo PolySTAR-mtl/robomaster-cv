@@ -26,7 +26,7 @@ BoundingBox::BoundingBox(tracking::Tracklet& bbox)
 float BoundingBox::getSize() { return this->width * this->height; }
 
 float BoundingBox::getDistance(BoundingBox other) { 
-    return std::sqrt(std::pow(this->x - other.x, 2) + std::pow(this->y - other.y, 2));
+    return std::sqrt(std::pow(this->x + (this->right_edge - this->left_edge)/2 - other.x, 2) + std::pow(this->y + (this->lower_edge - this->upper_edge)/2 - other.y, 2));
     }
 
 // If the bounding box is not a container but an armor module, its type score will be 0

@@ -33,20 +33,28 @@ int main(int argc, char **argv)
   while (ros::ok())
   {
 
-    auto contained1 = createTracklet("ArmureStd", 25, 25, 10, 10, static_cast<std::uint8_t>(1), 0); 
-    auto contained2 = createTracklet("ArmureHero1", 925, 925, 1, 1, static_cast<std::uint8_t>(1), 0);  
-    auto contained3 = createTracklet("ArmureHero2", 925, 925, 10, 10, static_cast<std::uint8_t>(1), 0);
-    auto soloModule = createTracklet("ArmureSolo", 175, 175, 50, 50, 1, 0);
-    auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
-    auto container2 = createTracklet("Hero", 900, 900, 100, 100, static_cast<std::uint8_t>(5), 0);
+    // Test 1 -> Taille vs Distance du milieu
+    auto solo1 = createTracklet("PetitProche", 200, 200, 10, 10, static_cast<uint8_t>(1), 0);
+    auto solo2 = createTracklet("MoyenProche", 180, 180, 60, 60, static_cast<uint8_t>(1), 0);
+    auto solo3 = createTracklet("GrandProche", 150, 150, 90, 90, static_cast<uint8_t>(1), 0);
+    auto solo4 = createTracklet("PetitLoin", 50, 50, 10, 10, static_cast<uint8_t>(1), 0);
+    auto solo5 = createTracklet("MoyenLoin", 40, 40, 60, 60, static_cast<uint8_t>(1), 0);
+    auto solo6 = createTracklet("GrandLoin", 25, 25, 90, 90, static_cast<uint8_t>(1), 0);
+    auto solo7 = createTracklet("PetitMid", 145, 145, 25, 25, static_cast<uint8_t>(1), 0);
+    auto solo8 = createTracklet("MoyenMid", 128, 128, 60, 60, static_cast<uint8_t>(1), 0);
+    auto solo9 = createTracklet("GrandMid", 113, 113, 90, 90, static_cast<uint8_t>(1), 0);
+    
 
     tracking::Tracklets trks;
-    trks.tracklets.push_back(contained1);
-    trks.tracklets.push_back(contained2);
-    trks.tracklets.push_back(contained3);
-    trks.tracklets.push_back(soloModule);  
-    trks.tracklets.push_back(container1);
-    trks.tracklets.push_back(container2);
+    trks.tracklets.push_back(solo1);
+    trks.tracklets.push_back(solo2);
+    trks.tracklets.push_back(solo3);
+    trks.tracklets.push_back(solo4);
+    trks.tracklets.push_back(solo5);
+    trks.tracklets.push_back(solo6);
+    trks.tracklets.push_back(solo7);
+    trks.tracklets.push_back(solo8);
+    trks.tracklets.push_back(solo9);
 
     chatter_pub.publish(trks);
 

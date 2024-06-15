@@ -24,8 +24,6 @@ class BoundingBox {
     static float weightStandard;
     static float weightHero;
     static float weightSentry;
-    static float weightSize;
-    static float weightDist;
 
     static float constexpr scaleFactor = 1.2f;
 
