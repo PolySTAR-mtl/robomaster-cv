@@ -215,6 +215,17 @@ void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
     msg.pitch = utils::fromAngularSpeed(turret_feedback.pitch);
     msg.yaw = utils::fromAngularSpeed(turret_feedback.yaw);
 
+
+
+    if(msg.pitch < 0) {
+	    msg.pitch += 15.27;
+    }
+
+    if(msg.yaw < 0) {
+	    msg.yaw += 15.27;
+    }
+
+    
     pub_turret.publish(msg);
 }
 
