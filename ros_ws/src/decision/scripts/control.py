@@ -24,7 +24,7 @@ class Controller:
         self.rate = rate
         self.timeout = lost_target_timeout
         self.freq_search = 1
-        self.follow_speed = 0.005
+        self.follow_speed = 0.002
         self.scale = 1/15
         self.speed_noise = 0.05
 
