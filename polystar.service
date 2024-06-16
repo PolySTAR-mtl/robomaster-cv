@@ -2,7 +2,7 @@
 Description=Polystar main script
 
 [Service]
-ExecStart=/bin/bash /home/polystar/robomaster-2023-cv/polystar.sh
+ExecStart=/bin/bash /home/polystar/robomaster-2024-cv/polystar.sh
 
 [Install]
 WantedBy=default.target
