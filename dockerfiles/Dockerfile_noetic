@@ -1,0 +1,10 @@
+FROM ros:noetic
+
+RUN apt update && apt install -y \
+    ros-noetic-cv-bridge \
+    ros-noetic-tf2-ros \
+    ros-noetic-tf2-geometry-msgs \
+    ros-noetic-camera-info-manager \
+    vim \
+    libeigen3-dev
+    
