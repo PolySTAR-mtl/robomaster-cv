@@ -1,4 +1,4 @@
-# PolySTAR - CV Robomaster 2023
+# PolySTAR - CV Robomaster 2025
 
 Work repository for the Computer Vision team
 
