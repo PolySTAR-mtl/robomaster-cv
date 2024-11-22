@@ -10,7 +10,7 @@
 
   <author email="sebastien.darche@polymtl.ca">Sébastien Darche</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
   <build_depend>detection</build_depend>
   <exec_depend>detection</exec_depend>
 
