@@ -16,6 +16,8 @@
   <exec_depend>message_runtime</exec_depend>
   <depend>detection</depend>
   
-  <export></export>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

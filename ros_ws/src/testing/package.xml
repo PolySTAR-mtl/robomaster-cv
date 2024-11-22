@@ -18,6 +18,8 @@
   <exec_depend>serial</exec_depend>
   <exec_depend>detection</exec_depend>
 
-  <export></export>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>
