@@ -3,17 +3,14 @@ project(monitor)
 
 add_compile_options(-std=c++17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  sensor_msgs
-  detection
-  cv_bridge
-)
-
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(detection REQUIRED)
+find_package(cv_bridge REQUIRED)
 find_package(OpenCV)
-
 
 ###################################
 ## catkin specific configuration ##

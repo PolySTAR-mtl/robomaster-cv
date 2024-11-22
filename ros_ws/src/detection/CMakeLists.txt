@@ -3,17 +3,14 @@ project(detection)
 
 set(CMAKE_CXX_STANDARD 17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  sensor_msgs
-  message_generation
-  cv_bridge
-)
-
-
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(rospy REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(message_generation REQUIRED)
+find_package(cv_bridge REQUIRED)
 find_package(OpenCV)
 
 if(DARKNET_CMAKE_PATH)

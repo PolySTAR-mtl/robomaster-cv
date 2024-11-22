@@ -3,19 +3,16 @@ project(decision)
 
 add_compile_options(-std=c++17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  sensor_msgs
-  detection
-  serial
-  tf2
-  tf2_ros
-  dynamic_reconfigure
-)
-
-
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(detection REQUIRED)
+find_package(serial REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(dynamic_reconfigure REQUIRED)
 find_package(OpenCV REQUIRED)
 
 generate_dynamic_reconfigure_options(

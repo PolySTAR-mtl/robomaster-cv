@@ -4,12 +4,11 @@ project(serial)
 # Compile as C++11, supported in ROS Kinetic and newer
 set(CMAKE_CXX_STANDARD 17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  message_generation
-)
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(message_generation REQUIRED)
 
 ## ----- Messages ----- ##
 

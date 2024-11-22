@@ -4,15 +4,12 @@ project(testing)
 # Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  sensor_msgs
-  serial
-)
-
-
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(serial REQUIRED)
 
 ###################################
 ## catkin specific configuration ##

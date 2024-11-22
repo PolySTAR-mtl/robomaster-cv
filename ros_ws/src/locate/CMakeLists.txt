@@ -3,17 +3,14 @@ project(locate)
 
 set(CMAKE_CXX_STANDARD 17)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  nav_msgs
-  sensor_msgs
-  serial
-  tf2
-  tf2_ros
-)
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(serial REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
