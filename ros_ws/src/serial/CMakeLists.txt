@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 ## Find macros and libraries
 find_package(ament_cmake_ros REQUIRED)
-find_package(roscpp REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(message_generation REQUIRED)
 

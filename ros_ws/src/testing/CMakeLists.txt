@@ -6,7 +6,7 @@ add_compile_options(-std=c++17)
 
 ## Find macros and libraries
 find_package(ament_cmake_ros REQUIRED)
-find_package(roscpp REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(serial REQUIRED)
