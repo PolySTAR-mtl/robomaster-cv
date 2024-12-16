@@ -119,18 +119,19 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${Deepstream_INCLUDE_DIRS}
-  ${catkin_INCLUDE_DIRS}
-  ${Darknet_INCLUDE_DIRS}
-)
 
 if(DEEPSTREAM)
 
 add_executable(deepstream_detection
   src/deepstream_node.cpp
   src/deepstream_detector.cpp
+)
+
+target_include_directories(deepstream_detection PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${Deepstream_INCLUDE_DIRS}
+  ${ament_INCLUDE_DIRS}
+  ${Darknet_INCLUDE_DIRS}
 )
 
 target_link_libraries(deepstream_detection
@@ -144,6 +145,13 @@ else()
 add_executable(detection
   src/detection_node.cpp
   src/detector.cpp
+)
+
+target_include_directories(detection PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${Deepstream_INCLUDE_DIRS}
+  ${ament_INCLUDE_DIRS}
+  ${Darknet_INCLUDE_DIRS}
 )
 
 target_link_libraries(detection

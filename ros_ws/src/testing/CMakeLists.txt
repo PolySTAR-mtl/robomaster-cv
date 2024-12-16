@@ -33,6 +33,11 @@ add_executable(serial_testing
   src/serial_testing.cpp
 )
 
+target_include_directories(serial_testing PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+   ${ament_INCLUDE_DIRS}
+)
+
 target_link_libraries(serial_testing
   ${catkin_LIBRARIES}
 )

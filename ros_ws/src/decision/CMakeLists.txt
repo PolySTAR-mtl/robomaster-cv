@@ -33,11 +33,8 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-  #${OpenCV_INCLUDE_DIRS}
-  /usr/include/opencv4
-)
+
+# Simple Tracker 
 
 add_executable(simple_tracker
   src/simple_tracker.cpp
@@ -59,6 +56,13 @@ add_executable(weighted_tracker
   src/weighted_tracker.cpp
   src/bounding_box.cpp
   src/tracker.cpp
+)
+
+target_include_directories(weighted_tracker PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+  ${ament_INCLUDE_DIRS}
+  #${OpenCV_INCLUDE_DIRS}
+  /usr/include/opencv4
 )
 
 target_link_libraries(weighted_tracker

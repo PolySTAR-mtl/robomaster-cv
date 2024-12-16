@@ -27,16 +27,16 @@ catkin_package(
 ## Build ##
 ###########
 
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
-
 add_executable(locate
   src/locate.cpp
   src/odom.cpp
   src/imu.cpp
   src/turret.cpp
+)
+
+target_include_directories(locate PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${ament_INCLUDE_DIRS}
 )
 
 add_dependencies(locate ${catkin_EXPORTED_TARGETS})

@@ -27,15 +27,16 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
-)
 
 add_executable(monitor_video
   src/monitor_video_node.cpp
   src/video_monitor.cpp
+)
+
+target_include_directories(monitor_video PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${ament_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 target_link_libraries(monitor_video
@@ -45,6 +46,11 @@ target_link_libraries(monitor_video
 
 add_executable(monitor_logger
   src/monitor_logger.cpp
+)
+
+target_include_directories(monitor_logger PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${ament_INCLUDE_DIRS}
 )
 
 target_link_libraries(monitor_logger
