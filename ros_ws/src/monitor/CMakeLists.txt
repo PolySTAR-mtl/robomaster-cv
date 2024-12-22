@@ -71,3 +71,5 @@ add_dependencies(monitor_video ${catkin_EXPORTED_TARGETS})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+ament_package()

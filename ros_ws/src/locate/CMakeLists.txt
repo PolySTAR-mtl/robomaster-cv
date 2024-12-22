@@ -45,3 +45,5 @@ target_link_libraries(locate
   ${catkin_LIBRARIES}
   Eigen3::Eigen
 )
+
+ament_package()

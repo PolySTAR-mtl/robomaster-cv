@@ -79,3 +79,5 @@ target_link_libraries(serialize serial_spinner ${catkin_LIBRARIES})
 
 catkin_add_gtest(deserialize test/deserialize.cpp)
 target_link_libraries(deserialize serial_spinner ${catkin_LIBRARIES})
+
+ament_package()
