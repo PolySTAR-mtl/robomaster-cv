@@ -11,19 +11,23 @@
   <author email="sebastien.darche@polymtl.ca">Sébastien Darche</author>
 
   <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  <build_depend>rclcpp</build_depend>
   <build_depend>detection</build_depend>
   <build_depend>serial</build_depend>
   <build_depend>tracking</build_depend>
   <build_depend>tf2</build_depend>
   <build_depend>tf2_ros</build_depend>
   <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>OpenCV</build_depend>
 
+  <exec_depend>rclcpp</exec_depend>
   <exec_depend>detection</exec_depend>
   <exec_depend>serial</exec_depend>
   <exec_depend>tracking</exec_depend>
   <exec_depend>tf2</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>dynamic_reconfigure</exec_depend>
+  <exec_depend>OpenCV</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

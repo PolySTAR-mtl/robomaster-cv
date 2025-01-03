@@ -6,10 +6,11 @@ add_compile_options(-std=c++17)
 ## Find macros and libraries
 find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
 find_package(detection REQUIRED)
 find_package(serial REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(tracking REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(dynamic_reconfigure REQUIRED)
@@ -42,7 +43,14 @@ add_executable(simple_tracker
 )
 
 target_link_libraries(simple_tracker
-  ${catkin_LIBRARIES}
+  rclcpp
+  std_msgs
+  sensor_msgs
+  tracking
+  serial
+  tf2
+  tf2_ros
+  dynamic_reconfigure
 )
 
 add_dependencies(simple_tracker ${catkin_EXPORTED_TARGETS})
@@ -66,8 +74,14 @@ target_include_directories(weighted_tracker PRIVATE
 )
 
 target_link_libraries(weighted_tracker
-  ${catkin_LIBRARIES}
-  ${OpenCV_LIBRARIES}
+  rclcpp
+  std_msgs
+  sensor_msgs
+  tracking
+  serial
+  tf2
+  tf2_ros
+  OpenCV
 )
 
 add_dependencies(weighted_tracker ${catkin_EXPORTED_TARGETS})
@@ -79,7 +93,10 @@ add_executable(publisher
 )
 
 target_link_libraries(publisher
-  ${catkin_LIBRARIES}
+  rclcpp
+  std_msgs
+  sensor_msgs
+  tracking
 )
 #############
 ## Testing ##
