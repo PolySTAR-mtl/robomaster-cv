@@ -6,10 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 ## Find macros and libraries
 find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rospy REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(message_generation REQUIRED)
+find_package(detection REQUIRED)
+find_package(rosidl_generate_interfaces REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV)
 
@@ -135,7 +136,9 @@ target_include_directories(deepstream_detection PRIVATE
 )
 
 target_link_libraries(deepstream_detection
-  ${catkin_LIBRARIES}
+  rclcpp
+  detection
+  sensor_msgs
   deepstream-runner
 )
 
@@ -155,7 +158,10 @@ target_include_directories(detection PRIVATE
 )
 
 target_link_libraries(detection
-  ${catkin_LIBRARIES}
+  rclcpp
+  detection
+  sensor_msgs
+  cv_bridge
   ${Darknet_LIBRARIES}
   ${OpenCV_LIBRARIES}
 )
