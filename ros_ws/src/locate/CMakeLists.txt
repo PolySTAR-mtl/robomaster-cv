@@ -42,7 +42,12 @@ target_include_directories(locate PRIVATE
 add_dependencies(locate ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(locate
-  ${catkin_LIBRARIES}
+  rclcpp
+  nav_msgs
+  sensor_msgs
+  serial
+  tf2
+  tf2_ros
   Eigen3::Eigen
 )
 

@@ -10,11 +10,15 @@
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  
+  <depend>rclcpp</depend>
   <depend>nav_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>serial</depend>
+
   <build_depend>tf2</build_depend>
   <build_depend>tf2_ros</build_depend>
+
   <exec_depend>tf2</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
 
