@@ -10,7 +10,6 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(serial REQUIRED)
-
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -36,7 +35,10 @@ target_include_directories(serial_testing PRIVATE
 )
 
 target_link_libraries(serial_testing
-  ${catkin_LIBRARIES}
+  rclcpp
+  std_msgs
+  sensor_msgs
+  serial
 )
 
 add_dependencies(serial_testing ${catkin_EXPORTED_TARGETS})
