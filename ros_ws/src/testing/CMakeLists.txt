@@ -34,7 +34,7 @@ target_include_directories(serial_testing PRIVATE
    ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(serial_testing
+target_link_libraries(serial_testing PRIVATE
   rclcpp
   std_msgs
   sensor_msgs

@@ -42,7 +42,7 @@ add_executable(simple_tracker
   src/tracker.cpp
 )
 
-target_link_libraries(simple_tracker
+target_link_libraries(simple_tracker PRIVATE
   rclcpp
   std_msgs
   sensor_msgs
@@ -73,7 +73,7 @@ target_include_directories(weighted_tracker PRIVATE
   /usr/include/opencv4
 )
 
-target_link_libraries(weighted_tracker
+target_link_libraries(weighted_tracker PRIVATE
   rclcpp
   std_msgs
   sensor_msgs
@@ -92,7 +92,7 @@ add_executable(publisher
   src/publisher.cpp
 )
 
-target_link_libraries(publisher
+target_link_libraries(publisher PRIVATE
   rclcpp
   std_msgs
   sensor_msgs

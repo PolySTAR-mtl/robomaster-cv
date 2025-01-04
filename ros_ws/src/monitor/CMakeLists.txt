@@ -39,7 +39,7 @@ target_include_directories(monitor_video PRIVATE
   ${OpenCV_INCLUDE_DIRS}
 )
 
-target_link_libraries(monitor_video
+target_link_libraries(monitor_video PRIVATE
   rclcpp
   std_msgs
   sensor_msgs
@@ -57,7 +57,7 @@ target_include_directories(monitor_logger PRIVATE
   ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(monitor_logger
+target_link_libraries(monitor_logger PRIVATE
   rclcpp
 )
 

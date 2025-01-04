@@ -41,7 +41,7 @@ target_include_directories(locate PRIVATE
 
 add_dependencies(locate ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(locate
+target_link_libraries(locate PRIVATE
   rclcpp
   nav_msgs
   sensor_msgs

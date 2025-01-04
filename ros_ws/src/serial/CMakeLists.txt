@@ -55,7 +55,7 @@ target_include_directories(serial_interface PRIVATE
   ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(serial_interface
+target_link_libraries(serial_interface PRIVATE
   rclcpp
   std_msgs
   rosidl_generate_interfaces

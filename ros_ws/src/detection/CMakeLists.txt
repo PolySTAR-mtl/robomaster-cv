@@ -61,7 +61,7 @@ if(DEEPSTREAM)
     ${Deepstream_common}
   )
 
-  target_link_libraries(deepstream-runner
+  target_link_libraries(deepstream-runner PRIVATE
     nvdsgst_meta
     nvds_meta
     nvdsgst_helper
@@ -135,7 +135,7 @@ target_include_directories(deepstream_detection PRIVATE
   ${Darknet_INCLUDE_DIRS}
 )
 
-target_link_libraries(deepstream_detection
+target_link_libraries(deepstream_detection PRIVATE
   rclcpp
   detection
   sensor_msgs
@@ -157,7 +157,7 @@ target_include_directories(detection PRIVATE
   ${Darknet_INCLUDE_DIRS}
 )
 
-target_link_libraries(detection
+target_link_libraries(detection PRIVATE
   rclcpp
   detection
   sensor_msgs
