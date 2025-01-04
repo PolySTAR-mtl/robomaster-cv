@@ -40,11 +40,11 @@ target_include_directories(monitor_video PRIVATE
 )
 
 target_link_libraries(monitor_video PRIVATE
-  rclcpp
-  std_msgs
-  sensor_msgs
-  detection
-  cv_bridge
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${detection_TARGETS}
+  cv_bridge::cv_bridge
   ${OpenCV_LIBRARIES}
 )
 
@@ -58,7 +58,7 @@ target_include_directories(monitor_logger PRIVATE
 )
 
 target_link_libraries(monitor_logger PRIVATE
-  rclcpp
+  rclcpp::rclcpp
 )
 
 add_dependencies(monitor_video ${catkin_EXPORTED_TARGETS})

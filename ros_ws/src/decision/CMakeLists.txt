@@ -43,14 +43,14 @@ add_executable(simple_tracker
 )
 
 target_link_libraries(simple_tracker PRIVATE
-  rclcpp
-  std_msgs
-  sensor_msgs
-  tracking
-  serial
-  tf2
-  tf2_ros
-  dynamic_reconfigure
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${tracking_TARGETS}
+  ${serial_TARGETS}
+  tf2::tf2
+  tf2_ros::tf2_ros
+  dynamic_reconfigure::dynamic_reconfigure
 )
 
 add_dependencies(simple_tracker ${catkin_EXPORTED_TARGETS})
@@ -74,14 +74,14 @@ target_include_directories(weighted_tracker PRIVATE
 )
 
 target_link_libraries(weighted_tracker PRIVATE
-  rclcpp
-  std_msgs
-  sensor_msgs
-  tracking
-  serial
-  tf2
-  tf2_ros
-  OpenCV
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${tracking_TARGETS}
+  ${serial_TARGETS}
+  tf2::tf2
+  tf2_ros::tf2_ros
+  OpenCV::OpenCV
 )
 
 add_dependencies(weighted_tracker ${catkin_EXPORTED_TARGETS})
@@ -93,10 +93,10 @@ add_executable(publisher
 )
 
 target_link_libraries(publisher PRIVATE
-  rclcpp
-  std_msgs
-  sensor_msgs
-  tracking
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${tracking_TARGETS}
 )
 #############
 ## Testing ##

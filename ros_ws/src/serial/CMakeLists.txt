@@ -56,9 +56,9 @@ target_include_directories(serial_interface PRIVATE
 )
 
 target_link_libraries(serial_interface PRIVATE
-  rclcpp
-  std_msgs
-  rosidl_generate_interfaces
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  rosidl_generate_interfaces::rosidl_generate_interfaces
   serial_spinner
 )
 

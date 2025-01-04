@@ -62,16 +62,16 @@ if(DEEPSTREAM)
   )
 
   target_link_libraries(deepstream-runner PRIVATE
-    nvdsgst_meta
-    nvds_meta
-    nvdsgst_helper
-    nvdsgst_smartrecord
-    nvds_utils
-    nvds_msgbroker
-    nvbufsurftransform
-    m
-    gstrtspserver-1.0
-    dl
+    nvdsgst_meta::nvdsgst_meta
+    nvds_meta::nvds_meta
+    nvdsgst_helper::nvdsgst_helper
+    nvdsgst_smartrecord::nvdsgst_smartrecord
+    nvds_utils::nvds_utils
+    nvds_msgbroker::nvds_msgbroker
+    nvbufsurftransform::nvbufsurftransform
+    m::m
+    gstrtspserver-1.0::gstrtspserver-1.0
+    dl::dl
     ${GSTREAMER_LIBRARIES}
     ${GST_VIDEO_LIBRARIES}
     ${GST_RTSP_LIBRARIES}
@@ -136,9 +136,9 @@ target_include_directories(deepstream_detection PRIVATE
 )
 
 target_link_libraries(deepstream_detection PRIVATE
-  rclcpp
-  detection
-  sensor_msgs
+  rclcpp::rclcpp
+  ${detection_TARGETS}
+  ${sensor_msgs_TARGETS}
   deepstream-runner
 )
 
@@ -158,10 +158,10 @@ target_include_directories(detection PRIVATE
 )
 
 target_link_libraries(detection PRIVATE
-  rclcpp
-  detection
-  sensor_msgs
-  cv_bridge
+  rclcpp::rclcpp
+  ${detection_TARGETS}
+  ${sensor_msgs_TARGETS}
+  cv_bridge::cv_bridge
   ${Darknet_LIBRARIES}
   ${OpenCV_LIBRARIES}
 )

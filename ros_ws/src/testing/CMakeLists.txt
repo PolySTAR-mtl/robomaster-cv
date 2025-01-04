@@ -35,10 +35,10 @@ target_include_directories(serial_testing PRIVATE
 )
 
 target_link_libraries(serial_testing PRIVATE
-  rclcpp
-  std_msgs
-  sensor_msgs
-  serial
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${serial_TARGETS}
 )
 
 add_dependencies(serial_testing ${catkin_EXPORTED_TARGETS})
