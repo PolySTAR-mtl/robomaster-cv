@@ -56,7 +56,9 @@ target_include_directories(serial_interface PRIVATE
 )
 
 target_link_libraries(serial_interface
-  ${catkin_LIBRARIES}
+  rclcpp
+  std_msgs
+  rosidl_generate_interfaces
   serial_spinner
 )
 
