@@ -14,8 +14,8 @@ find_package(serial REQUIRED)
 ## catkin specific configuration ##
 ###################################
 
-catkin_package(
-  CATKIN_DEPENDS serial
+ament_export_dependencies(
+  serial
 )
 
 ###########

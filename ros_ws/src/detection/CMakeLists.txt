@@ -105,14 +105,9 @@ generate_messages(
   std_msgs
 )
 
-
 ###################################
 ## catkin specific configuration ##
 ###################################
-
-catkin_package(
-  INCLUDE_DIRS include
-)
 
 ###########
 ## Build ##

@@ -24,8 +24,13 @@ generate_dynamic_reconfigure_options(
 ## catkin specific configuration ##
 ###################################
 
-catkin_package(
-  CATKIN_DEPENDS detection serial tf2 tf2_ros dynamic_reconfigure
+ament_export_dependencies(
+  detection
+  serial
+  tracking
+  tf2
+  tf2_ros
+  dynamic_reconfigure
 )
 
 ###########

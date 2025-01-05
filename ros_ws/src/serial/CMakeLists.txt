@@ -34,10 +34,6 @@ generate_messages()
 ## catkin specific configuration ##
 ###################################
 
-catkin_package(
-  INCLUDE_DIRS include
-)
-
 ###########
 ## Build ##
 ###########

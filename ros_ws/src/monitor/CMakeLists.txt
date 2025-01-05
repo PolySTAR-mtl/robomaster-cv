@@ -16,9 +16,8 @@ find_package(OpenCV)
 ## catkin specific configuration ##
 ###################################
 
-catkin_package(
-  INCLUDE_DIRS include
-  CATKIN_DEPENDS detection
+ament_export_dependencies(
+  detection
 )
 
 ###########

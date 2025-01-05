@@ -18,9 +18,12 @@ find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 ## catkin specific configuration ##
 ###################################
 
-catkin_package(
-  INCLUDE_DIRS include
-  CATKIN_DEPENDS nav_msgs sensor_msgs serial tf2 tf2_ros
+ament_export_dependencies(
+  nav_msgs
+  sensor_msgs
+  serial
+  tf2
+  tf2_ros
 )
 
 ###########
