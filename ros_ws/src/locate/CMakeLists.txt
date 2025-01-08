@@ -42,8 +42,6 @@ target_include_directories(locate PRIVATE
   ${ament_INCLUDE_DIRS}
 )
 
-add_dependencies(locate ${catkin_EXPORTED_TARGETS})
-
 target_link_libraries(locate PRIVATE
   rclcpp:rclcpp
   ${nav_msgs_TARGETS}

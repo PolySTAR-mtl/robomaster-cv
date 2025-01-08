@@ -38,7 +38,21 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-add_library(serial_spinner src/serial_spinner)
+
+add_library(serial_spinner 
+  src/serial_spinner
+)
+
+target_include_directories(serial_spinner PRIVATE
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  ${ament_INCLUDE_DIRS}
+)
+
+target_link_libraries(serial_spinner PRIVATE
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  rosidl_generate_interfaces::rosidl_generate_interfaces
+)
 
 add_executable(serial_interface
   src/serial_interface.cpp
@@ -56,8 +70,6 @@ target_link_libraries(serial_interface PRIVATE
   serial_spinner
 )
 
-add_dependencies(serial_spinner ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 #############
 ## Testing ##

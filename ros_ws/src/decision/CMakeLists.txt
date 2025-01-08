@@ -58,8 +58,6 @@ target_link_libraries(simple_tracker PRIVATE
   dynamic_reconfigure::dynamic_reconfigure
 )
 
-add_dependencies(simple_tracker ${catkin_EXPORTED_TARGETS})
-
 # dyn_reconf dependencies
 add_dependencies(simple_tracker ${PROJECT_NAME}_gencfg)
 
@@ -88,8 +86,6 @@ target_link_libraries(weighted_tracker PRIVATE
   tf2_ros::tf2_ros
   OpenCV::OpenCV
 )
-
-add_dependencies(weighted_tracker ${catkin_EXPORTED_TARGETS})
 
 # Publisher 
 

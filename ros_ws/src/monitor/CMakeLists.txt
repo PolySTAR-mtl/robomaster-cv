@@ -60,8 +60,6 @@ target_link_libraries(monitor_logger PRIVATE
   rclcpp::rclcpp
 )
 
-add_dependencies(monitor_video ${catkin_EXPORTED_TARGETS})
-
 #############
 ## Testing ##
 #############

@@ -42,6 +42,4 @@ target_link_libraries(serial_testing PRIVATE
   ${serial_TARGETS}
 )
 
-add_dependencies(serial_testing ${catkin_EXPORTED_TARGETS})
-
 ament_package()
