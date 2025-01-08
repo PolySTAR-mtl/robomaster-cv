@@ -13,21 +13,18 @@ find_package(rosidl_generate_interfaces REQUIRED)
 ## ----- Messages ----- ##
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  HP.msg
-  Rune.msg
-  SwitchOrder.msg
-  Target.msg
-  Movement.msg
-  GameStatus.msg
-  GameStage.msg
-  TurretFeedback.msg
-  PositionFeedback.msg
-  Shoot.msg
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/HP.msg
+  msg/Rune.msg
+  msg/SwitchOrder.msg
+  msg/Target.msg
+  msg/Movement.msg
+  msg/GameStatus.msg
+  msg/GameStage.msg
+  msg/TurretFeedback.msg
+  msg/PositionFeedback.msg
+  msg/Shoot.msg
 )
-
-generate_messages()
 
 
 ###################################

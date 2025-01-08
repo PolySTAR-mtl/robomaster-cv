@@ -94,15 +94,10 @@ endif()
 ## ----- Messages ----- ##
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Detection.msg
-  Detections.msg
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/Detection.msg
+  msg/Detections.msg
+  DEPENDENCIES std_msgs
 )
 
 ###################################

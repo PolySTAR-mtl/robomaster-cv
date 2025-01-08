@@ -14,15 +14,10 @@ ament_python_install_package()
 ## ----- Messages ----- ##
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Tracklet.msg
-  Tracklets.msg
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/Tracklet.msg
+  msg/Tracklets.msg
+  DEPENDENCIES std_msgs
 )
 
 ###################################
