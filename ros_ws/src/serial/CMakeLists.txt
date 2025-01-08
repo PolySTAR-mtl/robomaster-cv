@@ -9,6 +9,7 @@ find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_generate_interfaces REQUIRED)
+find_package(ament_cmake_gtest)
 
 ## ----- Messages ----- ##
 
@@ -69,10 +70,10 @@ add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_E
 # endif()
 
 
-catkin_add_gtest(serialize test/serialize.cpp)
+ament_add_gtest(serialize test/serialize.cpp)
 target_link_libraries(serialize serial_spinner ${catkin_LIBRARIES})
 
-catkin_add_gtest(deserialize test/deserialize.cpp)
+ament_add_gtest(deserialize test/deserialize.cpp)
 target_link_libraries(deserialize serial_spinner ${catkin_LIBRARIES})
 
 ament_package()
