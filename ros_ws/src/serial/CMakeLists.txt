@@ -29,7 +29,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ###########
@@ -71,9 +71,15 @@ add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_E
 
 
 ament_add_gtest(serialize test/serialize.cpp)
-target_link_libraries(serialize serial_spinner ${catkin_LIBRARIES})
+target_link_libraries(serialize PRIVATE 
+  serial_spinner 
+  ament_cmake_gtest::ament_cmake_gtest
+)
 
 ament_add_gtest(deserialize test/deserialize.cpp)
-target_link_libraries(deserialize serial_spinner ${catkin_LIBRARIES})
+target_link_libraries(deserialize PRIVATE
+  serial_spinner 
+  ament_cmake_gtest::ament_cmake_gtest
+)
 
 ament_package()

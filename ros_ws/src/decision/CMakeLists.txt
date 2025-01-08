@@ -21,7 +21,7 @@ generate_dynamic_reconfigure_options(
 )
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(

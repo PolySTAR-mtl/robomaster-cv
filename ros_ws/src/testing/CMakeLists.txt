@@ -10,8 +10,9 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(serial REQUIRED)
+
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(

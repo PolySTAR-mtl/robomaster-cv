@@ -13,7 +13,7 @@ find_package(cv_bridge REQUIRED)
 find_package(OpenCV)
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(

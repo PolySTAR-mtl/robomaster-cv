@@ -21,7 +21,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 )
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(

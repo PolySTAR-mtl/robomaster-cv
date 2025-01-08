@@ -15,7 +15,7 @@ find_package(tf2_ros REQUIRED)
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(
