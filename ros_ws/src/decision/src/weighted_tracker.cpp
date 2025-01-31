@@ -23,7 +23,7 @@
 // Project includes
 
 #include "tracker.h"
-#include "serial/Target.h"
+#include "serial/msg/Target.h"
 #include "bounding_box.h"
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }

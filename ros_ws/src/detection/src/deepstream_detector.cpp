@@ -12,7 +12,7 @@
 
 // ROS Includes
 
-#include "detection/Detections.h"
+#include "detection/msg/Detections.h"
 
 // Deepstream includes
 

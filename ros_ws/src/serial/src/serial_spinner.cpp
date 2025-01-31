@@ -13,11 +13,11 @@
 
 // ROS includes
 
-#include "serial/GameStage.h"
-#include "serial/GameStatus.h"
-#include "serial/PositionFeedback.h"
-#include "serial/Shoot.h"
-#include "serial/TurretFeedback.h"
+#include "serial/msg/GameStage.h"
+#include "serial/msg/GameStatus.h"
+#include "serial/msg/PositionFeedback.h"
+#include "serial/msg/Shoot.h"
+#include "serial/msg/TurretFeedback.h"
 
 // OS includes
 

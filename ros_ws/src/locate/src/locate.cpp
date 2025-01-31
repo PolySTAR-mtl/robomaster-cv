@@ -10,7 +10,7 @@
 
 #include "ros/ros.h"
 
-#include "serial/PositionFeedback.h"
+#include "serial/msg/PositionFeedback.h"
 
 void handleMessage(const serial::PositionFeedbackConstPtr& pos, IMU& imu,
                    Odom& odom) {

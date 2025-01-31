@@ -13,8 +13,8 @@
 
 // ROS includes
 
-#include "serial/HP.h"
-#include "serial/SwitchOrder.h"
+#include "serial/msg/HP.h"
+#include "serial/msg/SwitchOrder.h"
 
 // OS includes
 

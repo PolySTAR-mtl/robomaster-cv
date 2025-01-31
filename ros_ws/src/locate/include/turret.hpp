@@ -12,7 +12,7 @@
 #include <tf2_ros/transform_broadcaster.h>
 
 #include "geometry_msgs/QuaternionStamped.h"
-#include "serial/TurretFeedback.h"
+#include "serial/msg/TurretFeedback.h"
 
 class Turret {
   public:

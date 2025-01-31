@@ -14,7 +14,7 @@
 
 // Local includes
 
-#include "serial/Target.h"
+#include "serial/msg/Target.h"
 
 constexpr uint16_t rewrap_pi_millirad(uint16_t angle) {
     uint16_t circle_millirad = 2 * M_PI * 1000;

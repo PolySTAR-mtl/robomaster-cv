@@ -14,8 +14,8 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 #include <tf2_ros/transform_listener.h>
 
-#include "serial/Target.h"
-#include "tracking/Tracklets.h"
+#include "serial/msg/Target.h"
+#include "tracking/msg/Tracklets.h"
 
 #include "decision/DecisionConfig.h"
 #include <dynamic_reconfigure/server.h>

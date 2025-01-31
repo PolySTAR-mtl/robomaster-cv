@@ -1,7 +1,7 @@
 #pragma once
 #include <ros/ros.h>
-#include "serial/Target.h"
-#include "tracking/Tracklets.h"
+#include "serial/msg/Target.h"
+#include "tracking/msg/Tracklets.h"
 
 class Tracker {
     public: 

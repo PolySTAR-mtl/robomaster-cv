@@ -12,7 +12,7 @@
 #include <ros/ros.h>
 #include <sensor_msgs/Image.h>
 
-#include "detection/Detections.h"
+#include "detection/msg/Detections.h"
 
 extern "C" {
 void deepstreamCallback(void*, void*);

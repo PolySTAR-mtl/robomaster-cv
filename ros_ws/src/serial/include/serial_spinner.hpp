@@ -18,9 +18,9 @@
 
 #include <ros/ros.h>
 
-#include "serial/Movement.h"
-#include "serial/Shoot.h"
-#include "serial/Target.h"
+#include "serial/msg/Movement.h"
+#include "serial/msg/Shoot.h"
+#include "serial/msg/Target.h"
 
 class SerialSpinner {
   public:

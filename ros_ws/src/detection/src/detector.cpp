@@ -24,7 +24,7 @@
 
 // ROS Includes
 
-#include "detection/Detections.h"
+#include "detection/msg/Detections.h"
 #include <cv_bridge/cv_bridge.h>
 
 namespace {

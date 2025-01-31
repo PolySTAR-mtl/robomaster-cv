@@ -18,7 +18,7 @@
 
 #include <ros/ros.h>
 
-#include "detection/Detections.h"
+#include "detection/msg/Detections.h"
 #include "sensor_msgs/Image.h"
 
 class VideoMonitor {
