@@ -64,7 +64,7 @@ Detector::Detector(ros::NodeHandle& n, const std::string& datacfg,
 
     sub_img = nh.subscribe("image_in", 1, &Detector::imageCallback, this);
 
-    pub_detections = nh.advertise<detection::Detections>("detections", 1);
+    pub_detections = nh.advertise<detection::msg::Detections>("detections", 1);
 }
 
 Detector::~Detector() = default;
@@ -128,7 +128,7 @@ image matToImage(cv::Mat& mat) {
     return im;
 }
 
-void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
+void Detector::imageCallback(const sensor_msgs::msg::ImagePtr& img) {
     constexpr float ratio = 1.f / 256.f;
 
     std::cout << "Incoming frame : " << img->header.seq << '\n';
@@ -154,7 +154,7 @@ void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
     detection_darknet* dets = get_network_boxes(
         &p->net, im.w, im.h, p->tresh, p->hier_tresh, 0, 1, &nboxes, 0);
 
-    detection::Detections msg;
+    detection::msg::Detections msg;
     // Construct ROS message
     for (auto i = 0; i < nboxes; ++i) {
         auto& d = dets[i];
@@ -172,7 +172,7 @@ void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
 
         std::cout << ", best " << p->labels[d.best_class_idx] << '\n';
 
-        detection::Detection det;
+        detection::msg::Detection det;
         det.x = d.bbox.x * im.w;
         det.y = d.bbox.y * im.h;
         det.w = d.bbox.w * im.w;

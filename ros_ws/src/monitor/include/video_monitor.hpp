@@ -30,7 +30,7 @@ class VideoMonitor {
     /** \fn callbackImage
      * \brief Callback for images from the camera
      */
-    void callbackImage(const sensor_msgs::ImageConstPtr&);
+    void callbackImage(const sensor_msgs::msg::ImageConstPtr&);
 
     /** \fn callbackDetections
      * \brief Callback for detections coming from the detection node (NN)

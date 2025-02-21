@@ -17,8 +17,8 @@ double toRadiants(int64_t enc, int64_t resolution) {
 }
 
 Odom::Odom(ros::NodeHandle& n) : nh(n) {
-    pub_pos = nh.advertise<nav_msgs::Odometry>("odom", 1);
-    pub_speed = nh.advertise<nav_msgs::Odometry>("odom_speed", 1);
+    pub_pos = nh.advertise<nav_msgs::msg::Odometry>("odom", 1);
+    pub_speed = nh.advertise<nav_msgs::msg::Odometry>("odom_speed", 1);
 
     wheel_radius = nh.param("/robot/wheel_radius", 0.08);
     length_x = nh.param("/robot/l_x", 1.);
@@ -38,7 +38,7 @@ void Odom::handlePos(int64_t enc1, int64_t enc2, int64_t enc3, int64_t enc4) {
     auto robot_pose = cinematic(enc);
 
     // Generate Odom message
-    nav_msgs::Odometry odom;
+    nav_msgs::msg::Odometry odom;
 
     odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom";
@@ -100,7 +100,7 @@ void Odom::handleSpeed(float v1, float v2, float v3, float v4) {
     auto robot_speed = cinematic(speed);
 
     // Generate Odom message
-    nav_msgs::Odometry odom;
+    nav_msgs::msg::Odometry odom;
 
     odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom_speed";

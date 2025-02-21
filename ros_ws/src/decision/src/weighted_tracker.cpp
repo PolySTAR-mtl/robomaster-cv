@@ -137,7 +137,7 @@ class WeightedTracker : Tracker {
         }
         
         // Publish the best tracklet
-        tracking::Tracklet target;
+        tracking::msg::Tracklet target;
         target.id = best_target->id;
         target.x = best_target->x;
         target.y = best_target->y;
@@ -153,8 +153,8 @@ class WeightedTracker : Tracker {
         
     };
 
-    serial::Target toTarget(tracking::Tracklet& trk) override {
-        serial::Target target;
+    serial::msg::Target toTarget(tracking::msg::Tracklet& trk) override {
+        serial::msg::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";

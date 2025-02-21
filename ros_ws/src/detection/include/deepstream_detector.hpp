@@ -38,7 +38,7 @@ class DeepstreamDetector {
     /** \fn callback
      * \brief Function to call to publish detections
      */
-    void callback(detection::Detections&);
+    void callback(detection::msg::Detections&);
 
   private:
     void setupNet(const std::string& deepstream_config);

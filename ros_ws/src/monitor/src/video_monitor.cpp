@@ -24,7 +24,7 @@ constexpr int MONITOR_FONT_PADDING = 5;
 
 VideoMonitor::VideoMonitor(ros::NodeHandle& n, const std::string& class_name)
     : nh(n), default_name(class_name) {
-    pub_im = nh.advertise<sensor_msgs::Image>("image_out", 1);
+    pub_im = nh.advertise<sensor_msgs::msg::Image>("image_out", 1);
 
     sub_cam = nh.subscribe("image_in", 1, &VideoMonitor::callbackImage, this);
     sub_detections =
@@ -37,7 +37,7 @@ VideoMonitor::VideoMonitor(ros::NodeHandle& n, const std::string& class_name)
     }
 }
 
-void VideoMonitor::callbackImage(const sensor_msgs::ImageConstPtr& im) {
+void VideoMonitor::callbackImage(const sensor_msgs::msg::ImageConstPtr& im) {
     auto img_bridged = cv_bridge::toCvShare(im);
 
     // Saving the last image to draw on top when receiving detections
@@ -92,7 +92,7 @@ void VideoMonitor::callbackDetections(
     }
 
     auto out_msg =
-        cv_bridge::CvImage(dets->header, sensor_msgs::image_encodings::BGR8,
+        cv_bridge::CvImage(dets->header, sensor_msgs::msg::image_encodings::BGR8,
                            img_rects)
             .toImageMsg();
     pub_im.publish(out_msg);

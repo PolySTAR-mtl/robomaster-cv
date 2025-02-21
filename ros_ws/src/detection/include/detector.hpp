@@ -27,7 +27,7 @@ class Detector {
     /** \fn imageCallback
      * \brief Callback for incoming images (from camera)
      */
-    void imageCallback(const sensor_msgs::ImagePtr& img);
+    void imageCallback(const sensor_msgs::msg::ImagePtr& img);
 
   private:
     void setupNet(const std::string& datacfg, const std::string& config_path,

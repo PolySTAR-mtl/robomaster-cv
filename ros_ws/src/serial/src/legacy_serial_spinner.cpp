@@ -32,8 +32,8 @@ SerialSpinner::SerialSpinner(ros::NodeHandle& n, const std::string& device,
       frequency(_freq) {
     initSerial(device);
 
-    pub_hp = nh.advertise<serial::HP>("hp", 1);
-    pub_switch = nh.advertise<serial::SwitchOrder>("switch", 1);
+    pub_hp = nh.advertise<serial::msg::HP>("hp", 1);
+    pub_switch = nh.advertise<serial::msg::SwitchOrder>("switch", 1);
 
     sub_target =
         nh.subscribe("target", 1, &SerialSpinner::callbackTarget, this);
@@ -150,8 +150,8 @@ void SerialSpinner::handleSerial() {
     serial::command cmd;
 
     // ROS messages have to be initialized outside of a switch statement
-    serial::HP hp_msg;
-    serial::SwitchOrder switch_msg;
+    serial::msg::HP hp_msg;
+    serial::msg::SwitchOrder switch_msg;
 
     // Attempt to read a command
     bytes = read(fd, &cmd, sizeof(cmd));
@@ -193,16 +193,16 @@ void SerialSpinner::handleSerial() {
         // Create ROS message
         switch (data_sw) {
         case serial::target_switch::NOTHING:
-            switch_msg.order = serial::SwitchOrder::ORDER_NOTHING;
+            switch_msg.order = serial::msg::SwitchOrder::ORDER_NOTHING;
             break;
         case serial::target_switch::NEXT:
-            switch_msg.order = serial::SwitchOrder::ORDER_NEXT;
+            switch_msg.order = serial::msg::SwitchOrder::ORDER_NEXT;
             break;
         case serial::target_switch::RIGHT:
-            switch_msg.order = serial::SwitchOrder::ORDER_RIGHT;
+            switch_msg.order = serial::msg::SwitchOrder::ORDER_RIGHT;
             break;
         case serial::target_switch::LEFT:
-            switch_msg.order = serial::SwitchOrder::ORDER_LEFT;
+            switch_msg.order = serial::msg::SwitchOrder::ORDER_LEFT;
             break;
         default:
             ROS_ERROR("Unsupported switch order");

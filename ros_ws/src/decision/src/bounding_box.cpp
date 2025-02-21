@@ -17,7 +17,7 @@ BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
       } 
 
 // Construction from tracklet
-BoundingBox::BoundingBox(tracking::Tracklet& bbox) 
+BoundingBox::BoundingBox(tracking::msg::Tracklet& bbox) 
     : x(bbox.x), y(bbox.y), upper_edge(bbox.y),
       lower_edge(bbox.y + bbox.h), left_edge(bbox.x),
       right_edge(bbox.x + bbox.w), clss(bbox.clss), width(bbox.w),

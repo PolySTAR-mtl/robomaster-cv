@@ -27,7 +27,7 @@ class SimpleTracker {
         sub_tracklets = nh.subscribe("tracklets", 1,
                                      &SimpleTracker::callbackTracklets, this);
 
-        pub_target = nh.advertise<serial::Target>("target", 1);
+        pub_target = nh.advertise<serial::msg::Target>("target", 1);
         std::cout << "Enemy color set to be: "
                   << (enemy_color == 0 ? "red" : "blue") << "\n";
     }
@@ -57,8 +57,8 @@ class SimpleTracker {
         }
     }
 
-    serial::Target toTarget(tracking::Tracklet& trk) {
-        serial::Target target;
+    serial::msg::Target toTarget(tracking::msg::Tracklet& trk) {
+        serial::msg::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";
@@ -118,7 +118,7 @@ class SimpleTracker {
     ros::Publisher pub_target;
     int enemy_color;
 
-    tracking::Tracklet last_trk;
+    tracking::msg::Tracklet last_trk;
 
     float center_x = 416.f / 2.f;
     float center_y = 416.f / 2.f;

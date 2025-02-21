@@ -39,13 +39,13 @@ int main(int argc, char** argv) {
     nh.param("freq", freq, 10.f);
     nh.param("increment", increment, .05f);
 
-    auto pub = nh.advertise<serial::Target>("target", 1);
+    auto pub = nh.advertise<serial::msg::Target>("target", 1);
 
     ros::Rate rate(freq);
 
     while (ros::ok()) {
         for (float alpha = 0.f; alpha < 2 * M_PI; alpha += increment) {
-            serial::Target msg;
+            serial::msg::Target msg;
 
             int16_t theta = std::floor(std::sin(alpha) * amplitude * 1000.f);
             int16_t phi = std::floor(std::cos(alpha) * amplitude * 1000.f);

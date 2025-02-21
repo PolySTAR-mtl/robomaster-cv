@@ -31,7 +31,7 @@ class BoundingBox {
 
     BoundingBox(float x = 0.f, float y = 0.f, float upper_edge = 0.f, float lower_edge = 0.f, 
                 float left_edge = 0.f, float right_edge = 0.f, std::uint8_t clss = 0, std::string id = "Basic", float score = 0);
-    BoundingBox(tracking::Tracklet& bbox);
+    BoundingBox(tracking::msg::Tracklet& bbox);
 
     float getSize();
     float getDistance(BoundingBox other);

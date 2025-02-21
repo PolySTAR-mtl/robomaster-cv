@@ -4,9 +4,9 @@
 #include <sstream>
 #include <string_view>
 
-tracking::Tracklet createTracklet(std::string_view id, float x, float y, float w, 
+tracking::msg::Tracklet createTracklet(std::string_view id, float x, float y, float w, 
                     float h, std::uint8_t clss, float score){
-    tracking::Tracklet trk;
+    tracking::msg::Tracklet trk;
     trk.id = id;
     trk.x = x;
     trk.y = y;
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle nh("~");
 
-  ros::Publisher chatter_pub = nh.advertise<tracking::Tracklets>("tracklets", 1000);
+  ros::Publisher chatter_pub = nh.advertise<tracking::msg::Tracklets>("tracklets", 1000);
 
   ros::Rate loop_rate(1);
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
     auto container2 = createTracklet("Hero", 900, 900, 100, 100, static_cast<std::uint8_t>(5), 0);
 
-    tracking::Tracklets trks;
+    tracking::msg::Tracklets trks;
     trks.tracklets.push_back(contained1);
     trks.tracklets.push_back(contained2);
     trks.tracklets.push_back(contained3);

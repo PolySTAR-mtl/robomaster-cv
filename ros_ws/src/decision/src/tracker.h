@@ -7,7 +7,7 @@ class Tracker {
     public: 
     Tracker(ros::NodeHandle& n, int _enemy_color);
 
-    virtual serial::Target toTarget(tracking::Tracklet& trk) = 0;
+    virtual serial::Target toTarget(tracking::msg::Tracklet& trk) = 0;
     virtual void callbackTracklets(const tracking::TrackletsConstPtr& trks) = 0;
 
     protected:    
@@ -17,7 +17,7 @@ class Tracker {
 
     int enemy_color;
     
-    tracking::Tracklet last_trk;
+    tracking::msg::Tracklet last_trk;
 
     int im_w = 416/2;
     int im_h = 416/2;

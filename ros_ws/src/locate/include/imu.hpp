@@ -13,7 +13,7 @@
 class IMU {
   public:
     IMU(ros::NodeHandle& n) : nh(n) {
-        pub_msg = nh.advertise<sensor_msgs::Imu>("imu", 1);
+        pub_msg = nh.advertise<sensor_msgs::msg::Imu>("imu", 1);
     }
 
     void handle(float ax, float ay, float az, float rx, float ry, float rz);

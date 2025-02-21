@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     Odom odom{nh};
     Turret turret{nh};
 
-    auto sub_pos = nh.subscribe<serial::PositionFeedback>(
+    auto sub_pos = nh.subscribe<serial::msg::PositionFeedback>(
         "/serial/position", 1, [&imu, &odom](const auto& pos) -> void {
             handleMessage(pos, imu, odom);
         });

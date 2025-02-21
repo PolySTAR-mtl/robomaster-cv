@@ -41,7 +41,7 @@ class Odom {
     ros::NodeHandle nh;
     ros::Publisher pub_pos, pub_speed;
 
-    nav_msgs::Odometry last_estimation;
+    nav_msgs::msg::Odometry last_estimation;
 
     double wheel_radius;
     double length_x, length_y;

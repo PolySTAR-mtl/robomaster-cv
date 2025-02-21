@@ -7,7 +7,7 @@
 #include "turret.hpp"
 
 void Turret::callbackTurret(const serial::TurretFeedbackPtr& turret) {
-    geometry_msgs::TransformStamped tf;
+    geometry_msgs::msg::TransformStamped tf;
 
     tf.header.stamp = turret->stamp;
     tf.header.frame_id = "base_link";

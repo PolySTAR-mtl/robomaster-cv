@@ -56,10 +56,10 @@ SerialSpinner::SerialSpinner(ros::NodeHandle& n, const std::string& device,
       frequency(_freq) {
     initSerial(device);
 
-    pub_status = nh.advertise<serial::GameStatus>("gamestatus", 1);
-    pub_stage = nh.advertise<serial::GameStage>("gamestage", 1);
-    pub_turret = nh.advertise<serial::TurretFeedback>("turret", 1);
-    pub_position = nh.advertise<serial::PositionFeedback>("position", 1);
+    pub_status = nh.advertise<serial::msg::GameStatus>("gamestatus", 1);
+    pub_stage = nh.advertise<serial::msg::GameStage>("gamestage", 1);
+    pub_turret = nh.advertise<serial::msg::TurretFeedback>("turret", 1);
+    pub_position = nh.advertise<serial::msg::PositionFeedback>("position", 1);
 
     sub_target =
         nh.subscribe("target", 1, &SerialSpinner::callbackTarget, this);
@@ -177,7 +177,7 @@ void SerialSpinner::spin() {
 template <>
 void SerialSpinner::handleMessage<serial::msg::Status>(
     const serial::msg::Status& status) {
-    serial::GameStatus msg;
+    serial::msg::GameStatus msg;
 
     msg.stamp = ros::Time::now();
     msg.robot_type = status.robot_type;
@@ -197,7 +197,7 @@ void SerialSpinner::handleMessage<serial::msg::Status>(
 template <>
 void SerialSpinner::handleMessage<serial::msg::Gamestage>(
     const serial::msg::Gamestage& gamestage) {
-    serial::GameStage msg;
+    serial::msg::GameStage msg;
 
     msg.stamp = ros::Time::now();
     msg.gamestage = gamestage.gamestage;
@@ -208,7 +208,7 @@ void SerialSpinner::handleMessage<serial::msg::Gamestage>(
 template <>
 void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
     const serial::msg::TurretFeedback& turret_feedback) {
-    serial::TurretFeedback msg;
+    serial::msg::TurretFeedback msg;
 
     msg.stamp = ros::Time::now();
 
@@ -232,7 +232,7 @@ void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
 template <>
 void SerialSpinner::handleMessage<serial::msg::PositionFeedback>(
     const serial::msg::PositionFeedback& position_feedback) {
-    serial::PositionFeedback msg;
+    serial::msg::PositionFeedback msg;
 
     auto unwrap = [this](uint16_t enc, int16_t revolutions) {
         return static_cast<int64_t>(enc) +
