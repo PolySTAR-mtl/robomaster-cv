@@ -135,7 +135,7 @@ void SerialSpinner::initSerial(const std::string& device) {
 }
 
 void SerialSpinner::spin() {
-    ros::Rate rate(frequency);
+    rclcpp::Rate rate(frequency);
 
     while (ros::ok()) {
         handleSerial();

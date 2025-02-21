@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 
     auto pub = nh.advertise<serial::msg::Target>("target", 1);
 
-    ros::Rate rate(freq);
+    rclcpp::Rate rate(freq);
 
     while (ros::ok()) {
         for (float alpha = 0.f; alpha < 2 * M_PI; alpha += increment) {

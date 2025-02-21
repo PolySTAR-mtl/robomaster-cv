@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
   ros::Publisher chatter_pub = nh.advertise<tracking::msg::Tracklets>("tracklets", 1000);
 
-  ros::Rate loop_rate(1);
+  rclcpp::Rate loop_rate(1);
 
   int count = 0;
   int i = 0;
