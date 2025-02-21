@@ -42,7 +42,7 @@ void Odom::handlePos(int64_t enc1, int64_t enc2, int64_t enc3, int64_t enc4) {
 
     odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom";
-    odom.header.stamp = ros::Time::now();
+    odom.header.stamp = rclcpp::Time::now();
 
     odom.child_frame_id = "base_link";
 
@@ -104,7 +104,7 @@ void Odom::handleSpeed(float v1, float v2, float v3, float v4) {
 
     odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom_speed";
-    odom.header.stamp = ros::Time::now();
+    odom.header.stamp = rclcpp::Time::now();
 
     odom.child_frame_id = "odom_speed";
 

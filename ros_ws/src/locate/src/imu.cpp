@@ -12,7 +12,7 @@ void IMU::handle(float ax, float ay, float az, float rx, float ry, float rz) {
     sensor_msgs::msg::Imu imu;
 
     imu.header.frame_id = frame_id;
-    imu.header.stamp = ros::Time::now();
+    imu.header.stamp = rclcpp::Time::now();
     imu.header.seq = seq++;
 
     // No orientation from our IMU

@@ -76,7 +76,7 @@ class SimpleTracker {
 
         try {
             auto transformTurret =
-                tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
+                tBuffer.lookupTransform("base_link", "turret", rclcpp::Time(0));
             tf2::convert(transformTurret.transform.rotation, qTurret);
         } catch (tf2::LookupException e) {
             // Couldn't find lookup. Keep identity
@@ -95,7 +95,7 @@ class SimpleTracker {
         target.phi = yaw + phi;
         target.dist = 2000u; // 2 m
         target.located = true;
-        target.stamp = ros::Time::now();
+        target.stamp = rclcpp::Time::now();
         target.distance_center = std::hypot(x_c, y_c);
 
         return target;

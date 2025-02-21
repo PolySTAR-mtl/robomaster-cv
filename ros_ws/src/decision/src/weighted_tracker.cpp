@@ -181,7 +181,7 @@ class WeightedTracker : Tracker {
                        std::atan(y.at<float>(0)));
 
         auto transformTurret =
-            tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
+            tBuffer.lookupTransform("base_link", "turret", rclcpp::Time(0));
         tf2::convert(transformTurret.transform.rotation, qTurret);
 
         //qTarget *= qTurret;
@@ -204,7 +204,7 @@ class WeightedTracker : Tracker {
         target.phi = phi;
         target.dist = 2000u; // 2 m
         target.located = true;
-        target.stamp = ros::Time::now();
+        target.stamp = rclcpp::Time::now();
 
         return target;
     }

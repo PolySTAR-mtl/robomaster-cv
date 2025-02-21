@@ -179,7 +179,7 @@ void SerialSpinner::handleMessage<serial::msg::Status>(
     const serial::msg::Status& status) {
     serial::msg::GameStatus msg;
 
-    msg.stamp = ros::Time::now();
+    msg.stamp = rclcpp::Time::now();
     msg.robot_type = status.robot_type;
 
     msg.red_std_hp = status.red_std_hp;
@@ -199,7 +199,7 @@ void SerialSpinner::handleMessage<serial::msg::Gamestage>(
     const serial::msg::Gamestage& gamestage) {
     serial::msg::GameStage msg;
 
-    msg.stamp = ros::Time::now();
+    msg.stamp = rclcpp::Time::now();
     msg.gamestage = gamestage.gamestage;
 
     pub_stage.publish(msg);
@@ -210,7 +210,7 @@ void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
     const serial::msg::TurretFeedback& turret_feedback) {
     serial::msg::TurretFeedback msg;
 
-    msg.stamp = ros::Time::now();
+    msg.stamp = rclcpp::Time::now();
 
     msg.pitch = utils::fromAngularSpeed(turret_feedback.pitch);
     msg.yaw = utils::fromAngularSpeed(turret_feedback.yaw);
@@ -239,7 +239,7 @@ void SerialSpinner::handleMessage<serial::msg::PositionFeedback>(
                static_cast<int64_t>(revolutions) * encoder_resolution;
     };
 
-    msg.stamp = ros::Time::now();
+    msg.stamp = rclcpp::Time::now();
 
     msg.imu_ax = position_feedback.imu_ax;
     msg.imu_ay = position_feedback.imu_ay;
