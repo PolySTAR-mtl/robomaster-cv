@@ -1,7 +1,7 @@
 # PositionFeedback.msg
 ## Positional feedback from sensors. In m/s², rad/s² and seconds
 
-time stamp
+Time stamp
 
 float32 imu_ax
 float32 imu_ay

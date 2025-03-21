@@ -3,7 +3,7 @@
 
 # Message
 
-time stamp
+Time stamp
 bool located
 
 float32 distance_center

@@ -4,4 +4,4 @@
 
 # Message
 
-time stamp
+Time stamp

@@ -10,5 +10,5 @@ uint8 ORDER_LEFT=3
 
 # Message
 
-time stamp
+Time stamp
 uint8 order

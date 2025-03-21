@@ -1,7 +1,7 @@
 # GameStatus.msg
 ## Game status : Robot type, hp, mode
 
-time stamp
+Time stamp
 
 uint8 robot_type
 

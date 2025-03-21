@@ -5,7 +5,7 @@ package_name = 'tracking'
 setup(
     name=package_name,
     version='0.2.0',
-    packages=['motpy', 'tracking'],
+    packages=['motpy'],
     package_dir={'': 'src'},
     maintainer='Thomas Petrie',
     maintainer_email='thomas.petrie@polymtl.ca',
