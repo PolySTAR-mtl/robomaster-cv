@@ -1,0 +1,17 @@
+[31mCMake Error at CMakeLists.txt:41 (add_executable):
+  add_executable cannot create target "serial" because another target with
+  the same name already exists.  The existing target is a custom target
+  created in source directory "/home/ozone/robomaster-cv/ros_ws/src/serial".
+  See documentation for policy CMP0002 for more details.
+
+[0m
+[31mCMake Error at CMakeLists.txt:46 (target_include_directories):
+  target_include_directories called with non-compilable target type
+
+[0m
+[31mCMake Error at CMakeLists.txt:51 (target_link_libraries):
+  Utility target "serial" must not be used as the target of a
+  target_link_libraries call.
+
+[0m
+gmake: *** [Makefile:3043: cmake_check_build_system] Error 1

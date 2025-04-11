@@ -1,0 +1,4 @@
+Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
+Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs' returned '0': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
+Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs': /usr/bin/cmake --install /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs
+Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs' returned '0': /usr/bin/cmake --install /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs

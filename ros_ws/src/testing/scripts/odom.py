@@ -3,14 +3,14 @@
 import rospy
 import numpy as np
 
-from serial.msg import PositionFeedback
+from polystar_msgs.msg import PositionFeedback
 
 
 def main():
-    rospy.init_node('fake_serial')
+    rospy.init_node('fake_polystar_msgs')
 
     pub_odom = rospy.Publisher(
-        '/serial/position', PositionFeedback, queue_size=1)
+        '/polystar_msgs/position', PositionFeedback, queue_size=1)
     rate = rospy.Rate(50)
 
     inc = 1

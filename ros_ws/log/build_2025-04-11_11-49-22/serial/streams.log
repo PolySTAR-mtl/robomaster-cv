@@ -1,0 +1,653 @@
+[0.105s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16
+[0.117s] -- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+[0.196s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[0.343s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.348s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.355s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.364s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.454s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.455s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[5.467s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.560s] -- Found polystar_msgs: 0.1.0 (/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake)
+[5.577s] -- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+[5.595s] -- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+[5.599s] -- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+[5.602s] -- Configuring done
+[5.607s] -- Generating done
+[5.609s] -- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/serial
+[5.627s] [ 33%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o[0m
+[5.627s] [ 66%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o[0m
+[7.326s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.326s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTargetConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.326s]    42 |     void callbackTarget(const polystar_msgs::[01;31m[KTargetConstPtr[m[K&);
+[7.326s]       |                                              [01;31m[K^~~~~~~~~~~~~~[m[K
+[7.326s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:47:48:[m[K [01;31m[Kerror: [m[K‘[01m[KMovementConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.326s]    47 |     void callbackMovement(const polystar_msgs::[01;31m[KMovementConstPtr[m[K&);
+[7.326s]       |                                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[7.327s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:52:45:[m[K [01;31m[Kerror: [m[K‘[01m[KShootConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.327s]    52 |     void callbackShoot(const polystar_msgs::[01;31m[KShootConstPtr[m[K&);
+[7.327s]       |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[7.327s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:48:[m[K [01;31m[Kerror: [m[K‘[01m[KOutgoingMessage[m[K’ in namespace ‘[01m[Kpolystar_msgs::msg[m[K’ does not name a type
+[7.327s]    65 |     serializeMessage(const polystar_msgs::msg::[01;31m[KOutgoingMessage[m[K& message);
+[7.327s]       |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[7.327s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:70:32:[m[K [01;31m[Kerror: [m[K‘[01m[KIncomingMessage[m[K’ in namespace ‘[01m[Kpolystar_msgs::msg[m[K’ does not name a type
+[7.327s]    70 |     static polystar_msgs::msg::[01;31m[KIncomingMessage[m[K
+[7.327s]       |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[7.331s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:100:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.331s]   100 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Target> sub_target;
+[7.331s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.331s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:101:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.331s]   101 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Movement> sub_movement;
+[7.331s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.331s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:102:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.331s]   102 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Target> sub_shoot;
+[7.331s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.333s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In constructor ‘[01m[KSerialSpinner::SerialSpinner(const string&, int, int, int, bool, double)[m[K’:
+[7.333s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:44:23:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KSerialSpinner[m[K’ does not have any field named ‘[01m[Knh[m[K’
+[7.333s]    44 |     : Node("serial"), [01;31m[Knh[m[K(n), baud_rate(_baud), length(_len), stop_bits(_stop),
+[7.333s]       |                       [01;31m[K^~[m[K
+[7.333s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13[m[K:
+[7.333s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:42:46:[m[K [01;31m[Kerror: [m[K‘[01m[KTargetConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.333s]    42 |     void callbackTarget(const polystar_msgs::[01;31m[KTargetConstPtr[m[K&);
+[7.333s]       |                                              [01;31m[K^~~~~~~~~~~~~~[m[K
+[7.333s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:47:48:[m[K [01;31m[Kerror: [m[K‘[01m[KMovementConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.333s]    47 |     void callbackMovement(const polystar_msgs::[01;31m[KMovementConstPtr[m[K&);
+[7.333s]       |                                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[7.334s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:52:45:[m[K [01;31m[Kerror: [m[K‘[01m[KShootConstPtr[m[K’ in namespace ‘[01m[Kpolystar_msgs[m[K’ does not name a type
+[7.334s]    52 |     void callbackShoot(const polystar_msgs::[01;31m[KShootConstPtr[m[K&);
+[7.334s]       |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[7.334s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:48:[m[K [01;31m[Kerror: [m[K‘[01m[KOutgoingMessage[m[K’ in namespace ‘[01m[Kpolystar_msgs::msg[m[K’ does not name a type
+[7.334s]    65 |     serializeMessage(const polystar_msgs::msg::[01;31m[KOutgoingMessage[m[K& message);
+[7.334s]       |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[7.334s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:70:32:[m[K [01;31m[Kerror: [m[K‘[01m[KIncomingMessage[m[K’ in namespace ‘[01m[Kpolystar_msgs::msg[m[K’ does not name a type
+[7.334s]    70 |     static polystar_msgs::msg::[01;31m[KIncomingMessage[m[K
+[7.334s]       |                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[7.338s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:100:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.338s]   100 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Target> sub_target;
+[7.338s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.338s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:101:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.338s]   101 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Movement> sub_movement;
+[7.338s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.338s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:102:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[7.338s]   102 |     rclcpp::[01;31m[KSubscriber[m[K<polystar_msgs::msg::Target> sub_shoot;
+[7.338s]       |             [01;31m[K^~~~~~~~~~[m[K
+[7.339s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:44:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kn[m[K’ was not declared in this scope; did you mean ‘[01m[Kyn[m[K’?
+[7.339s]    44 |     : Node("serial"), nh([01;31m[Kn[m[K), baud_rate(_baud), length(_len), stop_bits(_stop),
+[7.339s]       |                          [01;31m[K^[m[K
+[7.339s]       |                          [32m[Kyn[m[K
+[7.339s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >::Publisher()[m[K’
+[7.339s]    45 |       parity(_parity), frequency(_freq[01;31m[K)[m[K {
+[7.339s]       |                                       [01;31m[K^[m[K
+[7.340s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.340s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.340s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.340s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.341s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.341s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.341s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::GameStatus_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>][m[K’
+[7.342s]   125 |   [01;36m[KPublisher[m[K(
+[7.342s]       |   [01;36m[K^~~~~~~~~[m[K
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 0 provided
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >&)[m[K’
+[7.342s]    77 | class [01;36m[KPublisher[m[K : public PublisherBase
+[7.342s]       |       [01;36m[K^~~~~~~~~[m[K
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[7.342s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >::Publisher()[m[K’
+[7.342s]    45 |       parity(_parity), frequency(_freq[01;31m[K)[m[K {
+[7.342s]       |                                       [01;31m[K^[m[K
+[7.342s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.342s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.342s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::GameStage_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>][m[K’
+[7.342s]   125 |   [01;36m[KPublisher[m[K(
+[7.342s]       |   [01;36m[K^~~~~~~~~[m[K
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 0 provided
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >&)[m[K’
+[7.342s]    77 | class [01;36m[KPublisher[m[K : public PublisherBase
+[7.342s]       |       [01;36m[K^~~~~~~~~[m[K
+[7.342s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[7.342s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::Publisher()[m[K’
+[7.342s]    45 |       parity(_parity), frequency(_freq[01;31m[K)[m[K {
+[7.342s]       |                                       [01;31m[K^[m[K
+[7.342s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.342s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.343s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.343s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>][m[K’
+[7.343s]   125 |   [01;36m[KPublisher[m[K(
+[7.343s]       |   [01;36m[K^~~~~~~~~[m[K
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 0 provided
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >&)[m[K’
+[7.343s]    77 | class [01;36m[KPublisher[m[K : public PublisherBase
+[7.343s]       |       [01;36m[K^~~~~~~~~[m[K
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[7.343s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::Publisher()[m[K’
+[7.343s]    45 |       parity(_parity), frequency(_freq[01;31m[K)[m[K {
+[7.343s]       |                                       [01;31m[K^[m[K
+[7.343s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.343s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.343s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.343s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>][m[K’
+[7.343s]   125 |   [01;36m[KPublisher[m[K(
+[7.343s]       |   [01;36m[K^~~~~~~~~[m[K
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 0 provided
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >&)[m[K’
+[7.343s]    77 | class [01;36m[KPublisher[m[K : public PublisherBase
+[7.343s]       |       [01;36m[K^~~~~~~~~[m[K
+[7.343s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[7.344s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:48:18:[m[K [01;31m[Kerror: [m[K‘[01m[Knh[m[K’ was not declared in this scope
+[7.344s]    48 |     pub_status = [01;31m[Knh[m[K.advertise<serial::msg::GameStatus>("gamestatus", 1);
+[7.344s]       |                  [01;31m[K^~[m[K
+[7.345s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:48:44:[m[K [01;31m[Kerror: [m[K‘[01m[KGameStatus[m[K’ is not a member of ‘[01m[Kserial::msg[m[K’; did you mean ‘[01m[Kpolystar_msgs::msg::GameStatus[m[K’?
+[7.345s]    48 |     pub_status = nh.advertise<serial::msg::[01;31m[KGameStatus[m[K>("gamestatus", 1);
+[7.345s]       |                                            [01;31m[K^~~~~~~~~~[m[K
+[7.345s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.hpp:7[m[K,
+[7.345s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:22[m[K,
+[7.345s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.345s] [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.hpp:237:7:[m[K [01;36m[Knote: [m[K‘[01m[Kpolystar_msgs::msg::GameStatus[m[K’ declared here
+[7.345s]   237 | using [01;36m[KGameStatus[m[K =
+[7.345s]       |       [01;36m[K^~~~~~~~~~[m[K
+[7.345s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:49:43:[m[K [01;31m[Kerror: [m[K‘[01m[KGameStage[m[K’ is not a member of ‘[01m[Kserial::msg[m[K’; did you mean ‘[01m[KGamestage[m[K’?
+[7.345s]    49 |     pub_stage = nh.advertise<serial::msg::[01;31m[KGameStage[m[K>("gamestage", 1);
+[7.345s]       |                                           [01;31m[K^~~~~~~~~[m[K
+[7.345s]       |                                           [32m[KGamestage[m[K
+[7.345s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:50:58:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[7.345s]    50 |     pub_turret = nh.advertise<serial::msg::TurretFeedback[01;31m[K>[m[K("turret", 1);
+[7.345s]       |                                                          [01;31m[K^[m[K
+[7.345s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:51:62:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[7.345s]    51 |     pub_position = nh.advertise<serial::msg::PositionFeedback[01;31m[K>[m[K("position", 1);
+[7.345s]       |                                                              [01;31m[K^[m[K
+[7.349s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:53:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_target[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_turret[m[K’?
+[7.349s]    53 |     [01;31m[Ksub_target[m[K =
+[7.349s]       |     [01;31m[K^~~~~~~~~~[m[K
+[7.349s]       |     [32m[Kpub_turret[m[K
+[7.353s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:55:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_movement[m[K’ was not declared in this scope
+[7.353s]    55 |     [01;31m[Ksub_movement[m[K =
+[7.353s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[7.357s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:57:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_shoot[m[K’ was not declared in this scope; did you mean ‘[01m[Ku_short[m[K’?
+[7.357s]    57 |     [01;31m[Ksub_shoot[m[K = nh.subscribe("shoot", 1, &SerialSpinner::callbackShoot, this);
+[7.357s]       |     [01;31m[K^~~~~~~~~[m[K
+[7.357s]       |     [32m[Ku_short[m[K
+[7.357s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:59:35:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+[7.357s]    59 |     encoder_resolution = nh.param<[01;31m[Kint[m[K>("/robot/encoder_resolution", 8192u);
+[7.357s]       |                                   [01;31m[K^~~[m[K
+[7.359s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::spin()[m[K’:
+[7.359s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:158:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[7.359s]   158 |     while ([01;31m[Kros[m[K::ok()) {
+[7.359s]       |            [01;31m[K^~~[m[K
+[7.359s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:162:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[7.359s]   162 |         [01;31m[Kros[m[K::spinOnce();
+[7.359s]       |         [01;31m[K^~~[m[K
+[7.359s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::Status][m[K’:
+[7.360s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:169:18:[m[K [01;31m[Kerror: [m[K‘[01m[KGameStatus[m[K’ is not a member of ‘[01m[Kserial::msg[m[K’; did you mean ‘[01m[Kpolystar_msgs::msg::GameStatus[m[K’?
+[7.360s]   169 |     serial::msg::[01;31m[KGameStatus[m[K msg;
+[7.360s]       |                  [01;31m[K^~~~~~~~~~[m[K
+[7.360s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.hpp:7[m[K,
+[7.360s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:22[m[K,
+[7.360s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.360s] [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.hpp:237:7:[m[K [01;36m[Knote: [m[K‘[01m[Kpolystar_msgs::msg::GameStatus[m[K’ declared here
+[7.360s]   237 | using [01;36m[KGameStatus[m[K =
+[7.360s]       |       [01;36m[K^~~~~~~~~~[m[K
+[7.360s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+[7.360s]   171 |     [01;31m[Kmsg[m[K.stamp = rclcpp::Time::now();
+[7.360s]       |     [01;31m[K^~~[m[K
+[7.360s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:5:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[7.360s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11[m[K,
+[7.361s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.361s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:40:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg[m[K’
+[7.361s]    40 | namespace [01;36m[Kmsg[m[K {
+[7.361s]       |           [01;36m[K^~~[m[K
+[7.361s] In file included from [01m[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:7[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/time.hpp:18[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:38[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.361s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.362s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.362s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.362s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.362s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.362s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.362s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.362s] [01m[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+[7.362s]    27 | namespace [01;36m[Kmsg[m[K
+[7.362s]       |           [01;36m[K^~~[m[K
+[7.363s] In file included from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.363s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.363s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.363s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.363s] [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+[7.363s]    27 | namespace [01;36m[Kmsg[m[K
+[7.363s]       |           [01;36m[K^~~[m[K
+[7.364s] In file included from [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.364s] [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+[7.364s]    27 | namespace [01;36m[Kmsg[m[K
+[7.364s]       |           [01;36m[K^~~[m[K
+[7.364s] In file included from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp:236[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:7[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/parameter_client.hpp:28[m[K,
+[7.364s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.364s] [01m[K/opt/ros/iron/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kservice_msgs::msg[m[K’
+[7.364s]    31 | namespace [01;36m[Kmsg[m[K
+[7.364s]       |           [01;36m[K^~~[m[K
+[7.364s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.hpp:7[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20[m[K,
+[7.364s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.364s] [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kpolystar_msgs::msg[m[K’
+[7.364s]    31 | namespace [01;36m[Kmsg[m[K
+[7.364s]       |           [01;36m[K^~~[m[K
+[7.364s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:31:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+[7.364s]   171 |     msg.stamp = rclcpp::Time::[01;31m[Know[m[K();
+[7.365s]       |                               [01;31m[K^~~[m[K
+[7.365s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::Gamestage][m[K’:
+[7.365s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:189:18:[m[K [01;31m[Kerror: [m[K‘[01m[KGameStage[m[K’ is not a member of ‘[01m[Kserial::msg[m[K’; did you mean ‘[01m[KGamestage[m[K’?
+[7.365s]   189 |     serial::msg::[01;31m[KGameStage[m[K msg;
+[7.365s]       |                  [01;31m[K^~~~~~~~~[m[K
+[7.365s]       |                  [32m[KGamestage[m[K
+[7.365s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+[7.365s]   191 |     [01;31m[Kmsg[m[K.stamp = rclcpp::Time::now();
+[7.365s]       |     [01;31m[K^~~[m[K
+[7.365s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:5:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[7.365s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11[m[K,
+[7.365s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.365s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:40:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg[m[K’
+[7.365s]    40 | namespace [01;36m[Kmsg[m[K {
+[7.365s]       |           [01;36m[K^~~[m[K
+[7.365s] In file included from [01m[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:7[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/time.hpp:18[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:38[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.365s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.365s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.365s] [01m[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+[7.365s]    27 | namespace [01;36m[Kmsg[m[K
+[7.365s]       |           [01;36m[K^~~[m[K
+[7.365s] In file included from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.365s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.366s] [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+[7.366s]    27 | namespace [01;36m[Kmsg[m[K
+[7.366s]       |           [01;36m[K^~~[m[K
+[7.366s] In file included from [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.366s] [01m[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+[7.366s]    27 | namespace [01;36m[Kmsg[m[K
+[7.366s]       |           [01;36m[K^~~[m[K
+[7.366s] In file included from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp:236[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:7[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/parameter_client.hpp:28[m[K,
+[7.366s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.366s] [01m[K/opt/ros/iron/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kservice_msgs::msg[m[K’
+[7.366s]    31 | namespace [01;36m[Kmsg[m[K
+[7.366s]       |           [01;36m[K^~~[m[K
+[7.366s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.hpp:7[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20[m[K,
+[7.366s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kpolystar_msgs::msg[m[K’
+[7.367s]    31 | namespace [01;36m[Kmsg[m[K
+[7.367s]       |           [01;36m[K^~~[m[K
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:31:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+[7.367s]   191 |     msg.stamp = rclcpp::Time::[01;31m[Know[m[K();
+[7.367s]       |                               [01;31m[K^~~[m[K
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::TurretFeedback][m[K’:
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:202:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct serial::msg::TurretFeedback[m[K’ has no member named ‘[01m[Kstamp[m[K’
+[7.367s]   202 |     msg.[01;31m[Kstamp[m[K = rclcpp::Time::now();
+[7.367s]       |         [01;31m[K^~~~~[m[K
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:202:31:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+[7.367s]   202 |     msg.stamp = rclcpp::Time::[01;31m[Know[m[K();
+[7.367s]       |                               [01;31m[K^~~[m[K
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::publish(serial::msg::TurretFeedback&)[m[K’
+[7.367s]   215 |     [01;31m[Kpub_turret.publish(msg)[m[K;
+[7.367s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.367s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.367s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.367s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.367s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.367s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.367s]   227 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)
+[7.367s]       |   [01;36m[K^~~~~~~[m[K
+[7.367s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.367s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg::TurretFeedback[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > > >[m[K’
+[7.367s]   215 |     [01;36m[Kpub_turret.publish(msg)[m[K;
+[7.368s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.368s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.368s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.368s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.368s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.368s]   268 |   [01;36m[Kpublish[m[K(const T & msg)
+[7.368s]       |   [01;36m[K^~~~~~~[m[K
+[7.368s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.368s] In file included from [01m[K/usr/include/c++/11/variant:36[m[K,
+[7.368s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:14[m[K,
+[7.368s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11[m[K,
+[7.368s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.368s] /usr/include/c++/11/type_traits: In substitution of ‘[01m[Ktemplate<bool _Cond, class _Tp> using enable_if_t = typename std::enable_if::type [with bool _Cond = false; _Tp = void][m[K’:
+[7.368s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:[m[K   required by substitution of ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::value), void> rclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::publish<T>(const T&) [with T = serial::msg::TurretFeedback][m[K’
+[7.368s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:[m[K   required from here
+[7.368s] [01m[K/usr/include/c++/11/type_traits:2579:11:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+[7.368s]  2579 |     using [01;31m[Kenable_if_t[m[K = typename enable_if<_Cond, _Tp>::type;
+[7.368s]       |           [01;31m[K^~~~~~~~~~~[m[K
+[7.368s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.368s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.369s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.369s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.369s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.369s]   298 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, PublishedTypeDeleter> msg)
+[7.369s]       |   [01;36m[K^~~~~~~[m[K
+[7.369s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.369s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg::TurretFeedback[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > > >[m[K’
+[7.369s]   215 |     [01;36m[Kpub_turret.publish(msg)[m[K;
+[7.369s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.369s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.369s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.369s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.369s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.369s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.369s]   340 |   [01;36m[Kpublish[m[K(const T & msg)
+[7.369s]       |   [01;36m[K^~~~~~~[m[K
+[7.369s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s][m[K’
+[7.370s]   359 |   [01;36m[Kpublish[m[K(const rcl_serialized_message_t & serialized_msg)
+[7.370s]       |   [01;36m[K^~~~~~~[m[K
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::TurretFeedback[m[K’ to ‘[01m[Kconst rcl_serialized_message_t&[m[K’ {aka ‘[01m[Kconst rcutils_uint8_array_s&[m[K’}
+[7.370s]   359 |   publish([01;36m[Kconst rcl_serialized_message_t & serialized_msg[m[K)
+[7.370s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.370s]   365 |   [01;36m[Kpublish[m[K(const SerializedMessage & serialized_msg)
+[7.370s]       |   [01;36m[K^~~~~~~[m[K
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::TurretFeedback[m[K’ to ‘[01m[Kconst rclcpp::SerializedMessage&[m[K’
+[7.370s]   365 |   publish([01;36m[Kconst SerializedMessage & serialized_msg[m[K)
+[7.370s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >][m[K’
+[7.370s]   379 |   [01;36m[Kpublish[m[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)
+[7.370s]       |   [01;36m[K^~~~~~~[m[K
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:64:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::TurretFeedback[m[K’ to ‘[01m[Krclcpp::LoanedMessage<polystar_msgs::msg::TurretFeedback_<std::allocator<void> >, std::allocator<void> >&&[m[K’
+[7.370s]   379 |   publish([01;36m[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg[m[K)
+[7.370s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[7.370s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::PositionFeedback][m[K’:
+[7.370s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:228:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct serial::msg::PositionFeedback[m[K’ has no member named ‘[01m[Kstamp[m[K’
+[7.370s]   228 |     msg.[01;31m[Kstamp[m[K = rclcpp::Time::now();
+[7.370s]       |         [01;31m[K^~~~~[m[K
+[7.370s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:228:31:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+[7.370s]   228 |     msg.stamp = rclcpp::Time::[01;31m[Know[m[K();
+[7.370s]       |                               [01;31m[K^~~[m[K
+[7.370s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::publish(serial::msg::PositionFeedback&)[m[K’
+[7.370s]   252 |     [01;31m[Kpub_position.publish(msg)[m[K;
+[7.370s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.370s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.370s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.370s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.370s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.370s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.371s]   227 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)
+[7.371s]       |   [01;36m[K^~~~~~~[m[K
+[7.371s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.371s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg::PositionFeedback[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > > >[m[K’
+[7.371s]   252 |     [01;36m[Kpub_position.publish(msg)[m[K;
+[7.371s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.371s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.371s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.371s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.371s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.371s]   268 |   [01;36m[Kpublish[m[K(const T & msg)
+[7.371s]       |   [01;36m[K^~~~~~~[m[K
+[7.371s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.371s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.371s]   298 |   [01;36m[Kpublish[m[K(std::unique_ptr<T, PublishedTypeDeleter> msg)
+[7.371s]       |   [01;36m[K^~~~~~~[m[K
+[7.371s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.371s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:[m[K [01;36m[Knote: [m[K  ‘[01m[Kserial::msg::PositionFeedback[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > > >[m[K’
+[7.371s]   252 |     [01;36m[Kpub_position.publish(msg)[m[K;
+[7.371s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[7.371s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[7.371s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[7.372s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[7.372s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[7.372s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[7.372s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[7.372s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19[m[K,
+[7.372s]                  from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.372s]   340 |   [01;36m[Kpublish[m[K(const T & msg)
+[7.372s]       |   [01;36m[K^~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s][m[K’
+[7.372s]   359 |   [01;36m[Kpublish[m[K(const rcl_serialized_message_t & serialized_msg)
+[7.372s]       |   [01;36m[K^~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::PositionFeedback[m[K’ to ‘[01m[Kconst rcl_serialized_message_t&[m[K’ {aka ‘[01m[Kconst rcutils_uint8_array_s&[m[K’}
+[7.372s]   359 |   publish([01;36m[Kconst rcl_serialized_message_t & serialized_msg[m[K)
+[7.372s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.372s]   365 |   [01;36m[Kpublish[m[K(const SerializedMessage & serialized_msg)
+[7.372s]       |   [01;36m[K^~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::PositionFeedback[m[K’ to ‘[01m[Kconst rclcpp::SerializedMessage&[m[K’
+[7.372s]   365 |   publish([01;36m[Kconst SerializedMessage & serialized_msg[m[K)
+[7.372s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >][m[K’
+[7.372s]   379 |   [01;36m[Kpublish[m[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)
+[7.372s]       |   [01;36m[K^~~~~~~[m[K
+[7.372s] [01m[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:64:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kserial::msg::PositionFeedback[m[K’ to ‘[01m[Krclcpp::LoanedMessage<polystar_msgs::msg::PositionFeedback_<std::allocator<void> >, std::allocator<void> >&&[m[K’
+[7.372s]   379 |   publish([01;36m[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg[m[K)
+[7.372s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[7.372s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::handleSerial()[m[K’:
+[7.372s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:268:9:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_WARN[m[K’ was not declared in this scope
+[7.372s]   268 |         [01;31m[KROS_WARN[m[K("Start frame not recognized, scanning command");
+[7.372s]       |         [01;31m[K^~~~~~~~[m[K
+[7.372s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:286:9:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_ERROR[m[K’ was not declared in this scope
+[7.373s]   286 |         [01;31m[KROS_ERROR[m[K("Incomplete read on input payload");
+[7.373s]       |         [01;31m[K^~~~~~~~~[m[K
+[7.377s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:307:9:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_ERROR[m[K’ was not declared in this scope
+[7.378s]   307 |         [01;31m[KROS_ERROR[m[K("Unknown message type %d", message.header.cmd_id);
+[7.378s]       |         [01;31m[K^~~~~~~~~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K At global scope:
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:312:1:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kserial::msg::IncomingMessage SerialSpinner::deseralizeMessage(const std::vector<unsigned char, std::allocator<unsigned char> >&)[m[K’
+[7.378s]   312 | [01;31m[KSerialSpinner[m[K::deseralizeMessage(const std::vector<uint8_t>& buffer) {
+[7.378s]       | [01;31m[K^~~~~~~~~~~~~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:312:1:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kserial::msg::IncomingMessage SerialSpinner::deseralizeMessage(const std::vector<unsigned char, std::allocator<unsigned char> >&)[m[K’
+[7.378s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:28:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass SerialSpinner[m[K’ defined here
+[7.378s]    28 | class [01;36m[KSerialSpinner[m[K : public rclcpp::Node {
+[7.378s]       |       [01;36m[K^~~~~~~~~~~~~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:338:50:[m[K [01;31m[Kerror: [m[K‘[01m[KTargetConstPtr[m[K’ in namespace ‘[01m[Kserial[m[K’ does not name a type
+[7.378s]   338 | void SerialSpinner::callbackTarget(const serial::[01;31m[KTargetConstPtr[m[K& target) {
+[7.378s]       |                                                  [01;31m[K^~~~~~~~~~~~~~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::callbackTarget(const int&)[m[K’:
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:344:23:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.378s]   344 |     msg.pitch = target[01;31m[K->[m[Ktheta;
+[7.378s]       |                       [01;31m[K^~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:345:21:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.378s]   345 |     msg.yaw = target[01;31m[K->[m[Kphi;
+[7.378s]       |                     [01;31m[K^~[m[K
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K At global scope:
+[7.378s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:352:52:[m[K [01;31m[Kerror: [m[K‘[01m[KMovementConstPtr[m[K’ in namespace ‘[01m[Kserial[m[K’ does not name a type
+[7.378s]   352 | void SerialSpinner::callbackMovement(const serial::[01;31m[KMovementConstPtr[m[K& move) {
+[7.379s]       |                                                    [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::callbackMovement(const int&)[m[K’:
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:358:39:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.379s]   358 |     msg.v_x = utils::toMillimeter(move[01;31m[K->[m[Kv_x);
+[7.379s]       |                                       [01;31m[K^~[m[K
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:359:39:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.379s]   359 |     msg.v_y = utils::toMillimeter(move[01;31m[K->[m[Kv_y);
+[7.379s]       |                                       [01;31m[K^~[m[K
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:360:43:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.379s]   360 |     msg.omega = utils::toAngularSpeed(move[01;31m[K->[m[Komega);
+[7.379s]       |                                           [01;31m[K^~[m[K
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K At global scope:
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:368:49:[m[K [01;31m[Kerror: [m[K‘[01m[KShootConstPtr[m[K’ in namespace ‘[01m[Kserial[m[K’ does not name a type
+[7.379s]   368 | void SerialSpinner::callbackShoot(const serial::[01;31m[KShootConstPtr[m[K& shoot) {
+[7.379s]       |                                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::callbackShoot(const int&)[m[K’:
+[7.379s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:377:36:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[7.379s]   377 |     order.shoot_order.shoot = shoot[01;31m[K->[m[Kshoot ? '\xFF' : '\0';
+[7.379s]       |                                    [01;31m[K^~[m[K
+[7.384s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K In member function ‘[01m[Kvoid SerialSpinner::sendMessage(const serial::msg::OutgoingMessage&)[m[K’:
+[7.384s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:391:9:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_ERROR[m[K’ was not declared in this scope
+[7.384s]   391 |         [01;31m[KROS_ERROR[m[K("Could not write to serial : %s", strerror(errno));
+[7.384s]       |         [01;31m[K^~~~~~~~~[m[K
+[7.384s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:[m[K At global scope:
+[7.384s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:396:1:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kstd::vector<unsigned char, std::allocator<unsigned char> > SerialSpinner::serializeMessage(const serial::msg::OutgoingMessage&)[m[K’
+[7.384s]   396 | [01;31m[KSerialSpinner[m[K::serializeMessage(const serial::msg::OutgoingMessage& message) {
+[7.384s]       | [01;31m[K^~~~~~~~~~~~~[m[K
+[7.384s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[7.384s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:5:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kstatic std::vector<unsigned char, std::allocator<unsigned char> > SerialSpinner::serializeMessage(const int&)[m[K’
+[7.384s]    65 |     [01;36m[KserializeMessage[m[K(const polystar_msgs::msg::OutgoingMessage& message);
+[7.384s]       |     [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[7.385s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:28:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass SerialSpinner[m[K’ defined here
+[7.385s]    28 | class [01;36m[KSerialSpinner[m[K : public rclcpp::Node {
+[7.385s]       |       [01;36m[K^~~~~~~~~~~~~[m[K
+[7.915s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1
+[7.915s] gmake[2]: *** Waiting for unfinished jobs....
+[7.990s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1
+[7.990s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_interface.dir/all] Error 2
+[7.990s] gmake: *** [Makefile:101: all] Error 2
+[7.992s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '2': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16

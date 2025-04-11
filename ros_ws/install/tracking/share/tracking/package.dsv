@@ -1,0 +1,3 @@
+source;share/tracking/hook/pythonpath.ps1
+source;share/tracking/hook/pythonpath.dsv
+source;share/tracking/hook/pythonpath.sh

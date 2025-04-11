@@ -12,14 +12,14 @@
 #include <tf2_ros/transform_broadcaster.h>
 
 #include "geometry_msgs/QuaternionStamped.h"
-#include "serial/msg/TurretFeedback.h"
+#include "polystar_msgs/msg/TurretFeedback.h"
 
 class Turret {
   public:
     Turret(ros::NodeHandle& n)
         : nh(n), turret_height(nh.param("/robot/turret/height", 0.5)) {}
 
-    void callbackTurret(const serial::TurretFeedbackPtr& turret);
+    void callbackTurret(const polystar_msgs::TurretFeedbackPtr& turret);
 
   private:
     ros::NodeHandle nh;

@@ -1,0 +1,1 @@
+Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/detection': /usr/bin/cmake /home/ozone/robomaster-cv/ros_ws/src/detection -DCMAKE_INSTALL_PREFIX=/home/ozone/robomaster-cv/ros_ws/install/detection

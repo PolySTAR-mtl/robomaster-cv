@@ -9,14 +9,14 @@ find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(serial REQUIRED)
+find_package(polystar_msgs REQUIRED)
 
 ###################################
 ## ament specific configuration ##
 ###################################
 
 ament_export_dependencies(
-  serial
+  polystar_msgs
 )
 
 ###########

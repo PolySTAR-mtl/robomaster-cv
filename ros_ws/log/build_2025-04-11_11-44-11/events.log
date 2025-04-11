@@ -1,0 +1,108 @@
+[0.000000] (-) TimerEvent: {}
+[0.000096] (-) JobUnselected: {'identifier': 'decision'}
+[0.000382] (-) JobUnselected: {'identifier': 'detection'}
+[0.000411] (-) JobUnselected: {'identifier': 'locate'}
+[0.000422] (-) JobUnselected: {'identifier': 'monitor'}
+[0.000442] (-) JobUnselected: {'identifier': 'polystar_msgs'}
+[0.000451] (-) JobUnselected: {'identifier': 'testing'}
+[0.000555] (-) JobUnselected: {'identifier': 'tracking'}
+[0.000854] (serial) JobQueued: {'identifier': 'serial', 'dependencies': OrderedDict([('polystar_msgs', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs')])}
+[0.000899] (serial) JobStarted: {'identifier': 'serial'}
+[0.099830] (-) TimerEvent: {}
+[0.104080] (serial) JobProgress: {'identifier': 'serial', 'progress': 'cmake'}
+[0.104531] (serial) JobProgress: {'identifier': 'serial', 'progress': 'build'}
+[0.105093] (serial) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ozone/robomaster-cv/ros_ws/build/serial', '--', '-j16', '-l16'], 'cwd': '/home/ozone/robomaster-cv/ros_ws/build/serial', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ozone'), ('GIT_ASKPASS', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/ozone'), ('OLDPWD', '/home/ozone/robomaster-cv'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-d2cd2c0e-905c-4d11-a3c1-bf9fdbcd5d40.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'ozone'), ('NAME', 'Laptop'), ('WSL_INTEROP', '/run/WSL/588_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('PATH', '/opt/ros/iron/bin:/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/thope/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/thope/AppData/Local/Programs/Python/Python312:/mnt/c/Users/thope/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/thope/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/thope/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/thope/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/thope/OneDrive/Desktop/School/H25/Projet/flutter/bin:/mnt/c/Users/thope/AppData/Local/Muse Hub/lib:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-6effc2bb41.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ozone/robomaster-cv/ros_ws/build/serial'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up'), ('CMAKE_PREFIX_PATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs')]), 'shell': False}
+[0.119533] (serial) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)\n'}
+[0.198592] (serial) StdoutLine: {'line': b'-- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)\n'}
+[0.200035] (-) TimerEvent: {}
+[0.300704] (-) TimerEvent: {}
+[0.346711] (serial) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)\n'}
+[0.351211] (serial) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)\n'}
+[0.357872] (serial) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.366161] (serial) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.401401] (-) TimerEvent: {}
+[0.454708] (serial) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)\n'}
+[0.456085] (serial) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.502301] (-) TimerEvent: {}
+[0.604289] (-) TimerEvent: {}
+[0.706261] (-) TimerEvent: {}
+[0.806549] (-) TimerEvent: {}
+[0.908080] (-) TimerEvent: {}
+[1.010048] (-) TimerEvent: {}
+[1.112026] (-) TimerEvent: {}
+[1.214045] (-) TimerEvent: {}
+[1.316022] (-) TimerEvent: {}
+[1.416330] (-) TimerEvent: {}
+[1.516622] (-) TimerEvent: {}
+[1.617086] (-) TimerEvent: {}
+[1.719066] (-) TimerEvent: {}
+[1.821043] (-) TimerEvent: {}
+[1.923052] (-) TimerEvent: {}
+[2.023490] (-) TimerEvent: {}
+[2.124775] (-) TimerEvent: {}
+[2.226745] (-) TimerEvent: {}
+[2.327908] (-) TimerEvent: {}
+[2.429903] (-) TimerEvent: {}
+[2.530356] (-) TimerEvent: {}
+[2.631654] (-) TimerEvent: {}
+[2.733628] (-) TimerEvent: {}
+[2.835652] (-) TimerEvent: {}
+[2.939126] (-) TimerEvent: {}
+[3.042627] (-) TimerEvent: {}
+[3.146300] (-) TimerEvent: {}
+[3.250258] (-) TimerEvent: {}
+[3.353789] (-) TimerEvent: {}
+[3.457288] (-) TimerEvent: {}
+[3.560351] (-) TimerEvent: {}
+[3.664026] (-) TimerEvent: {}
+[3.767535] (-) TimerEvent: {}
+[3.871106] (-) TimerEvent: {}
+[3.974593] (-) TimerEvent: {}
+[4.075182] (-) TimerEvent: {}
+[4.178417] (-) TimerEvent: {}
+[4.281940] (-) TimerEvent: {}
+[4.383719] (-) TimerEvent: {}
+[4.485866] (-) TimerEvent: {}
+[4.588401] (-) TimerEvent: {}
+[4.691881] (-) TimerEvent: {}
+[4.795377] (-) TimerEvent: {}
+[4.898861] (-) TimerEvent: {}
+[5.002351] (-) TimerEvent: {}
+[5.105829] (-) TimerEvent: {}
+[5.209361] (-) TimerEvent: {}
+[5.312887] (-) TimerEvent: {}
+[5.413460] (-) TimerEvent: {}
+[5.516599] (-) TimerEvent: {}
+[5.618843] (-) TimerEvent: {}
+[5.642202] (serial) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.721560] (-) TimerEvent: {}
+[5.733705] (serial) StdoutLine: {'line': b'-- Found polystar_msgs: 0.1.0 (/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake)\n'}
+[5.751331] (serial) StdoutLine: {'line': b'-- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)\n'}
+[5.768692] (serial) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)\n'}
+[5.772680] (serial) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)\n'}
+[5.775929] (serial) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.787523] (serial) StdoutLine: {'line': b'-- Generating done\n'}
+[5.788231] (serial) StdoutLine: {'line': b'-- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/serial\n'}
+[5.806717] (serial) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o\x1b[0m\n'}
+[5.807461] (serial) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o\x1b[0m\n'}
+[5.821847] (-) TimerEvent: {}
+[5.924250] (-) TimerEvent: {}
+[6.024816] (-) TimerEvent: {}
+[6.039609] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[6.039771] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/msg/game_stage.hpp: No such file or directory\n'}
+[6.039816] (serial) StderrLine: {'line': b'   20 | #include \x1b[01;31m\x1b[K"serial/msg/game_stage.hpp"\x1b[m\x1b[K\n'}
+[6.039844] (serial) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.039874] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13\x1b[m\x1b[K:\n'}
+[6.039901] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/msg/game_stage.hpp: No such file or directory\n'}
+[6.039927] (serial) StderrLine: {'line': b'   20 | #include \x1b[01;31m\x1b[K"serial/msg/game_stage.hpp"\x1b[m\x1b[K\n'}
+[6.039953] (serial) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.039976] (serial) StderrLine: {'line': b'compilation terminated.\n'}
+[6.039999] (serial) StderrLine: {'line': b'compilation terminated.\n'}
+[6.040634] (serial) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1\n'}
+[6.040792] (serial) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[6.040834] (serial) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1\n'}
+[6.040903] (serial) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_interface.dir/all] Error 2\n'}
+[6.041025] (serial) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.042187] (serial) CommandEnded: {'returncode': 2}
+[6.042433] (serial) JobEnded: {'identifier': 'serial', 'rc': 2}
+[6.053085] (-) EventReactorShutdown: {}

@@ -23,7 +23,7 @@
 // Project includes
 
 #include "tracker.h"
-#include "serial/msg/Target.h"
+#include "polystar_msgs/msg/Target.h"
 #include "bounding_box.h"
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }
@@ -153,8 +153,8 @@ class WeightedTracker : Tracker {
         
     };
 
-    serial::msg::Target toTarget(tracking::msg::Tracklet& trk) override {
-        serial::msg::Target target;
+    polystar_msgs::msg::Target toTarget(tracking::msg::Tracklet& trk) override {
+        polystar_msgs::msg::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";

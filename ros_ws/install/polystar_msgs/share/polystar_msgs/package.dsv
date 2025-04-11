@@ -1,0 +1,9 @@
+source;share/polystar_msgs/hook/cmake_prefix_path.ps1
+source;share/polystar_msgs/hook/cmake_prefix_path.dsv
+source;share/polystar_msgs/hook/cmake_prefix_path.sh
+source;share/polystar_msgs/hook/ld_library_path_lib.ps1
+source;share/polystar_msgs/hook/ld_library_path_lib.dsv
+source;share/polystar_msgs/hook/ld_library_path_lib.sh
+source;share/polystar_msgs/hook/pythonpath.ps1
+source;share/polystar_msgs/hook/pythonpath.dsv
+source;share/polystar_msgs/hook/pythonpath.sh

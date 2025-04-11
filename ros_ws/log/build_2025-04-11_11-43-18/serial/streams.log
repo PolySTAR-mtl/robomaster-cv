@@ -1,0 +1,31 @@
+[0.085s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16
+[0.127s] -- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+[0.240s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[0.398s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.407s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.420s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.435s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.540s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.542s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[5.308s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.549s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[6.549s]   By not providing "Findpolystar_msgs.cmake" in CMAKE_MODULE_PATH this
+[6.549s]   project has asked CMake to find a package configuration file provided by
+[6.549s]   "polystar_msgs", but CMake did not find one.
+[6.549s] 
+[6.549s]   Could not find a package configuration file provided by "polystar_msgs"
+[6.549s]   with any of the following names:
+[6.549s] 
+[6.549s]     polystar_msgsConfig.cmake
+[6.549s]     polystar_msgs-config.cmake
+[6.549s] 
+[6.549s]   Add the installation prefix of "polystar_msgs" to CMAKE_PREFIX_PATH or set
+[6.549s]   "polystar_msgs_DIR" to a directory containing one of the above files.  If
+[6.549s]   "polystar_msgs" provides a separate development package or SDK, be sure it
+[6.549s]   has been installed.
+[6.549s] 
+[6.549s] [0m
+[6.549s] -- Configuring incomplete, errors occurred!
+[6.549s] See also "/home/ozone/robomaster-cv/ros_ws/build/serial/CMakeFiles/CMakeOutput.log".
+[6.556s] gmake: *** [Makefile:3043: cmake_check_build_system] Error 1
+[6.557s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '2': LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16

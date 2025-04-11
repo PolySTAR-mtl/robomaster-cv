@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from polystar_msgs/msg/Target.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module polystar_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Target.msg" "\n"
+      "From CV to CS : Coordinates of the current target")
+    struct Target {
+      @verbatim (language="comment", text=
+        "Message")
+      builtin_interfaces::msg::Time stamp;
+
+      boolean located;
+
+      float distance_center;
+
+      @verbatim (language="comment", text=
+        "milli-ad")
+      int16 theta;
+
+      @verbatim (language="comment", text=
+        "millirad")
+      int16 phi;
+
+      @verbatim (language="comment", text=
+        "mm")
+      uint16 dist;
+    };
+  };
+};

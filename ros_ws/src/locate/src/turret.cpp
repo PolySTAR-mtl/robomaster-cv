@@ -6,7 +6,7 @@
 
 #include "turret.hpp"
 
-void Turret::callbackTurret(const serial::TurretFeedbackPtr& turret) {
+void Turret::callbackTurret(const polystar_msgs::TurretFeedbackPtr& turret) {
     geometry_msgs::msg::TransformStamped tf;
 
     tf.header.stamp = turret->stamp;

@@ -7,7 +7,7 @@ add_compile_options(-std=c++17)
 find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(detection REQUIRED)
-find_package(serial REQUIRED)
+find_package(polystar_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tracking REQUIRED)
@@ -26,7 +26,7 @@ generate_dynamic_reconfigure_options(
 
 ament_export_dependencies(
   detection
-  serial
+  polystar_msgs
   tracking
   tf2
   tf2_ros
@@ -52,7 +52,7 @@ target_link_libraries(simple_tracker PRIVATE
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
   ${tracking_TARGETS}
-  ${serial_TARGETS}
+  ${polystar_msgs_TARGETS}
   tf2::tf2
   tf2_ros::tf2_ros
   dynamic_reconfigure::dynamic_reconfigure
@@ -81,7 +81,7 @@ target_link_libraries(weighted_tracker PRIVATE
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
   ${tracking_TARGETS}
-  ${serial_TARGETS}
+  ${polystar_msgs_TARGETS}
   tf2::tf2
   tf2_ros::tf2_ros
   OpenCV::OpenCV

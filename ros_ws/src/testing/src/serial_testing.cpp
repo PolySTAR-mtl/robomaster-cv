@@ -14,7 +14,7 @@
 
 // Local includes
 
-#include "serial/msg/Target.h"
+#include "polystar_msgs/msg/Target.h"
 
 constexpr uint16_t rewrap_pi_millirad(uint16_t angle) {
     uint16_t circle_millirad = 2 * M_PI * 1000;
@@ -39,13 +39,13 @@ int main(int argc, char** argv) {
     nh.param("freq", freq, 10.f);
     nh.param("increment", increment, .05f);
 
-    auto pub = nh.advertise<serial::msg::Target>("target", 1);
+    auto pub = nh.advertise<polystar_msgs::msg::Target>("target", 1);
 
     rclcpp::Rate rate(freq);
 
     while (ros::ok()) {
         for (float alpha = 0.f; alpha < 2 * M_PI; alpha += increment) {
-            serial::msg::Target msg;
+            polystar_msgs::msg::Target msg;
 
             int16_t theta = std::floor(std::sin(alpha) * amplitude * 1000.f);
             int16_t phi = std::floor(std::cos(alpha) * amplitude * 1000.f);

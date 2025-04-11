@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from polystar_msgs/msg/GameStatus.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module polystar_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "GameStatus.msg" "\n"
+      "Game status : Robot type, hp, mode")
+    struct GameStatus {
+      builtin_interfaces::msg::Time stamp;
+
+      uint8 robot_type;
+
+      uint16 red_std_hp;
+
+      uint16 red_hro_hp;
+
+      uint16 red_sty_hp;
+
+      uint16 blu_std_hp;
+
+      uint16 blu_hro_hp;
+
+      uint16 blu_sty_hp;
+
+      uint8 mode;
+    };
+  };
+};

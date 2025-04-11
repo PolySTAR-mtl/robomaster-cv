@@ -8,7 +8,7 @@
 import rospy
 import numpy as np
 
-from serial.msg import Target, Movement
+from polystar_msgs.msg import Target, Movement
 
 
 class Controller:
@@ -18,7 +18,7 @@ class Controller:
             '/decision/target', Target, self.target_callback, queue_size=1)
 
         self.pub_movement = rospy.Publisher(
-            '/serial/movement', Movement, queue_size=1)
+            '/polystar_msgs/movement', Movement, queue_size=1)
 
         # Parameters
         self.rate = rate

@@ -8,7 +8,7 @@
 
 import rospy
 
-from serial.msg import Target, Shoot
+from polystar_msgs.msg import Target, Shoot
 
 
 class Shooter:
@@ -17,7 +17,7 @@ class Shooter:
         self.sub_target = rospy.Subscriber(
             '/decision/target', Target, self.target_callback, queue_size=1)
 
-        self.pub_shoot = rospy.Publisher('/serial/shoot', Shoot, queue_size=1)
+        self.pub_shoot = rospy.Publisher('/polystar_msgs/shoot', Shoot, queue_size=1)
 
         # State
         self.is_shooting = False

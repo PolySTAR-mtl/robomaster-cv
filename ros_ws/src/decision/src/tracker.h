@@ -1,13 +1,13 @@
 #pragma once
 #include <ros/ros.h>
-#include "serial/msg/Target.h"
+#include "polystar_msgs/msg/Target.h"
 #include "tracking/msg/Tracklets.h"
 
 class Tracker {
     public: 
     Tracker(ros::NodeHandle& n, int _enemy_color);
 
-    virtual serial::Target toTarget(tracking::msg::Tracklet& trk) = 0;
+    virtual polystar_msgs::Target toTarget(tracking::msg::Tracklet& trk) = 0;
     virtual void callbackTracklets(const tracking::TrackletsConstPtr& trks) = 0;
 
     protected:    

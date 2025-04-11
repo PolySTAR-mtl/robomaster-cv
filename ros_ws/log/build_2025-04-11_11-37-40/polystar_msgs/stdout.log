@@ -1,0 +1,44 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.2 (/opt/ros/iron/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs
+[  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  1%] Built target ament_cmake_python_copy_polystar_msgs
+running egg_info
+creating polystar_msgs.egg-info
+writing polystar_msgs.egg-info/PKG-INFO
+writing dependency_links to polystar_msgs.egg-info/dependency_links.txt
+writing top-level names to polystar_msgs.egg-info/top_level.txt
+writing manifest file 'polystar_msgs.egg-info/SOURCES.txt'
+reading manifest file 'polystar_msgs.egg-info/SOURCES.txt'
+writing manifest file 'polystar_msgs.egg-info/SOURCES.txt'
+[  1%] Built target ament_cmake_python_build_polystar_msgs_egg

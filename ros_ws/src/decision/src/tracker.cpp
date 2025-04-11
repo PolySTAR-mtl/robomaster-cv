@@ -11,7 +11,7 @@ Tracker::Tracker(ros::NodeHandle& n, int _enemy_color) : nh(n), enemy_color(_ene
         sub_tracklets = nh.subscribe("tracklets", 1,
                                      &Tracker::callbackTracklets, this);
 
-        pub_target = nh.advertise<serial::msg::Target>("target", 1);
+        pub_target = nh.advertise<polystar_msgs::msg::Target>("target", 1);
         std::cout << "Enemy color set to be: "
                   << (enemy_color == 0 ? "red" : "blue") << "\n";
 }

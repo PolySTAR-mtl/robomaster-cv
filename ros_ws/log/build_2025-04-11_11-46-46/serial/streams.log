@@ -1,0 +1,35 @@
+[0.108s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16
+[0.124s] -- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+[0.231s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[0.417s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.425s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.438s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.452s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.560s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.562s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[5.549s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.662s] -- Found polystar_msgs: 0.1.0 (/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake)
+[5.683s] -- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+[5.706s] -- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+[5.713s] -- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+[5.717s] -- Configuring done
+[5.728s] -- Generating done
+[5.728s] -- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/serial
+[5.746s] [ 33%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o[0m
+[5.746s] [ 66%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o[0m
+[5.856s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13[m[K:
+[5.856s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kpolystar_msgs/msg/game_stage.hpp: No such file or directory
+[5.857s]    20 | #include [01;31m[K"polystar_msgs/msg/game_stage.hpp"[m[K
+[5.857s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.857s] compilation terminated.
+[5.859s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[5.859s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kpolystar_msgs/msg/game_stage.hpp: No such file or directory
+[5.859s]    20 | #include [01;31m[K"polystar_msgs/msg/game_stage.hpp"[m[K
+[5.859s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.859s] compilation terminated.
+[5.859s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1
+[5.859s] gmake[2]: *** Waiting for unfinished jobs....
+[5.860s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1
+[5.860s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_interface.dir/all] Error 2
+[5.860s] gmake: *** [Makefile:101: all] Error 2
+[5.862s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '2': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16

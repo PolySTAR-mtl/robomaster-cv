@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/iron/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+  ament_target_dependencies() the passed package name 'rclcpp::rclcpp' was
+  not found before
+Call Stack (most recent call first):
+  CMakeLists.txt:47 (ament_target_dependencies)
+
+[0m
+gmake: *** [Makefile:245: cmake_check_build_system] Error 1

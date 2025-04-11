@@ -7,29 +7,19 @@ set(CMAKE_CXX_STANDARD 17)
 ## Find macros and libraries
 find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(polystar_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 # find_package(ament_cmake_gtest)
-
-## ----- Messages ----- ##
-
-## Generate messages in the 'msg' folder
-rosidl_generate_interfaces(${PROJECT_NAME}
-  msg/HP.msg
-  msg/SwitchOrder.msg
-  msg/Target.msg
-  msg/Movement.msg
-  msg/GameStatus.msg
-  msg/GameStage.msg
-  msg/TurretFeedback.msg
-  msg/PositionFeedback.msg
-  msg/Shoot.msg
-)
 
 
 ###################################
 ## ament specific configuration ##
 ###################################
+
+ament_export_dependencies(
+  polystar_msgs
+)
 
 ###########
 ## Build ##
@@ -44,14 +34,13 @@ add_executable(serial_interface
 )
 
 target_include_directories(serial_interface PRIVATE
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  ${serial_INCLUDE_DIRS}
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(serial_interface PRIVATE
-  rclcpp::rclcpp
-  ${std_msgs_TARGETS}
-  serial_spinner
+ament_target_dependencies(serial_interface 
+  rclcpp
+  polystar_msgs
 )
 
 
@@ -79,5 +68,3 @@ target_link_libraries(serial_interface PRIVATE
 # )
 
 # TODO: FIX TESTS
-
-ament_export_dependencies(rosidl_default_runtime)

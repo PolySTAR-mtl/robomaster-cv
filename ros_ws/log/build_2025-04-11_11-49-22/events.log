@@ -1,0 +1,746 @@
+[0.000000] (-) TimerEvent: {}
+[0.000123] (-) JobUnselected: {'identifier': 'decision'}
+[0.000160] (-) JobUnselected: {'identifier': 'detection'}
+[0.000189] (-) JobUnselected: {'identifier': 'locate'}
+[0.000198] (-) JobUnselected: {'identifier': 'monitor'}
+[0.000205] (-) JobUnselected: {'identifier': 'polystar_msgs'}
+[0.000213] (-) JobUnselected: {'identifier': 'testing'}
+[0.000219] (-) JobUnselected: {'identifier': 'tracking'}
+[0.000228] (serial) JobQueued: {'identifier': 'serial', 'dependencies': OrderedDict([('polystar_msgs', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs')])}
+[0.001115] (serial) JobStarted: {'identifier': 'serial'}
+[0.099904] (-) TimerEvent: {}
+[0.103657] (serial) JobProgress: {'identifier': 'serial', 'progress': 'cmake'}
+[0.104098] (serial) JobProgress: {'identifier': 'serial', 'progress': 'build'}
+[0.104672] (serial) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ozone/robomaster-cv/ros_ws/build/serial', '--', '-j16', '-l16'], 'cwd': '/home/ozone/robomaster-cv/ros_ws/build/serial', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ozone'), ('GIT_ASKPASS', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/ozone'), ('OLDPWD', '/home/ozone/robomaster-cv'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-d2cd2c0e-905c-4d11-a3c1-bf9fdbcd5d40.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'ozone'), ('NAME', 'Laptop'), ('WSL_INTEROP', '/run/WSL/588_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('PATH', '/opt/ros/iron/bin:/home/ozone/.vscode-server/bin/4949701c880d4bdb949e3c0e6b400288da7f474b/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/thope/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/thope/AppData/Local/Programs/Python/Python312:/mnt/c/Users/thope/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/thope/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/thope/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/thope/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/thope/OneDrive/Desktop/School/H25/Projet/flutter/bin:/mnt/c/Users/thope/AppData/Local/Muse Hub/lib:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-6effc2bb41.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ozone/robomaster-cv/ros_ws/build/serial'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up'), ('CMAKE_PREFIX_PATH', '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs')]), 'shell': False}
+[0.117738] (serial) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)\n'}
+[0.197451] (serial) StdoutLine: {'line': b'-- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)\n'}
+[0.200176] (-) TimerEvent: {}
+[0.300466] (-) TimerEvent: {}
+[0.344334] (serial) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)\n'}
+[0.348894] (serial) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)\n'}
+[0.356435] (serial) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.364818] (serial) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.401354] (-) TimerEvent: {}
+[0.455160] (serial) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)\n'}
+[0.455724] (serial) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.502510] (-) TimerEvent: {}
+[0.605141] (-) TimerEvent: {}
+[0.706224] (-) TimerEvent: {}
+[0.808822] (-) TimerEvent: {}
+[0.911403] (-) TimerEvent: {}
+[1.011745] (-) TimerEvent: {}
+[1.113773] (-) TimerEvent: {}
+[1.216339] (-) TimerEvent: {}
+[1.318915] (-) TimerEvent: {}
+[1.420930] (-) TimerEvent: {}
+[1.523495] (-) TimerEvent: {}
+[1.626053] (-) TimerEvent: {}
+[1.727887] (-) TimerEvent: {}
+[1.828187] (-) TimerEvent: {}
+[1.930181] (-) TimerEvent: {}
+[2.032741] (-) TimerEvent: {}
+[2.135619] (-) TimerEvent: {}
+[2.238203] (-) TimerEvent: {}
+[2.340905] (-) TimerEvent: {}
+[2.443078] (-) TimerEvent: {}
+[2.545700] (-) TimerEvent: {}
+[2.648470] (-) TimerEvent: {}
+[2.751029] (-) TimerEvent: {}
+[2.852267] (-) TimerEvent: {}
+[2.953121] (-) TimerEvent: {}
+[3.053534] (-) TimerEvent: {}
+[3.154578] (-) TimerEvent: {}
+[3.255724] (-) TimerEvent: {}
+[3.356897] (-) TimerEvent: {}
+[3.457869] (-) TimerEvent: {}
+[3.559009] (-) TimerEvent: {}
+[3.660099] (-) TimerEvent: {}
+[3.761011] (-) TimerEvent: {}
+[3.861933] (-) TimerEvent: {}
+[3.962871] (-) TimerEvent: {}
+[4.063903] (-) TimerEvent: {}
+[4.164331] (-) TimerEvent: {}
+[4.265440] (-) TimerEvent: {}
+[4.366524] (-) TimerEvent: {}
+[4.467473] (-) TimerEvent: {}
+[4.568511] (-) TimerEvent: {}
+[4.669590] (-) TimerEvent: {}
+[4.770722] (-) TimerEvent: {}
+[4.871688] (-) TimerEvent: {}
+[4.972717] (-) TimerEvent: {}
+[5.073087] (-) TimerEvent: {}
+[5.174145] (-) TimerEvent: {}
+[5.275246] (-) TimerEvent: {}
+[5.376249] (-) TimerEvent: {}
+[5.468439] (serial) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.476548] (-) TimerEvent: {}
+[5.561275] (serial) StdoutLine: {'line': b'-- Found polystar_msgs: 0.1.0 (/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake)\n'}
+[5.577030] (-) TimerEvent: {}
+[5.577976] (serial) StdoutLine: {'line': b'-- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)\n'}
+[5.596145] (serial) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)\n'}
+[5.600090] (serial) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)\n'}
+[5.603357] (serial) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.608509] (serial) StdoutLine: {'line': b'-- Generating done\n'}
+[5.609632] (serial) StdoutLine: {'line': b'-- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/serial\n'}
+[5.628191] (serial) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o\x1b[0m\n'}
+[5.628323] (serial) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o\x1b[0m\n'}
+[5.677510] (-) TimerEvent: {}
+[5.778716] (-) TimerEvent: {}
+[5.879714] (-) TimerEvent: {}
+[5.980192] (-) TimerEvent: {}
+[6.081334] (-) TimerEvent: {}
+[6.182368] (-) TimerEvent: {}
+[6.283332] (-) TimerEvent: {}
+[6.384394] (-) TimerEvent: {}
+[6.485017] (-) TimerEvent: {}
+[6.585835] (-) TimerEvent: {}
+[6.687122] (-) TimerEvent: {}
+[6.788268] (-) TimerEvent: {}
+[6.889299] (-) TimerEvent: {}
+[6.990475] (-) TimerEvent: {}
+[7.091084] (-) TimerEvent: {}
+[7.192123] (-) TimerEvent: {}
+[7.293237] (-) TimerEvent: {}
+[7.327285] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.327441] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTargetConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.327479] (serial) StderrLine: {'line': b'   42 |     void callbackTarget(const polystar_msgs::\x1b[01;31m\x1b[KTargetConstPtr\x1b[m\x1b[K&);\n'}
+[7.327508] (serial) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.327537] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:47:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMovementConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.327608] (serial) StderrLine: {'line': b'   47 |     void callbackMovement(const polystar_msgs::\x1b[01;31m\x1b[KMovementConstPtr\x1b[m\x1b[K&);\n'}
+[7.327645] (serial) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.327674] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:52:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KShootConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.327721] (serial) StderrLine: {'line': b'   52 |     void callbackShoot(const polystar_msgs::\x1b[01;31m\x1b[KShootConstPtr\x1b[m\x1b[K&);\n'}
+[7.327764] (serial) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.327792] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KOutgoingMessage\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.327824] (serial) StderrLine: {'line': b'   65 |     serializeMessage(const polystar_msgs::msg::\x1b[01;31m\x1b[KOutgoingMessage\x1b[m\x1b[K& message);\n'}
+[7.327850] (serial) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.327875] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:70:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIncomingMessage\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.327900] (serial) StderrLine: {'line': b'   70 |     static polystar_msgs::msg::\x1b[01;31m\x1b[KIncomingMessage\x1b[m\x1b[K\n'}
+[7.327926] (serial) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.331552] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:100:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.331697] (serial) StderrLine: {'line': b'  100 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Target> sub_target;\n'}
+[7.331730] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.331758] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:101:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.331784] (serial) StderrLine: {'line': b'  101 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Movement> sub_movement;\n'}
+[7.331813] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.331838] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:102:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.331863] (serial) StderrLine: {'line': b'  102 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Target> sub_shoot;\n'}
+[7.331888] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.334009] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KSerialSpinner::SerialSpinner(const string&, int, int, int, bool, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.334078] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:44:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[KSerialSpinner\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Knh\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.334131] (serial) StderrLine: {'line': b'   44 |     : Node("serial"), \x1b[01;31m\x1b[Knh\x1b[m\x1b[K(n), baud_rate(_baud), length(_len), stop_bits(_stop),\n'}
+[7.334215] (serial) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.334411] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13\x1b[m\x1b[K:\n'}
+[7.334460] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:42:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTargetConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.334499] (serial) StderrLine: {'line': b'   42 |     void callbackTarget(const polystar_msgs::\x1b[01;31m\x1b[KTargetConstPtr\x1b[m\x1b[K&);\n'}
+[7.334538] (serial) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.334573] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:47:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMovementConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.334599] (serial) StderrLine: {'line': b'   47 |     void callbackMovement(const polystar_msgs::\x1b[01;31m\x1b[KMovementConstPtr\x1b[m\x1b[K&);\n'}
+[7.334624] (serial) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.334649] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:52:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KShootConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.334675] (serial) StderrLine: {'line': b'   52 |     void callbackShoot(const polystar_msgs::\x1b[01;31m\x1b[KShootConstPtr\x1b[m\x1b[K&);\n'}
+[7.334710] (serial) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.334737] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KOutgoingMessage\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.334762] (serial) StderrLine: {'line': b'   65 |     serializeMessage(const polystar_msgs::msg::\x1b[01;31m\x1b[KOutgoingMessage\x1b[m\x1b[K& message);\n'}
+[7.334786] (serial) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.334810] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:70:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIncomingMessage\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.334834] (serial) StderrLine: {'line': b'   70 |     static polystar_msgs::msg::\x1b[01;31m\x1b[KIncomingMessage\x1b[m\x1b[K\n'}
+[7.334858] (serial) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.338621] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:100:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.338789] (serial) StderrLine: {'line': b'  100 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Target> sub_target;\n'}
+[7.338827] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.338854] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:101:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.338881] (serial) StderrLine: {'line': b'  101 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Movement> sub_movement;\n'}
+[7.338906] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.338931] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:102:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSubscriber\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[7.338956] (serial) StderrLine: {'line': b'  102 |     rclcpp::\x1b[01;31m\x1b[KSubscriber\x1b[m\x1b[K<polystar_msgs::msg::Target> sub_shoot;\n'}
+[7.338980] (serial) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.340252] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:44:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kn\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kyn\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.340340] (serial) StderrLine: {'line': b'   44 |     : Node("serial"), nh(\x1b[01;31m\x1b[Kn\x1b[m\x1b[K), baud_rate(_baud), length(_len), stop_bits(_stop),\n'}
+[7.340373] (serial) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.340402] (serial) StderrLine: {'line': b'      |                          \x1b[32m\x1b[Kyn\x1b[m\x1b[K\n'}
+[7.340428] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >::Publisher()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.340453] (serial) StderrLine: {'line': b'   45 |       parity(_parity), frequency(_freq\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[7.340478] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.341436] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.341525] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.341556] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.341582] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.341609] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.341903] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.342386] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.342441] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.342487] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.342537] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.342579] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.342616] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.342656] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::GameStatus_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.342694] (serial) StderrLine: {'line': b'  125 |   \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K(\n'}
+[7.342720] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.342746] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 0 provided\n'}
+[7.342776] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::GameStatus_<std::allocator<void> > >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.342804] (serial) StderrLine: {'line': b'   77 | class \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K : public PublisherBase\n'}
+[7.342831] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.342855] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[7.342879] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >::Publisher()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.342905] (serial) StderrLine: {'line': b'   45 |       parity(_parity), frequency(_freq\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[7.342931] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.342955] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.342980] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.343004] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.343027] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.343053] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.343080] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.343103] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.343127] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.343150] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.343173] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.343195] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.343216] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.343239] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::GameStage_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.343265] (serial) StderrLine: {'line': b'  125 |   \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K(\n'}
+[7.343289] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.343312] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 0 provided\n'}
+[7.343335] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::GameStage_<std::allocator<void> > >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.343360] (serial) StderrLine: {'line': b'   77 | class \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K : public PublisherBase\n'}
+[7.343383] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.343405] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[7.343428] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::Publisher()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.343451] (serial) StderrLine: {'line': b'   45 |       parity(_parity), frequency(_freq\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[7.343474] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.343497] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.343520] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.343545] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.343567] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.343590] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.343613] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.343635] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.343659] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.343681] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.343702] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.343724] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.343746] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.343768] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.343792] (serial) StderrLine: {'line': b'  125 |   \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K(\n'}
+[7.343814] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.343856] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 0 provided\n'}
+[7.343888] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.343915] (serial) StderrLine: {'line': b'   77 | class \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K : public PublisherBase\n'}
+[7.343940] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.343965] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[7.343990] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:45:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::Publisher()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.344015] (serial) StderrLine: {'line': b'   45 |       parity(_parity), frequency(_freq\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[7.344040] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.344064] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.344088] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.344150] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.344186] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.344215] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.344241] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.344266] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.344290] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.344313] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.344337] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.344360] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.344383] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.344420] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.344449] (serial) StderrLine: {'line': b'  125 |   \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K(\n'}
+[7.344478] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.344510] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:125:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 0 provided\n'}
+[7.344535] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.344560] (serial) StderrLine: {'line': b'   77 | class \x1b[01;36m\x1b[KPublisher\x1b[m\x1b[K : public PublisherBase\n'}
+[7.344584] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.344608] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:77:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[7.345345] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:48:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knh\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.345386] (serial) StderrLine: {'line': b'   48 |     pub_status = \x1b[01;31m\x1b[Knh\x1b[m\x1b[K.advertise<serial::msg::GameStatus>("gamestatus", 1);\n'}
+[7.345412] (serial) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.345649] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:48:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGameStatus\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg::GameStatus\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.345896] (serial) StderrLine: {'line': b'   48 |     pub_status = nh.advertise<serial::msg::\x1b[01;31m\x1b[KGameStatus\x1b[m\x1b[K>("gamestatus", 1);\n'}
+[7.345941] (serial) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.345970] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.hpp:7\x1b[m\x1b[K,\n'}
+[7.345996] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:22\x1b[m\x1b[K,\n'}
+[7.346022] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.346046] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.hpp:237:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg::GameStatus\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[7.346086] (serial) StderrLine: {'line': b'  237 | using \x1b[01;36m\x1b[KGameStatus\x1b[m\x1b[K =\n'}
+[7.346114] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.346138] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:49:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGameStage\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KGamestage\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.346165] (serial) StderrLine: {'line': b'   49 |     pub_stage = nh.advertise<serial::msg::\x1b[01;31m\x1b[KGameStage\x1b[m\x1b[K>("gamestage", 1);\n'}
+[7.346189] (serial) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.346213] (serial) StderrLine: {'line': b'      |                                           \x1b[32m\x1b[KGamestage\x1b[m\x1b[K\n'}
+[7.346236] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:50:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[7.346262] (serial) StderrLine: {'line': b'   50 |     pub_turret = nh.advertise<serial::msg::TurretFeedback\x1b[01;31m\x1b[K>\x1b[m\x1b[K("turret", 1);\n'}
+[7.346285] (serial) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.346308] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:51:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[7.346330] (serial) StderrLine: {'line': b'   51 |     pub_position = nh.advertise<serial::msg::PositionFeedback\x1b[01;31m\x1b[K>\x1b[m\x1b[K("position", 1);\n'}
+[7.346354] (serial) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.349969] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:53:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_target\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpub_turret\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.350043] (serial) StderrLine: {'line': b'   53 |     \x1b[01;31m\x1b[Ksub_target\x1b[m\x1b[K =\n'}
+[7.350072] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.350097] (serial) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kpub_turret\x1b[m\x1b[K\n'}
+[7.354447] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:55:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_movement\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.354518] (serial) StderrLine: {'line': b'   55 |     \x1b[01;31m\x1b[Ksub_movement\x1b[m\x1b[K =\n'}
+[7.354545] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.358173] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:57:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_shoot\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ku_short\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.358264] (serial) StderrLine: {'line': b'   57 |     \x1b[01;31m\x1b[Ksub_shoot\x1b[m\x1b[K = nh.subscribe("shoot", 1, &SerialSpinner::callbackShoot, this);\n'}
+[7.358301] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.358340] (serial) StderrLine: {'line': b'      |     \x1b[32m\x1b[Ku_short\x1b[m\x1b[K\n'}
+[7.358367] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:59:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.358393] (serial) StderrLine: {'line': b'   59 |     encoder_resolution = nh.param<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K>("/robot/encoder_resolution", 8192u);\n'}
+[7.358418] (serial) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.359975] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::spin()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.360037] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:158:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kros\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[7.360065] (serial) StderrLine: {'line': b'  158 |     while (\x1b[01;31m\x1b[Kros\x1b[m\x1b[K::ok()) {\n'}
+[7.360090] (serial) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.360114] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:162:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kros\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[7.360139] (serial) StderrLine: {'line': b'  162 |         \x1b[01;31m\x1b[Kros\x1b[m\x1b[K::spinOnce();\n'}
+[7.360230] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.360492] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::Status]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.360577] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:169:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGameStatus\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg::GameStatus\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.360708] (serial) StderrLine: {'line': b'  169 |     serial::msg::\x1b[01;31m\x1b[KGameStatus\x1b[m\x1b[K msg;\n'}
+[7.360806] (serial) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.360883] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.hpp:7\x1b[m\x1b[K,\n'}
+[7.360943] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:22\x1b[m\x1b[K,\n'}
+[7.361000] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.361037] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.hpp:237:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg::GameStatus\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[7.361306] (serial) StderrLine: {'line': b'  237 | using \x1b[01;36m\x1b[KGameStatus\x1b[m\x1b[K =\n'}
+[7.361367] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.361409] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.361437] (serial) StderrLine: {'line': b'  171 |     \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K.stamp = rclcpp::Time::now();\n'}
+[7.361466] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.361491] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[7.361553] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11\x1b[m\x1b[K,\n'}
+[7.361930] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.361990] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:40:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.362020] (serial) StderrLine: {'line': b'   40 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K {\n'}
+[7.362045] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.362069] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:7\x1b[m\x1b[K,\n'}
+[7.362104] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/time.hpp:18\x1b[m\x1b[K,\n'}
+[7.362130] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/clock.hpp:24\x1b[m\x1b[K,\n'}
+[7.362154] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:38\x1b[m\x1b[K,\n'}
+[7.362178] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[7.362201] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[7.362328] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.362372] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.362401] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.362634] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.362709] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.362788] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.362847] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.363135] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.363298] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.363390] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.363454] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.363534] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.363650] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7\x1b[m\x1b[K,\n'}
+[7.363679] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/qos_overriding_options.hpp:28\x1b[m\x1b[K,\n'}
+[7.363705] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription_options.hpp:30\x1b[m\x1b[K,\n'}
+[7.363771] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:45\x1b[m\x1b[K,\n'}
+[7.363821] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.363848] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.363888] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.363956] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.364003] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.364030] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.364057] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.364433] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.364482] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.364524] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.364564] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.364608] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.364642] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.364671] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23\x1b[m\x1b[K,\n'}
+[7.364698] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[7.364722] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[7.364747] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[7.364775] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.364800] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.364823] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.364854] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.364913] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.364940] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.364966] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.364992] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.365015] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.365049] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.365084] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.365111] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.365136] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.365160] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.365189] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp:236\x1b[m\x1b[K,\n'}
+[7.365220] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:7\x1b[m\x1b[K,\n'}
+[7.365245] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/parameter_client.hpp:28\x1b[m\x1b[K,\n'}
+[7.365270] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[7.365296] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.365321] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.365347] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kservice_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.365382] (serial) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.365411] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.365438] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.hpp:7\x1b[m\x1b[K,\n'}
+[7.365469] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20\x1b[m\x1b[K,\n'}
+[7.365498] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.365527] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.365556] (serial) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.365581] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.365608] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:171:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.365634] (serial) StderrLine: {'line': b'  171 |     msg.stamp = rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K();\n'}
+[7.365661] (serial) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.365685] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::Gamestage]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.365710] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:189:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGameStage\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KGamestage\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.365735] (serial) StderrLine: {'line': b'  189 |     serial::msg::\x1b[01;31m\x1b[KGameStage\x1b[m\x1b[K msg;\n'}
+[7.365759] (serial) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.365781] (serial) StderrLine: {'line': b'      |                  \x1b[32m\x1b[KGamestage\x1b[m\x1b[K\n'}
+[7.365804] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.365827] (serial) StderrLine: {'line': b'  191 |     \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K.stamp = rclcpp::Time::now();\n'}
+[7.365849] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.365872] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[7.365894] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11\x1b[m\x1b[K,\n'}
+[7.365916] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.365938] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:40:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.365960] (serial) StderrLine: {'line': b'   40 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K {\n'}
+[7.365982] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.366004] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:7\x1b[m\x1b[K,\n'}
+[7.366026] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/time.hpp:18\x1b[m\x1b[K,\n'}
+[7.366049] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/clock.hpp:24\x1b[m\x1b[K,\n'}
+[7.366071] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:38\x1b[m\x1b[K,\n'}
+[7.366094] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[7.366116] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[7.366140] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.366176] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.366224] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.366253] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.366279] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.366304] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.366329] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.366353] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.366377] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.366402] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.366429] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.366454] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.366485] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7\x1b[m\x1b[K,\n'}
+[7.366515] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/qos_overriding_options.hpp:28\x1b[m\x1b[K,\n'}
+[7.366539] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription_options.hpp:30\x1b[m\x1b[K,\n'}
+[7.366563] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:45\x1b[m\x1b[K,\n'}
+[7.366587] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.366612] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.366650] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.366683] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.366709] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.366733] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.366759] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.366783] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.366806] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.366830] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.366853] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.366886] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.366914] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.366937] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23\x1b[m\x1b[K,\n'}
+[7.366962] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[7.366986] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[7.367009] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[7.367033] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.367056] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.367078] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.367101] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.367123] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.367146] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.367169] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.367192] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.367216] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.367238] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.367261] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.367284] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367308] (serial) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.367330] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.367354] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp:236\x1b[m\x1b[K,\n'}
+[7.367388] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:7\x1b[m\x1b[K,\n'}
+[7.367415] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/parameter_client.hpp:28\x1b[m\x1b[K,\n'}
+[7.367439] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[7.367462] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.367485] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.367510] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kservice_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367534] (serial) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.367559] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.367582] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.hpp:7\x1b[m\x1b[K,\n'}
+[7.367606] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20\x1b[m\x1b[K,\n'}
+[7.367631] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.367654] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kpolystar_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367687] (serial) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[7.367717] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.367747] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:191:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367772] (serial) StderrLine: {'line': b'  191 |     msg.stamp = rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K();\n'}
+[7.367795] (serial) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.367838] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::TurretFeedback]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.367878] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:202:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct serial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstamp\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367906] (serial) StderrLine: {'line': b'  202 |     msg.\x1b[01;31m\x1b[Kstamp\x1b[m\x1b[K = rclcpp::Time::now();\n'}
+[7.367930] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[7.367955] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:202:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.367983] (serial) StderrLine: {'line': b'  202 |     msg.stamp = rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K();\n'}
+[7.368007] (serial) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.368030] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::publish(serial::msg::TurretFeedback&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.368055] (serial) StderrLine: {'line': b'  215 |     \x1b[01;31m\x1b[Kpub_turret.publish(msg)\x1b[m\x1b[K;\n'}
+[7.368078] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.368101] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.368125] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.368148] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.368172] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.368195] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.368232] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.368264] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.368290] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.368315] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.368350] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.368377] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.368400] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.368424] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.368519] (serial) StderrLine: {'line': b'  227 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)\n'}
+[7.368547] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.368572] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.368603] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.368636] (serial) StderrLine: {'line': b'  215 |     \x1b[01;36m\x1b[Kpub_turret.publish(msg)\x1b[m\x1b[K;\n'}
+[7.368661] (serial) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.368687] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.368711] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.368745] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.368781] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.368807] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.368835] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.368871] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.368901] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.368926] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.368951] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.368976] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.368999] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.369022] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.369049] (serial) StderrLine: {'line': b'  268 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[7.369074] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.369098] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.369124] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/variant:36\x1b[m\x1b[K,\n'}
+[7.369149] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/protocol.hpp:14\x1b[m\x1b[K,\n'}
+[7.369173] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:11\x1b[m\x1b[K,\n'}
+[7.369197] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.369232] (serial) StderrLine: {'line': b'/usr/include/c++/11/type_traits: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<bool _Cond, class _Tp> using enable_if_t = typename std::enable_if::type [with bool _Cond = false; _Tp = void]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.369288] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:\x1b[m\x1b[K   required by substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::value), void> rclcpp::Publisher<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > >::publish<T>(const T&) [with T = serial::msg::TurretFeedback]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.369328] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:\x1b[m\x1b[K   required from here\n'}
+[7.369355] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/type_traits:2579:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, void>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.369381] (serial) StderrLine: {'line': b' 2579 |     using \x1b[01;31m\x1b[Kenable_if_t\x1b[m\x1b[K = typename enable_if<_Cond, _Tp>::type;\n'}
+[7.369407] (serial) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.369478] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.369552] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.369643] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.369723] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.369796] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.369879] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.369932] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.369959] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.369990] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.370014] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.370051] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.370077] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.370103] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370137] (serial) StderrLine: {'line': b'  298 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, PublishedTypeDeleter> msg)\n'}
+[7.370161] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.370185] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.370208] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:215:23:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::TurretFeedback_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370234] (serial) StderrLine: {'line': b'  215 |     \x1b[01;36m\x1b[Kpub_turret.publish(msg)\x1b[m\x1b[K;\n'}
+[7.370258] (serial) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.370281] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.370305] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.370328] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.370351] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.370375] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.370398] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.370421] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.370444] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.370468] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.370492] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.370515] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.370539] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.370563] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370589] (serial) StderrLine: {'line': b'  340 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[7.370612] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.370636] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.370662] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370687] (serial) StderrLine: {'line': b'  359 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const rcl_serialized_message_t & serialized_msg)\n'}
+[7.370710] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.370733] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:44:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rcl_serialized_message_t&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst rcutils_uint8_array_s&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[7.370758] (serial) StderrLine: {'line': b'  359 |   publish(\x1b[01;36m\x1b[Kconst rcl_serialized_message_t & serialized_msg\x1b[m\x1b[K)\n'}
+[7.370781] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.370804] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370828] (serial) StderrLine: {'line': b'  365 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const SerializedMessage & serialized_msg)\n'}
+[7.370851] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.370874] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::SerializedMessage&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370898] (serial) StderrLine: {'line': b'  365 |   publish(\x1b[01;36m\x1b[Kconst SerializedMessage & serialized_msg\x1b[m\x1b[K)\n'}
+[7.370921] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.370943] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) [with MessageT = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = polystar_msgs::msg::TurretFeedback_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.370970] (serial) StderrLine: {'line': b'  379 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)\n'}
+[7.370993] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.371015] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:64:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::TurretFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::LoanedMessage<polystar_msgs::msg::TurretFeedback_<std::allocator<void> >, std::allocator<void> >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371040] (serial) StderrLine: {'line': b'  379 |   publish(\x1b[01;36m\x1b[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg\x1b[m\x1b[K)\n'}
+[7.371063] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.371085] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::handleMessage(const T&) [with T = serial::msg::PositionFeedback]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.371109] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:228:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct serial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kstamp\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371133] (serial) StderrLine: {'line': b'  228 |     msg.\x1b[01;31m\x1b[Kstamp\x1b[m\x1b[K = rclcpp::Time::now();\n'}
+[7.371155] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[7.371178] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:228:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371202] (serial) StderrLine: {'line': b'  228 |     msg.stamp = rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K();\n'}
+[7.371225] (serial) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[7.371248] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > >::publish(serial::msg::PositionFeedback&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371273] (serial) StderrLine: {'line': b'  252 |     \x1b[01;31m\x1b[Kpub_position.publish(msg)\x1b[m\x1b[K;\n'}
+[7.371295] (serial) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.371318] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.371341] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.371363] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.371386] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.371407] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.371432] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.371454] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.371477] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.371500] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.371522] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.371545] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.371568] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.371593] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::ros_message_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::ros_message_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::ros_message_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371678] (serial) StderrLine: {'line': b'  227 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, ROSMessageTypeDeleter> msg)\n'}
+[7.371717] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.371745] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:227:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.371772] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.371799] (serial) StderrLine: {'line': b'  252 |     \x1b[01;36m\x1b[Kpub_position.publish(msg)\x1b[m\x1b[K;\n'}
+[7.371825] (serial) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.371851] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.371875] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.371899] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.371922] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.371946] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.371969] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.371992] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.372015] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.372038] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.372071] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.372104] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.372128] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.372157] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(rosidl_generator_traits::is_message<T>::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::ros_message_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.372201] (serial) StderrLine: {'line': b'  268 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[7.372237] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.372273] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:268:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.372307] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type>::rebind_alloc<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>, std::allocator<typename rclcpp::TypeAdapter<MessageT>::custom_type> >::value, std::default_delete<typename rclcpp::TypeAdapter<MessageT>::custom_type>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Allocator>::rebind_traits<typename rclcpp::TypeAdapter<MessageT, void, void>::custom_type>::allocator_type> >::type>) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.372349] (serial) StderrLine: {'line': b'  298 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<T, PublishedTypeDeleter> msg)\n'}
+[7.372375] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.372399] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:298:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.372425] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:252:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<T, std::default_delete<polystar_msgs::msg::PositionFeedback_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.372453] (serial) StderrLine: {'line': b'  252 |     \x1b[01;36m\x1b[Kpub_position.publish(msg)\x1b[m\x1b[K;\n'}
+[7.372477] (serial) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[7.372501] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.372525] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.372548] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.372572] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[7.372595] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.372627] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.372655] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[7.372680] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[7.372704] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.372728] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167\x1b[m\x1b[K,\n'}
+[7.372751] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:19\x1b[m\x1b[K,\n'}
+[7.372774] (serial) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.372798] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> std::enable_if_t<(typename rclcpp::TypeAdapter<MessageT>::is_specialized::value && std::is_same<T, typename rclcpp::TypeAdapter<MessageT>::custom_type>::value)> rclcpp::Publisher<MessageT, AllocatorT>::publish(const T&) [with T = T; MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.372826] (serial) StderrLine: {'line': b'  340 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const T & msg)\n'}
+[7.372850] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.372872] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:340:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.372896] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_s]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.372921] (serial) StderrLine: {'line': b'  359 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const rcl_serialized_message_t & serialized_msg)\n'}
+[7.372946] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.372969] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:359:44:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rcl_serialized_message_t&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst rcutils_uint8_array_s&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[7.372995] (serial) StderrLine: {'line': b'  359 |   publish(\x1b[01;36m\x1b[Kconst rcl_serialized_message_t & serialized_msg\x1b[m\x1b[K)\n'}
+[7.373018] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.373041] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.373065] (serial) StderrLine: {'line': b'  365 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const SerializedMessage & serialized_msg)\n'}
+[7.373088] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.373111] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:365:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::SerializedMessage&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.373134] (serial) StderrLine: {'line': b'  365 |   publish(\x1b[01;36m\x1b[Kconst SerializedMessage & serialized_msg\x1b[m\x1b[K)\n'}
+[7.373157] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.373180] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<typename rclcpp::TypeAdapter<MessageT>::ros_message_type, AllocatorT>&&) [with MessageT = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename rclcpp::TypeAdapter<MessageT>::ros_message_type = polystar_msgs::msg::PositionFeedback_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.373205] (serial) StderrLine: {'line': b'  379 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(rclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg)\n'}
+[7.373230] (serial) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.373254] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/iron/include/rclcpp/rclcpp/publisher.hpp:379:64:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::PositionFeedback\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::LoanedMessage<polystar_msgs::msg::PositionFeedback_<std::allocator<void> >, std::allocator<void> >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.373279] (serial) StderrLine: {'line': b'  379 |   publish(\x1b[01;36m\x1b[Krclcpp::LoanedMessage<ROSMessageType, AllocatorT> && loaned_msg\x1b[m\x1b[K)\n'}
+[7.373302] (serial) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.373326] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::handleSerial()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.373352] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:268:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KROS_WARN\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.373413] (serial) StderrLine: {'line': b'  268 |         \x1b[01;31m\x1b[KROS_WARN\x1b[m\x1b[K("Start frame not recognized, scanning command");\n'}
+[7.373443] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.373584] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:286:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KROS_ERROR\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.373631] (serial) StderrLine: {'line': b'  286 |         \x1b[01;31m\x1b[KROS_ERROR\x1b[m\x1b[K("Incomplete read on input payload");\n'}
+[7.373679] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.378560] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:307:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KROS_ERROR\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.378665] (serial) StderrLine: {'line': b'  307 |         \x1b[01;31m\x1b[KROS_ERROR\x1b[m\x1b[K("Unknown message type %d", message.header.cmd_id);\n'}
+[7.378752] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.378924] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K At global scope:\n'}
+[7.378966] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:312:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno declaration matches \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::IncomingMessage SerialSpinner::deseralizeMessage(const std::vector<unsigned char, std::allocator<unsigned char> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.378997] (serial) StderrLine: {'line': b'  312 | \x1b[01;31m\x1b[KSerialSpinner\x1b[m\x1b[K::deseralizeMessage(const std::vector<uint8_t>& buffer) {\n'}
+[7.379030] (serial) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.379056] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:312:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kno functions named \xe2\x80\x98\x1b[01m\x1b[Kserial::msg::IncomingMessage SerialSpinner::deseralizeMessage(const std::vector<unsigned char, std::allocator<unsigned char> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.379084] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.379109] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:28:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass SerialSpinner\x1b[m\x1b[K\xe2\x80\x99 defined here\n'}
+[7.379135] (serial) StderrLine: {'line': b'   28 | class \x1b[01;36m\x1b[KSerialSpinner\x1b[m\x1b[K : public rclcpp::Node {\n'}
+[7.379160] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.379184] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:338:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTargetConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.379209] (serial) StderrLine: {'line': b'  338 | void SerialSpinner::callbackTarget(const serial::\x1b[01;31m\x1b[KTargetConstPtr\x1b[m\x1b[K& target) {\n'}
+[7.379234] (serial) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.379262] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::callbackTarget(const int&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.379288] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:344:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.379314] (serial) StderrLine: {'line': b'  344 |     msg.pitch = target\x1b[01;31m\x1b[K->\x1b[m\x1b[Ktheta;\n'}
+[7.379337] (serial) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.379404] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:345:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.379520] (serial) StderrLine: {'line': b'  345 |     msg.yaw = target\x1b[01;31m\x1b[K->\x1b[m\x1b[Kphi;\n'}
+[7.379553] (serial) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.379581] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K At global scope:\n'}
+[7.379608] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:352:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMovementConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.379637] (serial) StderrLine: {'line': b'  352 | void SerialSpinner::callbackMovement(const serial::\x1b[01;31m\x1b[KMovementConstPtr\x1b[m\x1b[K& move) {\n'}
+[7.379662] (serial) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.379686] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::callbackMovement(const int&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.379711] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:358:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.379734] (serial) StderrLine: {'line': b'  358 |     msg.v_x = utils::toMillimeter(move\x1b[01;31m\x1b[K->\x1b[m\x1b[Kv_x);\n'}
+[7.379757] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.379781] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:359:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.379805] (serial) StderrLine: {'line': b'  359 |     msg.v_y = utils::toMillimeter(move\x1b[01;31m\x1b[K->\x1b[m\x1b[Kv_y);\n'}
+[7.379828] (serial) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.379854] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:360:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.379878] (serial) StderrLine: {'line': b'  360 |     msg.omega = utils::toAngularSpeed(move\x1b[01;31m\x1b[K->\x1b[m\x1b[Komega);\n'}
+[7.379903] (serial) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.379993] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K At global scope:\n'}
+[7.380044] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:368:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KShootConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kserial\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[7.380087] (serial) StderrLine: {'line': b'  368 | void SerialSpinner::callbackShoot(const serial::\x1b[01;31m\x1b[KShootConstPtr\x1b[m\x1b[K& shoot) {\n'}
+[7.380120] (serial) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.380156] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::callbackShoot(const int&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.380193] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:377:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[7.380229] (serial) StderrLine: {'line': b"  377 |     order.shoot_order.shoot = shoot\x1b[01;31m\x1b[K->\x1b[m\x1b[Kshoot ? '\\xFF' : '\\0';\n"}
+[7.380256] (serial) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[7.385312] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SerialSpinner::sendMessage(const serial::msg::OutgoingMessage&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.385379] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:391:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KROS_ERROR\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.385408] (serial) StderrLine: {'line': b'  391 |         \x1b[01;31m\x1b[KROS_ERROR\x1b[m\x1b[K("Could not write to serial : %s", strerror(errno));\n'}
+[7.385434] (serial) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.385460] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:\x1b[m\x1b[K At global scope:\n'}
+[7.385486] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:396:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno declaration matches \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<unsigned char, std::allocator<unsigned char> > SerialSpinner::serializeMessage(const serial::msg::OutgoingMessage&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.385512] (serial) StderrLine: {'line': b'  396 | \x1b[01;31m\x1b[KSerialSpinner\x1b[m\x1b[K::serializeMessage(const serial::msg::OutgoingMessage& message) {\n'}
+[7.385537] (serial) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.385560] (serial) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9\x1b[m\x1b[K:\n'}
+[7.385584] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:65:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate is: \xe2\x80\x98\x1b[01m\x1b[Kstatic std::vector<unsigned char, std::allocator<unsigned char> > SerialSpinner::serializeMessage(const int&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.385612] (serial) StderrLine: {'line': b'   65 |     \x1b[01;36m\x1b[KserializeMessage\x1b[m\x1b[K(const polystar_msgs::msg::OutgoingMessage& message);\n'}
+[7.385635] (serial) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.385658] (serial) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:28:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass SerialSpinner\x1b[m\x1b[K\xe2\x80\x99 defined here\n'}
+[7.385681] (serial) StderrLine: {'line': b'   28 | class \x1b[01;36m\x1b[KSerialSpinner\x1b[m\x1b[K : public rclcpp::Node {\n'}
+[7.385705] (serial) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.393459] (-) TimerEvent: {}
+[7.494078] (-) TimerEvent: {}
+[7.596800] (-) TimerEvent: {}
+[7.697628] (-) TimerEvent: {}
+[7.800505] (-) TimerEvent: {}
+[7.901399] (-) TimerEvent: {}
+[7.915834] (serial) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1\n'}
+[7.916013] (serial) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[7.991207] (serial) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1\n'}
+[7.991397] (serial) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_interface.dir/all] Error 2\n'}
+[7.991553] (serial) StderrLine: {'line': b'gmake: *** [Makefile:101: all] Error 2\n'}
+[7.992823] (serial) CommandEnded: {'returncode': 2}
+[7.993113] (serial) JobEnded: {'identifier': 'serial', 'rc': 2}
+[8.001558] (-) TimerEvent: {}
+[8.003505] (-) EventReactorShutdown: {}

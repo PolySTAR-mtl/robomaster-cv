@@ -14,7 +14,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 #include <tf2_ros/transform_listener.h>
 
-#include "serial/msg/Target.h"
+#include "polystar_msgs/msg/Target.h"
 #include "tracking/msg/Tracklets.h"
 
 #include "decision/DecisionConfig.h"
@@ -27,7 +27,7 @@ class SimpleTracker {
         sub_tracklets = nh.subscribe("tracklets", 1,
                                      &SimpleTracker::callbackTracklets, this);
 
-        pub_target = nh.advertise<serial::msg::Target>("target", 1);
+        pub_target = nh.advertise<polystar_msgs::msg::Target>("target", 1);
         std::cout << "Enemy color set to be: "
                   << (enemy_color == 0 ? "red" : "blue") << "\n";
     }
@@ -57,8 +57,8 @@ class SimpleTracker {
         }
     }
 
-    serial::msg::Target toTarget(tracking::msg::Tracklet& trk) {
-        serial::msg::Target target;
+    polystar_msgs::msg::Target toTarget(tracking::msg::Tracklet& trk) {
+        polystar_msgs::msg::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";

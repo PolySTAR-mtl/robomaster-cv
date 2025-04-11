@@ -1,0 +1,70 @@
+[0.006s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': /usr/bin/cmake /home/ozone/robomaster-cv/ros_ws/src/serial -DCMAKE_INSTALL_PREFIX=/home/ozone/robomaster-cv/ros_ws/install/serial
+[0.013s] -- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+[0.101s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.171s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[0.318s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.328s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.344s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.361s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.469s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[0.472s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[1.610s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.713s] -- Found FastRTPS: /opt/ros/iron/include  
+[5.149s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.261s] -- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+[5.283s] -- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+[5.293s] -- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+[5.663s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.728s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.800s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[5.802s] -- Found python_cmake_module: 0.10.2 (/opt/ros/iron/share/python_cmake_module/cmake)
+[6.144s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[6.144s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[6.144s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[6.144s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[6.156s] -- Found PythonExtra: .so  
+[6.208s] -- Configuring done
+[6.238s] -- Generating done
+[6.239s] -- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/serial
+[6.246s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '0': /usr/bin/cmake /home/ozone/robomaster-cv/ros_ws/src/serial -DCMAKE_INSTALL_PREFIX=/home/ozone/robomaster-cv/ros_ws/install/serial
+[6.246s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16
+[6.269s] [  0%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[6.269s] [  1%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o[0m
+[6.270s] [  2%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o[0m
+[6.273s] [  2%] Built target ament_cmake_python_copy_serial
+[6.393s] running egg_info
+[6.394s] creating serial.egg-info
+[6.394s] writing serial.egg-info/PKG-INFO
+[6.394s] writing dependency_links to serial.egg-info/dependency_links.txt
+[6.394s] writing top-level names to serial.egg-info/top_level.txt
+[6.394s] writing manifest file 'serial.egg-info/SOURCES.txt'
+[6.395s] reading manifest file 'serial.egg-info/SOURCES.txt'
+[6.395s] writing manifest file 'serial.egg-info/SOURCES.txt'
+[6.409s] [  2%] Built target ament_cmake_python_build_serial_egg
+[6.506s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[6.506s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kserial/msg/game_stage.hpp: No such file or directory
+[6.506s]    20 | #include [01;31m[K"serial/msg/game_stage.hpp"[m[K
+[6.506s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.506s] compilation terminated.
+[6.507s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13[m[K:
+[6.507s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kserial/msg/game_stage.hpp: No such file or directory
+[6.507s]    20 | #include [01;31m[K"serial/msg/game_stage.hpp"[m[K
+[6.507s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.507s] compilation terminated.
+[6.507s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1
+[6.507s] gmake[2]: *** Waiting for unfinished jobs....
+[6.507s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1
+[6.507s] gmake[1]: *** [CMakeFiles/Makefile2:623: CMakeFiles/serial_interface.dir/all] Error 2
+[6.507s] gmake[1]: *** Waiting for unfinished jobs....
+[6.532s] Traceback (most recent call last):
+[6.532s]   File "/opt/ros/iron/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 50, in <module>
+[6.532s]     sys.exit(main())
+[6.532s]   File "/opt/ros/iron/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 46, in main
+[6.532s]     generate_type_hash(args.generator_arguments_file)
+[6.532s]   File "/opt/ros/iron/lib/python3.10/site-packages/rosidl_generator_type_description/__init__.py", line 160, in generate_type_hash
+[6.532s]     pkg_dir = include_map[pkg]
+[6.532s] KeyError: 'builtin_interfaces'
+[6.542s] gmake[2]: *** [CMakeFiles/serial__rosidl_generator_type_description.dir/build.make:91: rosidl_generator_type_description/serial/msg/HP.json] Error 1
+[6.542s] gmake[1]: *** [CMakeFiles/Makefile2:217: CMakeFiles/serial__rosidl_generator_type_description.dir/all] Error 2
+[6.542s] gmake: *** [Makefile:146: all] Error 2
+[6.544s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '2': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16

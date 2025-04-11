@@ -17,14 +17,14 @@
 // ROS includes
 
 #include "rclcpp/rclcpp.hpp"
-#include "serial/msg/game_stage.hpp"
+#include "polystar_msgs/msg/game_stage.hpp"
 
-#include "serial/msg/game_status.hpp"
-#include "serial/msg/movement.hpp"
-#include "serial/msg/position_feedback.hpp"
-#include "serial/msg/shoot.hpp"
-#include "serial/msg/target.hpp"
-#include "serial/msg/turret_feedback.hpp"
+#include "polystar_msgs/msg/game_status.hpp"
+#include "polystar_msgs/msg/movement.hpp"
+#include "polystar_msgs/msg/position_feedback.hpp"
+#include "polystar_msgs/msg/shoot.hpp"
+#include "polystar_msgs/msg/target.hpp"
+#include "polystar_msgs/msg/turret_feedback.hpp"
 class SerialSpinner : public rclcpp::Node {
   public:
     /** \brief Constructor
@@ -39,17 +39,17 @@ class SerialSpinner : public rclcpp::Node {
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackTarget(const serial::TargetConstPtr&);
+    void callbackTarget(const polystar_msgs::TargetConstPtr&);
 
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackMovement(const serial::MovementConstPtr&);
+    void callbackMovement(const polystar_msgs::MovementConstPtr&);
 
     /** \fn callbackShoot
      * \brief Callback for shoot orders
      */
-    void callbackShoot(const serial::ShootConstPtr&);
+    void callbackShoot(const polystar_msgs::ShootConstPtr&);
 
     /** \fn spin
      * \brief Spins, waiting for requests and listens to the serial port
@@ -62,12 +62,12 @@ class SerialSpinner : public rclcpp::Node {
      * \brief Serialize a message to a buffer
      */
     static std::vector<uint8_t>
-    serializeMessage(const serial::msg::OutgoingMessage& message);
+    serializeMessage(const polystar_msgs::msg::OutgoingMessage& message);
 
     /** \fn deserializeMessage
      * \brief Deserialize a message from a buffer
      */
-    static serial::msg::IncomingMessage
+    static polystar_msgs::msg::IncomingMessage
     deseralizeMessage(const std::vector<uint8_t>& buffer);
 
   private:
@@ -93,13 +93,13 @@ class SerialSpinner : public rclcpp::Node {
      */
     void sendMessage(const serial::msg::OutgoingMessage& message);
 
-    rclcpp::Publisher<seria::msg::GameStatus> pub_status;
-    rclcpp::Publisher<seria::msg::GameStage> pub_stage;
-    rclcpp::Publisher<seria::msg::TurretFeedback> pub_turret;
-    rclcpp::Publisher<seria::msg::PositionFeedback> pub_position;
-    rclcpp::Subscriber<serial::msg::Target> sub_target;
-    rclcpp::Subscriber<serial::msg::Movement> sub_movement;
-    rclcpp::Subscriber<serial::msg::Target> sub_shoot;
+    rclcpp::Publisher<polystar_msgs::msg::GameStatus> pub_status;
+    rclcpp::Publisher<polystar_msgs::msg::GameStage> pub_stage;
+    rclcpp::Publisher<polystar_msgs::msg::TurretFeedback> pub_turret;
+    rclcpp::Publisher<polystar_msgs::msg::PositionFeedback> pub_position;
+    rclcpp::Subscriber<polystar_msgs::msg::Target> sub_target;
+    rclcpp::Subscriber<polystar_msgs::msg::Movement> sub_movement;
+    rclcpp::Subscriber<polystar_msgs::msg::Target> sub_shoot;
 
     int fd = -1;
     int baud_rate, length, stop_bits;

@@ -1,0 +1,19 @@
+[0.131s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16
+[0.179s] [ 66%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o[0m
+[0.179s] [ 66%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o[0m
+[0.414s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_spinner.cpp:9[m[K:
+[0.414s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kpolystar_msgs/msg/game_stage.hpp: No such file or directory
+[0.414s]    20 | #include [01;31m[K"polystar_msgs/msg/game_stage.hpp"[m[K
+[0.414s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.414s] In file included from [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/src/serial_interface.cpp:13[m[K:
+[0.414s] [01m[K/home/ozone/robomaster-cv/ros_ws/src/serial/include/serial_spinner.hpp:20:10:[m[K [01;31m[Kfatal error: [m[Kpolystar_msgs/msg/game_stage.hpp: No such file or directory
+[0.414s]    20 | #include [01;31m[K"polystar_msgs/msg/game_stage.hpp"[m[K
+[0.414s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.414s] compilation terminated.
+[0.414s] compilation terminated.
+[0.415s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:90: CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o] Error 1
+[0.415s] gmake[2]: *** Waiting for unfinished jobs....
+[0.415s] gmake[2]: *** [CMakeFiles/serial_interface.dir/build.make:76: CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o] Error 1
+[0.415s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_interface.dir/all] Error 2
+[0.415s] gmake: *** [Makefile:101: all] Error 2
+[0.417s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '2': CMAKE_PREFIX_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs LD_LIBRARY_PATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/serial -- -j16 -l16

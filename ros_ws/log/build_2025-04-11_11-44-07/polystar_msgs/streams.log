@@ -1,0 +1,351 @@
+[0.006s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
+[0.022s] -- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+[0.266s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[0.271s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[0.277s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.286s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.319s] -- Found rosidl_default_generators: 1.5.0 (/opt/ros/iron/share/rosidl_default_generators/cmake)
+[0.327s] -- Found rosidl_adapter: 4.0.1 (/opt/ros/iron/share/rosidl_adapter/cmake)
+[0.536s] -- Found ament_cmake_ros: 0.11.2 (/opt/ros/iron/share/ament_cmake_ros/cmake)
+[0.702s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.767s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.782s] -- Found python_cmake_module: 0.10.2 (/opt/ros/iron/share/python_cmake_module/cmake)
+[0.797s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.797s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.797s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.818s] -- Configuring done
+[0.866s] -- Generating done
+[0.867s] -- Build files have been written to: /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs
+[0.885s] [  1%] Built target polystar_msgs__rosidl_generator_type_description
+[0.895s] [  1%] Built target polystar_msgs__cpp
+[0.896s] [  1%] Built target ament_cmake_python_copy_polystar_msgs
+[0.897s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_generator_c[0m
+[0.907s] [ 27%] Built target polystar_msgs__rosidl_generator_c
+[0.915s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[0.915s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_fastrtps_c[0m
+[0.915s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_introspection_c[0m
+[0.917s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_introspection_cpp[0m
+[0.917s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_cpp[0m
+[0.917s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_c[0m
+[0.923s] [ 37%] Built target polystar_msgs__rosidl_typesupport_introspection_c
+[0.925s] [ 47%] Built target polystar_msgs__rosidl_typesupport_c
+[0.927s] [ 56%] Built target polystar_msgs__rosidl_typesupport_fastrtps_cpp
+[0.929s] [ 66%] Built target polystar_msgs__rosidl_typesupport_fastrtps_c
+[0.929s] [ 75%] Built target polystar_msgs__rosidl_typesupport_cpp
+[0.930s] [ 85%] Built target polystar_msgs__rosidl_typesupport_introspection_cpp
+[0.940s] [ 85%] Built target polystar_msgs
+[0.949s] [ 86%] Built target polystar_msgs__py
+[0.956s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_generator_py[0m
+[0.967s] [ 94%] Built target polystar_msgs__rosidl_generator_py
+[0.973s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_c__pyext[0m
+[0.974s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.975s] [35m[1mConsolidate compiler generated dependencies of target polystar_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[0.985s] [ 97%] Built target polystar_msgs__rosidl_typesupport_introspection_c__pyext
+[0.985s] [ 98%] Built target polystar_msgs__rosidl_typesupport_c__pyext
+[0.985s] [100%] Built target polystar_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.039s] running egg_info
+[1.039s] writing polystar_msgs.egg-info/PKG-INFO
+[1.040s] writing dependency_links to polystar_msgs.egg-info/dependency_links.txt
+[1.040s] writing top-level names to polystar_msgs.egg-info/top_level.txt
+[1.042s] reading manifest file 'polystar_msgs.egg-info/SOURCES.txt'
+[1.042s] writing manifest file 'polystar_msgs.egg-info/SOURCES.txt'
+[1.057s] [100%] Built target ament_cmake_python_build_polystar_msgs_egg
+[1.063s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs' returned '0': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
+[1.184s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs': /usr/bin/cmake --install /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs
+[1.188s] -- Install configuration: ""
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/ament_index/resource_index/rosidl_interfaces/polystar_msgs
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/HP.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/SwitchOrder.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Target.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Movement.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStatus.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStage.json
+[1.188s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/TurretFeedback.json
+[1.189s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/PositionFeedback.json
+[1.189s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Shoot.json
+[1.189s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.190s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/switch_order.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/movement.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/target.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/turret_feedback.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/position_feedback.h
+[1.191s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/shoot.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__struct.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__description.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__struct.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__type_support.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__functions.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__type_support.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__functions.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__type_support.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__struct.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__type_support.h
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__functions.c
+[1.192s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__type_support.h
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__functions.h
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__functions.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__type_support.h
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__description.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__type_support.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__description.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__functions.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__functions.h
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__type_support.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__struct.h
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__type_support.c
+[1.193s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__struct.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__type_support.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__description.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__functions.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__functions.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__functions.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__type_support.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__description.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__type_support.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__functions.c
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__functions.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__functions.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__type_support.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__type_support.h
+[1.194s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__description.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__description.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__description.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__struct.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__functions.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__functions.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__functions.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__functions.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__type_support.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__type_support.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__struct.h
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__type_support.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__description.c
+[1.195s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__functions.c
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__type_support.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/hp.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/library_path.sh
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/library_path.dsv
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_generator_c.so
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__rosidl_typesupport_fastrtps_c.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__rosidl_typesupport_fastrtps_c.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__rosidl_typesupport_fastrtps_c.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__rosidl_typesupport_fastrtps_c.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__rosidl_typesupport_fastrtps_c.h
+[1.196s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__rosidl_typesupport_fastrtps_c.h
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__rosidl_typesupport_fastrtps_c.h
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__rosidl_typesupport_fastrtps_c.h
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__rosidl_typesupport_fastrtps_c.h
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_fastrtps_c.so
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/target.hpp
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_stage.hpp
+[1.197s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/hp.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/switch_order.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/shoot.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/game_status.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/position_feedback.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/turret_feedback.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/movement.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__struct.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__builder.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__struct.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__builder.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__struct.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__builder.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__struct.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__builder.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__traits.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__builder.hpp
+[1.198s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__traits.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__builder.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__struct.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__struct.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__struct.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__builder.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__struct.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__struct.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__traits.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__builder.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__builder.hpp
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.199s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/dds_fastrtps
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__rosidl_typesupport_fastrtps_cpp.hpp
+[1.200s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__rosidl_typesupport_introspection_c.h
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__type_support.c
+[1.201s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__rosidl_typesupport_introspection_c.h
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__rosidl_typesupport_introspection_c.h
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__rosidl_typesupport_introspection_c.h
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__type_support.c
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_introspection_c.so
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_c.so
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/target__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_stage__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/game_status__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/switch_order__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/turret_feedback__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/movement__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/position_feedback__rosidl_typesupport_introspection_cpp.hpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/hp__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/include/polystar_msgs/polystar_msgs/msg/detail/shoot__type_support.cpp
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_introspection_cpp.so
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_typesupport_cpp.so
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/pythonpath.sh
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/pythonpath.dsv
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs-0.1.0-py3.10.egg-info
+[1.202s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs-0.1.0-py3.10.egg-info/PKG-INFO
+[1.202s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs-0.1.0-py3.10.egg-info/dependency_links.txt
+[1.202s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs-0.1.0-py3.10.egg-info/SOURCES.txt
+[1.202s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs-0.1.0-py3.10.egg-info/top_level.txt
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/_polystar_msgs_s.ep.rosidl_typesupport_c.c
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.202s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/__init__.py
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/_polystar_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.202s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/libpolystar_msgs__rosidl_generator_py.so
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_turret_feedback_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_game_stage.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_position_feedback_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_position_feedback.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_turret_feedback.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_hp_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_shoot.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_hp.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_target_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_switch_order_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_shoot_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/__init__.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_switch_order.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_target.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_game_status.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_movement.py
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_game_status_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_movement_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg/_game_stage_s.c
+[1.203s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/_polystar_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.220s] Listing '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs'...
+[1.220s] Compiling '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/__init__.py'...
+[1.220s] Listing '/home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/msg'...
+[1.223s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.224s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.224s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/python3.10/site-packages/polystar_msgs/polystar_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/lib/libpolystar_msgs__rosidl_generator_py.so
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/HP.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/SwitchOrder.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Target.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Movement.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStatus.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStage.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/TurretFeedback.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/PositionFeedback.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Shoot.idl
+[1.225s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/HP.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/SwitchOrder.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Target.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Movement.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStatus.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/GameStage.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/TurretFeedback.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/PositionFeedback.msg
+[1.226s] -- Up-to-date: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/msg/Shoot.msg
+[1.226s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/ament_index/resource_index/package_run_dependencies/polystar_msgs
+[1.226s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/ament_index/resource_index/parent_prefix_path/polystar_msgs
+[1.226s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/ament_prefix_path.sh
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/ament_prefix_path.dsv
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/path.sh
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/environment/path.dsv
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/local_setup.bash
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/local_setup.sh
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/local_setup.zsh
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/local_setup.dsv
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/package.dsv
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/ament_index/resource_index/packages/polystar_msgs
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_generator_cExport.cmake
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.227s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_generator_cppExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_cExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.228s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_cppExport.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_generator_pyExport.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/export_polystar_msgs__rosidl_generator_pyExport-noconfig.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/rosidl_cmake-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgsConfig.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/cmake/polystar_msgsConfig-version.cmake
+[1.229s] -- Installing: /home/ozone/robomaster-cv/ros_ws/install/polystar_msgs/share/polystar_msgs/package.xml
+[1.230s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs' returned '0': /usr/bin/cmake --install /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs

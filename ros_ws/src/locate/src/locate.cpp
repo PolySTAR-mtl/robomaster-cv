@@ -10,9 +10,9 @@
 
 #include "ros/ros.h"
 
-#include "serial/msg/PositionFeedback.h"
+#include "polystar_msgs/msg/PositionFeedback.h"
 
-void handleMessage(const serial::PositionFeedbackConstPtr& pos, IMU& imu,
+void handleMessage(const polystar_msgs::PositionFeedbackConstPtr& pos, IMU& imu,
                    Odom& odom) {
     imu.handle(pos->imu_ax, pos->imu_ay, pos->imu_az, pos->imu_rx, pos->imu_ry,
                pos->imu_rz);
@@ -27,13 +27,13 @@ int main(int argc, char** argv) {
     Odom odom{nh};
     Turret turret{nh};
 
-    auto sub_pos = nh.subscribe<serial::msg::PositionFeedback>(
-        "/serial/position", 1, [&imu, &odom](const auto& pos) -> void {
+    auto sub_pos = nh.subscribe<polystar_msgs::msg::PositionFeedback>(
+        "/polystar_msgs/position", 1, [&imu, &odom](const auto& pos) -> void {
             handleMessage(pos, imu, odom);
         });
 
     auto sub_turret =
-        nh.subscribe("/serial/turret", 1, &Turret::callbackTurret, &turret);
+        nh.subscribe("/polystar_msgs/turret", 1, &Turret::callbackTurret, &turret);
 
     ros::spin();
 
