@@ -1,3 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target serial_interface[0m
-[ 33%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_spinner.cpp.o[0m
-[ 66%] [32mBuilding CXX object CMakeFiles/serial_interface.dir/src/serial_interface.cpp.o[0m

@@ -1,2 +1,0 @@
-Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/serial': /usr/bin/cmake /home/ozone/robomaster-cv/ros_ws/src/serial -DCMAKE_INSTALL_PREFIX=/home/ozone/robomaster-cv/ros_ws/install/serial
-Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/serial' returned '1': /usr/bin/cmake /home/ozone/robomaster-cv/ros_ws/src/serial -DCMAKE_INSTALL_PREFIX=/home/ozone/robomaster-cv/ros_ws/install/serial

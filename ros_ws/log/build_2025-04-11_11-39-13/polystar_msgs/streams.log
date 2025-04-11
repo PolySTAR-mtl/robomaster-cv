@@ -1,9 +1,0 @@
-[0.005s] Invoking command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
-[0.017s] [31mCMake Error at CMakeLists.txt:19:
-[0.017s]   Parse error.  Expected a command name, got unquoted argument with text "/".
-[0.017s] 
-[0.017s] [0m
-[0.017s] -- Configuring incomplete, errors occurred!
-[0.017s] See also "/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs/CMakeFiles/CMakeOutput.log".
-[0.017s] gmake: *** [Makefile:2975: cmake_check_build_system] Error 1
-[0.019s] Invoked command in '/home/ozone/robomaster-cv/ros_ws/build/polystar_msgs' returned '2': /usr/bin/cmake --build /home/ozone/robomaster-cv/ros_ws/build/polystar_msgs -- -j16 -l16
