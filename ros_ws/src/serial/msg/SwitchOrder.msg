@@ -10,5 +10,5 @@ uint8 ORDER_LEFT=3
 
 # Message
 
-Time stamp
+builtin_interfaces/Time stamp
 uint8 order

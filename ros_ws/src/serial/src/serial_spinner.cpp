@@ -9,16 +9,6 @@
 #include "serial_spinner.hpp"
 #include "protocol.hpp"
 
-// Std includes
-
-// ROS includes
-
-#include "serial/msg/GameStage.h"
-#include "serial/msg/GameStatus.h"
-#include "serial/msg/PositionFeedback.h"
-#include "serial/msg/Shoot.h"
-#include "serial/msg/TurretFeedback.h"
-
 // OS includes
 
 #include <errno.h>
@@ -49,11 +39,10 @@ constexpr int16_t toAngularSpeed(float omega) {
 }
 } // namespace utils
 
-SerialSpinner::SerialSpinner(ros::NodeHandle& n, const std::string& device,
-                             int _baud, int _len, int _stop, bool _parity,
-                             double _freq)
-    : nh(n), baud_rate(_baud), length(_len), stop_bits(_stop), parity(_parity),
-      frequency(_freq) {
+SerialSpinner::SerialSpinner(const std::string& device, int _baud, int _len,
+                             int _stop, bool _parity, double _freq)
+    : Node("serial"), nh(n), baud_rate(_baud), length(_len), stop_bits(_stop),
+      parity(_parity), frequency(_freq) {
     initSerial(device);
 
     pub_status = nh.advertise<serial::msg::GameStatus>("gamestatus", 1);
@@ -215,17 +204,14 @@ void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
     msg.pitch = utils::fromAngularSpeed(turret_feedback.pitch);
     msg.yaw = utils::fromAngularSpeed(turret_feedback.yaw);
 
-
-
-    if(msg.pitch < 0) {
-	    msg.pitch += 15.27;
+    if (msg.pitch < 0) {
+        msg.pitch += 15.27;
     }
 
-    if(msg.yaw < 0) {
-	    msg.yaw += 15.27;
+    if (msg.yaw < 0) {
+        msg.yaw += 15.27;
     }
 
-    
     pub_turret.publish(msg);
 }
 

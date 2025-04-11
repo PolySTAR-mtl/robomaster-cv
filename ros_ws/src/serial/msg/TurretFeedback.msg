@@ -1,7 +1,7 @@
 # TurretFeedback.msg
 ## Turret positional feedback, in radians
 
-Time stamp
+builtin_interfaces/Time stamp
 
 float32 pitch
 float32 yaw

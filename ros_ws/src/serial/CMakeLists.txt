@@ -16,7 +16,6 @@ find_package(rosidl_default_generators REQUIRED)
 ## Generate messages in the 'msg' folder
 rosidl_generate_interfaces(${PROJECT_NAME}
   msg/HP.msg
-  msg/Rune.msg
   msg/SwitchOrder.msg
   msg/Target.msg
   msg/Movement.msg
@@ -39,27 +38,14 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 
-add_library(serial_spinner 
-  src/serial_spinner.cpp
-)
-
-target_include_directories(serial_spinner PRIVATE
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  ${ament_INCLUDE_DIRS}
-)
-
-target_link_libraries(serial_spinner PRIVATE
-  rclcpp::rclcpp
-  ${std_msgs_TARGETS}
-)
-
 add_executable(serial_interface
+  src/serial_spinner.cpp
   src/serial_interface.cpp
 )
 
 target_include_directories(serial_interface PRIVATE
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  ${ament_INCLUDE_DIRS}
+  ${serial_INCLUDE_DIRS}
 )
 
 target_link_libraries(serial_interface PRIVATE
@@ -95,5 +81,3 @@ target_link_libraries(serial_interface PRIVATE
 # TODO: FIX TESTS
 
 ament_export_dependencies(rosidl_default_runtime)
-
-ament_package()

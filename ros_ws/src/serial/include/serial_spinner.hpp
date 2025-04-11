@@ -16,19 +16,21 @@
 
 // ROS includes
 
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
+#include "serial/msg/game_stage.hpp"
 
-#include "serial/msg/Movement.h"
-#include "serial/msg/Shoot.h"
-#include "serial/msg/Target.h"
-
-class SerialSpinner {
+#include "serial/msg/game_status.hpp"
+#include "serial/msg/movement.hpp"
+#include "serial/msg/position_feedback.hpp"
+#include "serial/msg/shoot.hpp"
+#include "serial/msg/target.hpp"
+#include "serial/msg/turret_feedback.hpp"
+class SerialSpinner : public rclcpp::Node {
   public:
     /** \brief Constructor
      */
-    SerialSpinner(ros::NodeHandle& nh, const std::string& device, int baud_rate,
-                  int length, int stop_bits, bool parity,
-                  double frequency = 500.);
+    SerialSpinner(const std::string& device, int baud_rate, int length,
+                  int stop_bits, bool parity, double frequency = 500.);
 
     /** \brief Destructor
      */
@@ -91,9 +93,13 @@ class SerialSpinner {
      */
     void sendMessage(const serial::msg::OutgoingMessage& message);
 
-    ros::NodeHandle& nh;
-    ros::Publisher pub_status, pub_stage, pub_turret, pub_position;
-    ros::Subscriber sub_target, sub_movement, sub_shoot;
+    rclcpp::Publisher<seria::msg::GameStatus> pub_status;
+    rclcpp::Publisher<seria::msg::GameStage> pub_stage;
+    rclcpp::Publisher<seria::msg::TurretFeedback> pub_turret;
+    rclcpp::Publisher<seria::msg::PositionFeedback> pub_position;
+    rclcpp::Subscriber<serial::msg::Target> sub_target;
+    rclcpp::Subscriber<serial::msg::Movement> sub_movement;
+    rclcpp::Subscriber<serial::msg::Target> sub_shoot;
 
     int fd = -1;
     int baud_rate, length, stop_bits;

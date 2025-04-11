@@ -112,50 +112,50 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 if(DEEPSTREAM)
 
-add_executable(deepstream_detection
-  src/deepstream_node.cpp
-  src/deepstream_detector.cpp
-)
+  add_executable(deepstream_detection
+    src/deepstream_node.cpp
+    src/deepstream_detector.cpp
+  )
 
-target_include_directories(deepstream_detection PRIVATE
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  ${Deepstream_INCLUDE_DIRS}
-  ${ament_INCLUDE_DIRS}
-  ${Darknet_INCLUDE_DIRS}
-)
+  target_include_directories(deepstream_detection PRIVATE
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    ${Deepstream_INCLUDE_DIRS}
+    ${ament_INCLUDE_DIRS}
+    ${Darknet_INCLUDE_DIRS}
+  )
 
-target_link_libraries(deepstream_detection PRIVATE
-  rclcpp::rclcpp
-  ${detection_TARGETS}
-  ${sensor_msgs_TARGETS}
-  deepstream-runner
-)
+  target_link_libraries(deepstream_detection PRIVATE
+    rclcpp::rclcpp
+    ${detection_TARGETS}
+    ${sensor_msgs_TARGETS}
+    deepstream-runner
+  )
 
-add_dependencies(deepstream_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
+  add_dependencies(deepstream_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
 else()
 
-add_executable(detection
-  src/detection_node.cpp
-  src/detector.cpp
-)
+  add_executable(darknet_detection
+    src/detection_node.cpp
+    src/detector.cpp
+  )
 
-target_include_directories(detection PRIVATE
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  ${Deepstream_INCLUDE_DIRS}
-  ${ament_INCLUDE_DIRS}
-  ${Darknet_INCLUDE_DIRS}
-)
+  target_include_directories(darknet_detection PRIVATE
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    ${Deepstream_INCLUDE_DIRS}
+    ${ament_INCLUDE_DIRS}
+    ${Darknet_INCLUDE_DIRS}
+  )
 
-target_link_libraries(detection PRIVATE
-  rclcpp::rclcpp
-  ${detection_TARGETS}
-  ${sensor_msgs_TARGETS}
-  cv_bridge::cv_bridge
-  ${Darknet_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-)
+  target_link_libraries(darknet_detection PRIVATE
+    rclcpp::rclcpp
+    ${detection_TARGETS}
+    ${sensor_msgs_TARGETS}
+    cv_bridge::cv_bridge
+    ${Darknet_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+  )
 
-add_dependencies(detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
+  #add_dependencies(darknet_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
 endif()
 
 #############
