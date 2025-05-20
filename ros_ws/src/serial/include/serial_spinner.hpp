@@ -16,8 +16,8 @@
 
 // ROS includes
 
-#include "rclcpp/rclcpp.hpp"
 #include "polystar_msgs/msg/game_stage.hpp"
+#include "rclcpp/rclcpp.hpp"
 
 #include "polystar_msgs/msg/game_status.hpp"
 #include "polystar_msgs/msg/movement.hpp"
@@ -39,17 +39,17 @@ class SerialSpinner : public rclcpp::Node {
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackTarget(const polystar_msgs::TargetConstPtr&);
+    void callbackTarget(polystar_msgs::Target::UniquePtr);
 
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackMovement(const polystar_msgs::MovementConstPtr&);
+    void callbackMovement(polystar_msgs::Movement::UniquePtr);
 
     /** \fn callbackShoot
      * \brief Callback for shoot orders
      */
-    void callbackShoot(const polystar_msgs::ShootConstPtr&);
+    void callbackShoot(polystar_msgs::Shoot::UniquePtr);
 
     /** \fn spin
      * \brief Spins, waiting for requests and listens to the serial port
@@ -91,15 +91,15 @@ class SerialSpinner : public rclcpp::Node {
     /** \fn sendMessage
      * \brief Send an outgoing message
      */
-    void sendMessage(const serial::msg::OutgoingMessage& message);
+    void sendMessage(const polystar_msgs::msg::OutgoingMessage& message);
 
     rclcpp::Publisher<polystar_msgs::msg::GameStatus> pub_status;
     rclcpp::Publisher<polystar_msgs::msg::GameStage> pub_stage;
     rclcpp::Publisher<polystar_msgs::msg::TurretFeedback> pub_turret;
     rclcpp::Publisher<polystar_msgs::msg::PositionFeedback> pub_position;
-    rclcpp::Subscriber<polystar_msgs::msg::Target> sub_target;
-    rclcpp::Subscriber<polystar_msgs::msg::Movement> sub_movement;
-    rclcpp::Subscriber<polystar_msgs::msg::Target> sub_shoot;
+    rclcpp::Subscription<polystar_msgs::msg::Target> sub_target;
+    rclcpp::Subscription<polystar_msgs::msg::Movement> sub_movement;
+    rclcpp::Subscription<polystar_msgs::msg::Target> sub_shoot;
 
     int fd = -1;
     int baud_rate, length, stop_bits;
