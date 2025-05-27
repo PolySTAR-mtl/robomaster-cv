@@ -25,12 +25,12 @@
 #include "polystar_msgs/msg/shoot.hpp"
 #include "polystar_msgs/msg/target.hpp"
 #include "polystar_msgs/msg/turret_feedback.hpp"
+
 class SerialSpinner : public rclcpp::Node {
   public:
     /** \brief Constructor
      */
-    SerialSpinner(const std::string& device, int baud_rate, int length,
-                  int stop_bits, bool parity, double frequency = 500.);
+    SerialSpinner(double frequency = 500.);
 
     /** \brief Destructor
      */
@@ -39,17 +39,17 @@ class SerialSpinner : public rclcpp::Node {
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackTarget(polystar_msgs::Target::UniquePtr);
+    void callbackTarget(const polystar_msgs::msg::Target::SharedPtr);
 
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackMovement(polystar_msgs::Movement::UniquePtr);
+    void callbackMovement(const polystar_msgs::msg::Movement::SharedPtr);
 
     /** \fn callbackShoot
      * \brief Callback for shoot orders
      */
-    void callbackShoot(polystar_msgs::Shoot::UniquePtr);
+    void callbackShoot(const polystar_msgs::msg::Shoot::SharedPtr);
 
     /** \fn spin
      * \brief Spins, waiting for requests and listens to the serial port
@@ -62,12 +62,12 @@ class SerialSpinner : public rclcpp::Node {
      * \brief Serialize a message to a buffer
      */
     static std::vector<uint8_t>
-    serializeMessage(const polystar_msgs::msg::OutgoingMessage& message);
+    serializeMessage(const serial::msg::OutgoingMessage& message);
 
     /** \fn deserializeMessage
      * \brief Deserialize a message from a buffer
      */
-    static polystar_msgs::msg::IncomingMessage
+    static serial::msg::IncomingMessage
     deseralizeMessage(const std::vector<uint8_t>& buffer);
 
   private:
@@ -91,15 +91,16 @@ class SerialSpinner : public rclcpp::Node {
     /** \fn sendMessage
      * \brief Send an outgoing message
      */
-    void sendMessage(const polystar_msgs::msg::OutgoingMessage& message);
+    void sendMessage(const serial::msg::OutgoingMessage& message);
 
-    rclcpp::Publisher<polystar_msgs::msg::GameStatus> pub_status;
-    rclcpp::Publisher<polystar_msgs::msg::GameStage> pub_stage;
-    rclcpp::Publisher<polystar_msgs::msg::TurretFeedback> pub_turret;
-    rclcpp::Publisher<polystar_msgs::msg::PositionFeedback> pub_position;
-    rclcpp::Subscription<polystar_msgs::msg::Target> sub_target;
-    rclcpp::Subscription<polystar_msgs::msg::Movement> sub_movement;
-    rclcpp::Subscription<polystar_msgs::msg::Target> sub_shoot;
+    rclcpp::Publisher<polystar_msgs::msg::GameStatus>::SharedPtr pub_status;
+    rclcpp::Publisher<polystar_msgs::msg::GameStage>::SharedPtr pub_stage;
+    rclcpp::Publisher<polystar_msgs::msg::TurretFeedback>::SharedPtr pub_turret;
+    rclcpp::Publisher<polystar_msgs::msg::PositionFeedback>::SharedPtr
+        pub_position;
+    rclcpp::Subscription<polystar_msgs::msg::Target>::SharedPtr sub_target;
+    rclcpp::Subscription<polystar_msgs::msg::Movement>::SharedPtr sub_movement;
+    rclcpp::Subscription<polystar_msgs::msg::Shoot>::SharedPtr sub_shoot;
 
     int fd = -1;
     int baud_rate, length, stop_bits;

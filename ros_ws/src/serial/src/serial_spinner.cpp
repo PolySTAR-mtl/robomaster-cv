@@ -39,10 +39,18 @@ constexpr int16_t toAngularSpeed(float omega) {
 }
 } // namespace utils
 
-SerialSpinner::SerialSpinner(const std::string& device, int _baud, int _len,
-                             int _stop, bool _parity, double _freq)
-    : Node("serial"), baud_rate(_baud), length(_len), stop_bits(_stop),
-      parity(_parity), frequency(_freq) {
+SerialSpinner::SerialSpinner(double _freq) : Node("serial"), frequency(_freq) {
+
+    // Serial setup
+    auto device = get_parameter("device").as_string();
+    baud_rate = get_parameter("baud").as_int();
+    length = get_parameter("length").as_int();
+    stop_bits = get_parameter("stop").as_bool();
+    parity = get_parameter("parity").as_bool();
+
+    // Misc. parameters
+    encoder_resolution = get_parameter("/robot/encoder_resolution").as_int();
+
     initSerial(device);
 
     pub_status =
@@ -53,14 +61,23 @@ SerialSpinner::SerialSpinner(const std::string& device, int _baud, int _len,
     pub_position =
         create_publisher<polystar_msgs::msg::PositionFeedback>("position", 1);
 
-    sub_target =
-        create_subscription("target", 1, &SerialSpinner::callbackTarget, this);
-    sub_movement = create_subscription("movement", 1,
-                                       &SerialSpinner::callbackMovement, this);
-    sub_shoot =
-        create_subscription("shoot", 1, &SerialSpinner::callbackShoot, this);
+    sub_target = create_subscription<polystar_msgs::msg::Target>(
+        "target", 1, [this](const polystar_msgs::msg::Target::SharedPtr msg) {
+            callbackTarget(msg);
+        });
 
-    encoder_resolution = nh.param<int>("/robot/encoder_resolution", 8192u);
+    sub_movement = create_subscription<polystar_msgs::msg::Movement>(
+        "movement", 1,
+        [this](const polystar_msgs::msg::Movement::SharedPtr msg) {
+            callbackMovement(msg);
+        });
+
+    sub_shoot = create_subscription<polystar_msgs::msg::Shoot>(
+        "shoot", 1, [this](const polystar_msgs::msg::Shoot::SharedPtr msg) {
+            callbackShoot(msg);
+        });
+
+    encoder_resolution = get_parameter("/robot/encoder_resolution").as_int();
 }
 
 SerialSpinner::~SerialSpinner() {
@@ -339,8 +356,9 @@ SerialSpinner::deseralizeMessage(const std::vector<uint8_t>& buffer) {
     return message;
 }
 
-void SerialSpinner::callbackTarget(const serial::TargetConstPtr& target) {
-    using namespace polystar_msgs::msg;
+void SerialSpinner::callbackTarget(
+    const polystar_msgs::msg::Target::SharedPtr) {
+    using namespace serial::msg;
     OutgoingMessage order{.target_order = {}};
 
     TargetOrder& msg = order.target_order;
@@ -353,8 +371,9 @@ void SerialSpinner::callbackTarget(const serial::TargetConstPtr& target) {
     sendMessage(order);
 }
 
-void SerialSpinner::callbackMovement(const serial::MovementConstPtr& move) {
-    using namespace polystar_msgs::msg;
+void SerialSpinner::callbackMovement(
+    const polystar_msgs::msg::Movement::SharedPtr move) {
+    using namespace serial::msg;
     OutgoingMessage order{.move_order = {}};
 
     Move& msg = order.move_order;
@@ -369,8 +388,9 @@ void SerialSpinner::callbackMovement(const serial::MovementConstPtr& move) {
     sendMessage(order);
 }
 
-void SerialSpinner::callbackShoot(const serial::ShootConstPtr& shoot) {
-    using namespace polystar_msgs::msg;
+void SerialSpinner::callbackShoot(
+    const polystar_msgs::msg::Shoot::SharedPtr shoot) {
+    using namespace serial::msg;
 
     if (!shooting_enabled) {
         return;
