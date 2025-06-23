@@ -6,23 +6,23 @@
 
 #pragma once
 
-#include "ros/ros.h"
+#include "rclcpp/rclcpp.hpp"
 
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_ros/transform_broadcaster.h>
 
-#include "geometry_msgs/QuaternionStamped.h"
-#include "polystar_msgs/msg/TurretFeedback.h"
+#include "geometry_msgs/msg/quaternion_stamped.hpp"
+#include "polystar_msgs/msg/turret_feedback.hpp"
 
-class Turret {
+class Turret : public rclcpp::Node {
   public:
-    Turret(ros::NodeHandle& n)
-        : nh(n), turret_height(nh.param("/robot/turret/height", 0.5)) {}
+    Turret() : Node("turret"), pub_pos(this) {
+      this->get_parameter("robot.turret.heigh", turret_height);
+    } 
 
-    void callbackTurret(const polystar_msgs::TurretFeedbackPtr& turret);
+    void callbackTurret(const std::shared_ptr<const polystar_msgs::msg::TurretFeedback>& turret);
 
   private:
-    ros::NodeHandle nh;
     tf2_ros::TransformBroadcaster pub_pos;
 
     float turret_height;

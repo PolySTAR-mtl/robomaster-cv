@@ -6,23 +6,20 @@
 
 #pragma once
 
-#include "ros/ros.h"
+#include "rclcpp/rclcpp.hpp"
 
-#include "sensor_msgs/Imu.h"
+#include "sensor_msgs/msg/imu.hpp"
 
-class IMU {
+class IMU : public rclcpp::Node {
   public:
-    IMU(ros::NodeHandle& n) : nh(n) {
-        pub_msg = nh.advertise<sensor_msgs::msg::Imu>("imu", 1);
+    IMU() : Node("imu") {
+        pub_msg = create_publisher<sensor_msgs::msg::Imu>("imu", 1);
     }
 
     void handle(float ax, float ay, float az, float rx, float ry, float rz);
 
   private:
-    ros::NodeHandle& nh;
-    ros::Publisher pub_msg;
-
-    uint32_t seq = 0u;
+    rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr pub_msg;
 
     constexpr static const auto frame_id = "imu";
 };

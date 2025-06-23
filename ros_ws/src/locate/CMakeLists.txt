@@ -9,6 +9,7 @@ find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(polystar_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 
@@ -22,6 +23,7 @@ ament_export_dependencies(
   nav_msgs
   sensor_msgs
   polystar_msgs
+  geometry_msgs
   tf2
   tf2_ros
 )
@@ -42,13 +44,17 @@ target_include_directories(locate PRIVATE
   ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(locate PRIVATE
-  rclcpp:rclcpp
-  ${nav_msgs_TARGETS}
-  ${sensor_msgs_TARGETS}
-  ${polystar_msgs_TARGETS}
-  tf2::tf2
-  tf2_ros::tf2_ros
+ament_target_dependencies(locate
+  rclcpp
+  nav_msgs
+  sensor_msgs
+  polystar_msgs
+  geometry_msgs
+  tf2
+  tf2_ros
+)
+
+target_link_libraries(locate
   Eigen3::Eigen
 )
 
