@@ -127,6 +127,12 @@ if(DEEPSTREAM)
     ${sensor_msgs_TARGETS}
     deepstream-runner
   )
+  
+  ament_target_dependencies(deepstream_detection
+    rclcpp
+    polystar_msgs
+    sensor_msgs
+  )
 
   add_dependencies(deepstream_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
 else()

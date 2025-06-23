@@ -60,10 +60,10 @@ void deepstreamCallback(void* appCtx_v, void* batch_meta_v) {
 }
 }
 
-DeepstreamDetector::DeepstreamDetector(ros::NodeHandle& n,
-                                       const std::string& deepstream_config)
-    : nh(n) {
-    pub_detections = nh.advertise<detection::msg::Detections>("detections", 1);
+DeepstreamDetector::DeepstreamDetector() {
+    pub_detections = create_publisher<polystar_msgs::msg::Detections>()
+
+    auto deepstream_config = get_parameter("net.deepstream").as_string("detections", 1);
 
     setupNet(deepstream_config);
 }
@@ -81,6 +81,6 @@ void DeepstreamDetector::run() {
     deepstream_app_main(fake_argc, fake_argv.data());
 }
 
-void DeepstreamDetector::callback(detection::msg::Detections& dets) {
-    pub_detections.publish(dets);
+void DeepstreamDetector::callback(polystar_msgs::msg::Detections& dets) {
+    pub_detections->publish(dets);
 }
