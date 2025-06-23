@@ -16,7 +16,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/TurretFeedback.msg
   msg/PositionFeedback.msg
   msg/Shoot.msg
-  DEPENDENCIES builtin_interfaces
+  msg/Detection.msg
+  msg/Detections.msg
+  DEPENDENCIES builtin_interfaces std_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
