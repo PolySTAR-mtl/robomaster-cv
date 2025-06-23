@@ -102,6 +102,8 @@ class SerialSpinner : public rclcpp::Node {
     rclcpp::Subscription<polystar_msgs::msg::Movement>::SharedPtr sub_movement;
     rclcpp::Subscription<polystar_msgs::msg::Shoot>::SharedPtr sub_shoot;
 
+    rclcpp::TimerBase::SharedPtr timer;
+
     int fd = -1;
     int baud_rate, length, stop_bits;
     bool parity;

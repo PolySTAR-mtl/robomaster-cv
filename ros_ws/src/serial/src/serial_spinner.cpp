@@ -16,6 +16,8 @@
 #include <termios.h>
 #include <unistd.h>
 
+#include <chrono>
+
 namespace utils {
 
 constexpr float fromMillimeter(int16_t mm_s) {
@@ -78,6 +80,8 @@ SerialSpinner::SerialSpinner(double _freq) : Node("serial"), frequency(_freq) {
         });
 
     encoder_resolution = get_parameter("/robot/encoder_resolution").as_int();
+
+    timer = create_timer(std::chrono::microseconds(static_cast<unsigned>(1000000.f / _freq)), [this](){handleSerial();});
 }
 
 SerialSpinner::~SerialSpinner() {
@@ -173,23 +177,12 @@ void SerialSpinner::initSerial(const std::string& device) {
     }
 }
 
-void SerialSpinner::spin() {
-    rclcpp::Rate rate(frequency);
-
-    while (ros::ok()) {
-        handleSerial();
-
-        rate.sleep();
-        ros::spinOnce();
-    }
-}
-
 template <>
-void SerialSpinner::handleMessage<polystar_msgs::msg::Status>(
-    const polystar_msgs::msg::Status& status) {
+void SerialSpinner::handleMessage<serial::msg::Status>(
+    const serial::msg::Status& status) {
     polystar_msgs::msg::GameStatus msg;
 
-    msg.stamp = rclcpp::Time::now();
+    msg.stamp = now();
     msg.robot_type = status.robot_type;
 
     msg.red_std_hp = status.red_std_hp;
@@ -201,26 +194,26 @@ void SerialSpinner::handleMessage<polystar_msgs::msg::Status>(
 
     msg.mode = status.mode;
 
-    pub_status.publish(msg);
+    pub_status->publish(msg);
 }
 
 template <>
-void SerialSpinner::handleMessage<polystar_msgs::msg::Gamestage>(
-    const polystar_msgs::msg::Gamestage& gamestage) {
+void SerialSpinner::handleMessage<serial::msg::Gamestage>(
+    const serial::msg::Gamestage& gamestage) {
     polystar_msgs::msg::GameStage msg;
 
-    msg.stamp = rclcpp::Time::now();
+    msg.stamp = now();
     msg.gamestage = gamestage.gamestage;
 
-    pub_stage.publish(msg);
+    pub_stage->publish(msg);
 }
 
 template <>
-void SerialSpinner::handleMessage<polystar_msgs::msg::TurretFeedback>(
-    const polystar_msgs::msg::TurretFeedback& turret_feedback) {
+void SerialSpinner::handleMessage<serial::msg::TurretFeedback>(
+    const serial::msg::TurretFeedback& turret_feedback) {
     polystar_msgs::msg::TurretFeedback msg;
 
-    msg.stamp = rclcpp::Time::now();
+    msg.stamp = now();
 
     msg.pitch = utils::fromAngularSpeed(turret_feedback.pitch);
     msg.yaw = utils::fromAngularSpeed(turret_feedback.yaw);
@@ -233,12 +226,12 @@ void SerialSpinner::handleMessage<polystar_msgs::msg::TurretFeedback>(
         msg.yaw += 15.27;
     }
 
-    pub_turret.publish(msg);
+    pub_turret->publish(msg);
 }
 
 template <>
-void SerialSpinner::handleMessage<polystar_msgs::msg::PositionFeedback>(
-    const polystar_msgs::msg::PositionFeedback& position_feedback) {
+void SerialSpinner::handleMessage<serial::msg::PositionFeedback>(
+    const serial::msg::PositionFeedback& position_feedback) {
     polystar_msgs::msg::PositionFeedback msg;
 
     auto unwrap = [this](uint16_t enc, int16_t revolutions) {
@@ -246,7 +239,7 @@ void SerialSpinner::handleMessage<polystar_msgs::msg::PositionFeedback>(
                static_cast<int64_t>(revolutions) * encoder_resolution;
     };
 
-    msg.stamp = rclcpp::Time::now();
+    msg.stamp = now();
 
     msg.imu_ax = position_feedback.imu_ax;
     msg.imu_ay = position_feedback.imu_ay;
@@ -270,13 +263,13 @@ void SerialSpinner::handleMessage<polystar_msgs::msg::PositionFeedback>(
     msg.v_enc_3 = position_feedback.v_enc_3;
     msg.v_enc_4 = position_feedback.v_enc_4;
 
-    pub_position.publish(msg);
+    pub_position->publish(msg);
 }
 
 void SerialSpinner::handleSerial() {
     int bytes;
 
-    polystar_msgs::msg::IncomingMessage message{serial::None()};
+    serial::msg::IncomingMessage message{serial::None()};
 
     // Attempt to read a command
     bytes = read(fd, &message, serial::HEADER_SIZE);
@@ -286,8 +279,8 @@ void SerialSpinner::handleSerial() {
     }
 
     while (message.header.start_byte != serial::START_FRAME) {
-        ROS_WARN("Start frame not recognized, scanning command");
-        polystar_msgs::msg::IncomingMessage rotated_message{serial::None()};
+        RCLCPP_WARN(get_logger(), "Start frame not recognized, scanning command");
+        serial::msg::IncomingMessage rotated_message{serial::None()};
 
         memcpy(&rotated_message, reinterpret_cast<uint8_t*>(&message) + 1,
                serial::HEADER_SIZE);
@@ -304,13 +297,13 @@ void SerialSpinner::handleSerial() {
         reinterpret_cast<uint8_t*>(&message) + serial::HEADER_SIZE;
     bytes = read(fd, payload, message.header.data_len);
     if (bytes < message.header.data_len) {
-        ROS_ERROR("Incomplete read on input payload");
+        RCLCPP_ERROR(get_logger(), "Incomplete read on input payload");
         return;
     }
 
     // Could use a std::visit-type method here, but this will do for now.
 
-    using namespace polystar_msgs::msg;
+    using namespace serial::msg;
     switch (message.header.cmd_id) {
     case Status::ID:
         handleMessage(message.status);
@@ -325,13 +318,13 @@ void SerialSpinner::handleSerial() {
         handleMessage(message.position_feedback);
         break;
     default:
-        ROS_ERROR("Unknown message type %d", message.header.cmd_id);
+        RCLCPP_ERROR(get_logger(), "Unknown message type %d", message.header.cmd_id);
     }
 }
 
-polystar_msgs::msg::IncomingMessage
+serial::msg::IncomingMessage
 SerialSpinner::deseralizeMessage(const std::vector<uint8_t>& buffer) {
-    polystar_msgs::msg::IncomingMessage message{serial::Header<serial::None>()};
+    serial::msg::IncomingMessage message{serial::Header<serial::None>()};
 
     if (buffer.size() < serial::HEADER_SIZE) {
         throw std::runtime_error("Incomplete header");
@@ -357,7 +350,7 @@ SerialSpinner::deseralizeMessage(const std::vector<uint8_t>& buffer) {
 }
 
 void SerialSpinner::callbackTarget(
-    const polystar_msgs::msg::Target::SharedPtr) {
+    const polystar_msgs::msg::Target::SharedPtr target) {
     using namespace serial::msg;
     OutgoingMessage order{.target_order = {}};
 
@@ -406,19 +399,19 @@ void SerialSpinner::callbackShoot(
 }
 
 void SerialSpinner::sendMessage(
-    const polystar_msgs::msg::OutgoingMessage& message) {
+    const serial::msg::OutgoingMessage& message) {
     auto msg_size = message.header.size();
 
     const uint8_t* ptr = reinterpret_cast<const uint8_t*>(&message);
 
     int bytes = write(fd, ptr, message.header.size());
     if (bytes != msg_size) {
-        ROS_ERROR("Could not write to serial : %s", strerror(errno));
+        RCLCPP_ERROR(get_logger(), "Could not write to serial : %s", strerror(errno));
     }
 }
 
 std::vector<uint8_t> SerialSpinner::serializeMessage(
-    const polystar_msgs::msg::OutgoingMessage& message) {
+    const serial::msg::OutgoingMessage& message) {
     auto msg_size = message.header.size();
 
     std::vector<uint8_t> vec(msg_size, 0u);
