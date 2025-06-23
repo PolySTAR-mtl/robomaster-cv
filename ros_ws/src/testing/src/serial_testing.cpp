@@ -37,10 +37,7 @@ int main(int argc, char** argv) {
     constexpr uint16_t dist = 100u;
     float freq, increment;
 
-    node->declare_parameter<float>("freq", 10.0f);
     node->get_parameter("freq", freq);
-
-    node->declare_parameter<float>("increment", 0.05f);
     node->get_parameter("increment", increment);
 
     auto pub = node->create_publisher<polystar_msgs::msg::Target>("target", 1);
