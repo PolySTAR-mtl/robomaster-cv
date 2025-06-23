@@ -56,14 +56,15 @@ struct Detector::impl {
     network net;
 };
 
-Detector::Detector(const std::string& datacfg,
-                   const std::string& config_path,
-                   const std::string& weights_path)
-    : Node("detection"), p(std::make_unique<impl>()) {
+Detector::Detector() : Node("detection"), p(std::make_unique<impl>()) {
+    auto datacfg = get_parameter("net.datacfg").as_string();
+    auto config_path = get_parameter("net.config_path").as_string();
+    auto weights_path = get_parameter("net.weights").as_string();
+
     setupNet(datacfg, config_path, weights_path);
 
     pub_detections_ = create_publisher<polystar_msgs::msg::Detections>("detections", 1);
-    
+
     sub_img_ = create_subscription<sensor_msgs::msg::Image>(
         "image_in", 1, [this](const std::shared_ptr<const sensor_msgs::msg::Image>& msg){
         imageCallback(msg);

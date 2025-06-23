@@ -20,8 +20,8 @@ class Detector : public rclcpp::Node {
     /**
      * \brief Main constructor. Loads the weights
      */
-    Detector(const std::string& datacfg, const std::string& config_path, 
-             const std::string& weights_path);
+    Detector();
+
     /** \brief Destructor
      */
     ~Detector();
