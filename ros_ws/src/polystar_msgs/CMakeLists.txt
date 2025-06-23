@@ -18,6 +18,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/Shoot.msg
   msg/Detection.msg
   msg/Detections.msg
+  msg/Tracklet.msg
+  msg/Tracklets.msg
   DEPENDENCIES builtin_interfaces std_msgs
 )
 
