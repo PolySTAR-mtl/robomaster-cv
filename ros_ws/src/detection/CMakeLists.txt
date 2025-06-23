@@ -9,9 +9,13 @@ find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
 find_package(cv_bridge REQUIRED)
+find_package(polystar_msgs REQUIRED)
 find_package(OpenCV)
+
+ament_export_dependencies(
+  polystar_msgs
+)
 
 if(DARKNET_CMAKE_PATH)
   set(CMAKE_CUDA_ARCHITECTURES 72)
@@ -92,13 +96,6 @@ endif()
 
 ## ----- Messages ----- ##
 
-## Generate messages in the 'msg' folder
-rosidl_generate_interfaces(${PROJECT_NAME}
-  msg/Detection.msg
-  msg/Detections.msg
-  DEPENDENCIES std_msgs
-)
-
 ###################################
 ## ament specific configuration ##
 ###################################
@@ -146,13 +143,15 @@ else()
     ${Darknet_INCLUDE_DIRS}
   )
 
-  target_link_libraries(darknet_detection PRIVATE
-    rclcpp::rclcpp
-    ${detection_TARGETS}
-    ${sensor_msgs_TARGETS}
-    cv_bridge::cv_bridge
+  ament_target_dependencies(darknet_detection
+    rclcpp
+    polystar_msgs
+    sensor_msgs
+    cv_bridge
+  )
+
+  target_link_libraries(darknet_detection
     ${Darknet_LIBRARIES}
-    ${OpenCV_LIBRARIES}
   )
 
   #add_dependencies(darknet_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})

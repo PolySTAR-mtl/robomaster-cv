@@ -9,25 +9,28 @@
 #include "detector.hpp"
 
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "detector");
-    ros::NodeHandle nh("~");
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<rclcpp::Node>("detection");
 
     std::string datacfg, config_path, weights_path;
-    if (!nh.getParam("net/datacfg", datacfg)) {
+    
+    if (!node->get_parameter("datacfg", datacfg)) {
         throw std::runtime_error("Network datacfg path not specified");
     }
 
-    if (!nh.getParam("net/config_path", config_path)) {
+    if (!node->get_parameter("config_path", config_path)) {
         throw std::runtime_error("Network config path not specified");
     }
 
-    if (!nh.getParam("net/weights", weights_path)) {
+    if (!node->get_parameter("c", weights_path)) {
         throw std::runtime_error("Network weights path not specified");
     }
 
-    Detector detector(nh, datacfg, config_path, weights_path);
+    auto detector = std::make_shared<Detector>(datacfg, config_path, weights_path);
 
-    ros::spin();
+    rclcpp::spin(detector);
+    rclcpp::shutdown();
 
     return 0;
 }

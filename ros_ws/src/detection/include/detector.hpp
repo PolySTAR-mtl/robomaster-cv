@@ -9,25 +9,27 @@
 
 // ROS includes
 
-#include <ros/ros.h>
-#include <sensor_msgs/Image.h>
+#include "rclcpp/rclcpp.hpp"
+#include "polystar_msgs/msg/detections.hpp"
+#include "sensor_msgs/msg/image.hpp"
 
 /** \class Detector
  */
-class Detector {
+class Detector : public rclcpp::Node {
   public:
-    /** ctor
+    /**
      * \brief Main constructor. Loads the weights
      */
-    Detector(ros::NodeHandle& nh, const std::string& datacfg,
-             const std::string& config_path, const std::string& weights_path);
-
+    Detector(const std::string& datacfg, const std::string& config_path, 
+             const std::string& weights_path);
+    /** \brief Destructor
+     */
     ~Detector();
 
     /** \fn imageCallback
      * \brief Callback for incoming images (from camera)
      */
-    void imageCallback(const sensor_msgs::msg::ImagePtr& img);
+    void imageCallback(const std::shared_ptr<const sensor_msgs::msg::Image>& img);
 
   private:
     void setupNet(const std::string& datacfg, const std::string& config_path,
@@ -35,10 +37,8 @@ class Detector {
 
     void loadLabels();
 
-    ros::NodeHandle& nh;
-
-    ros::Subscriber sub_img;
-    ros::Publisher pub_detections;
+    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr sub_img_;
+    rclcpp::Publisher<polystar_msgs::msg::Detections>::SharedPtr pub_detections_;
 
     /** PIml idiom
      * \brief Not a fan of PImpl, but in this case it prevents Darknet from
