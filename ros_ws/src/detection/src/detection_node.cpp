@@ -15,15 +15,15 @@ int main(int argc, char** argv) {
 
     std::string datacfg, config_path, weights_path;
     
-    if (!node->get_parameter("datacfg", datacfg)) {
+    if (!node->get_parameter("net.datacfg", datacfg)) {
         throw std::runtime_error("Network datacfg path not specified");
     }
 
-    if (!node->get_parameter("config_path", config_path)) {
+    if (!node->get_parameter("net.config_path", config_path)) {
         throw std::runtime_error("Network config path not specified");
     }
 
-    if (!node->get_parameter("c", weights_path)) {
+    if (!node->get_parameter("net.weights", weights_path)) {
         throw std::runtime_error("Network weights path not specified");
     }
 

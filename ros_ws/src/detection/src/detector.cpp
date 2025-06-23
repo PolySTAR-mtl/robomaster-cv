@@ -95,7 +95,7 @@ void Detector::setupNet(const std::string& datacfg,
 
 void Detector::loadLabels() {
     std::string path;
-    if (!this->get_parameter("labels", path)) {
+    if (!this->get_parameter("net.labels", path)) {
         return;
     }
 
