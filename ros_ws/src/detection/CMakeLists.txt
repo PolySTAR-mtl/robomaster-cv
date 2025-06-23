@@ -13,6 +13,10 @@ find_package(cv_bridge REQUIRED)
 find_package(polystar_msgs REQUIRED)
 find_package(OpenCV)
 
+###################################
+## ament specific configuration ##
+###################################
+
 ament_export_dependencies(
   polystar_msgs
 )

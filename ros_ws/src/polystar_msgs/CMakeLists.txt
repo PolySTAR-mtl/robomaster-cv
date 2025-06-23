@@ -5,6 +5,14 @@ find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 
+###################################
+## ament specific configuration ##
+###################################
+
+ament_export_dependencies(
+  rosidl_default_runtime
+)
+
 ## Generate messages in the 'msg' folder
 rosidl_generate_interfaces(${PROJECT_NAME}
   msg/HP.msg
@@ -22,7 +30,5 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/Tracklets.msg
   DEPENDENCIES builtin_interfaces std_msgs
 )
-
-ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()

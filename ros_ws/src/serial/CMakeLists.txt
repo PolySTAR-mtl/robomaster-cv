@@ -43,6 +43,7 @@ ament_target_dependencies(serial_interface
   polystar_msgs
 )
 
+ament_package()
 
 #############
 ## Testing ##
