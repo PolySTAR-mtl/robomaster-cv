@@ -35,7 +35,12 @@ target_include_directories(serial_testing PRIVATE
    ${ament_INCLUDE_DIRS}
 )
 
-target_link_libraries(serial_testing PRIVATE
+ament_target_dependencies(serial_testing
+  rclcpp
+  polystar_msgs
+)
+
+target_link_libraries(serial_testing
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
