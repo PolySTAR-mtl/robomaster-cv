@@ -6,7 +6,7 @@
 
 #include "turret.hpp"
 
-void Turret::callbackTurret(const polystar_msgs::TurretFeedbackPtr& turret) {
+void Turret::callbackTurret(const std::shared_ptr<const polystar_msgs::msg::TurretFeedback>& turret) {
     geometry_msgs::msg::TransformStamped tf;
 
     tf.header.stamp = turret->stamp;
