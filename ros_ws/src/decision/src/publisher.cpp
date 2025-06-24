@@ -1,12 +1,12 @@
 #include "rclcpp/rclcpp.hpp"
-#include "tracking/msg/tracklets.hpp"
+#include "polystar_msgs/msg/tracklets.hpp"
 
 #include <sstream>
 #include <string_view>
 
-tracking::msg::Tracklet createTracklet(std::string_view id, float x, float y, float w, 
+polystar_msgs::msg::Tracklet createTracklet(std::string_view id, float x, float y, float w, 
                     float h, std::uint8_t clss, float score){
-    tracking::msg::Tracklet trk;
+    polystar_msgs::msg::Tracklet trk;
     trk.id = id;
     trk.x = x;
     trk.y = y;
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
   
   auto node = std::make_shared<rclcpp::Node>("tracking_publisher");
   
-  auto publisher = node->create_publisher<tracking::msg::Tracklets>("tracklets", 10);
+  auto publisher = node->create_publisher<polystar_msgs::msg::Tracklets>("tracklets", 10);
 
   rclcpp::Rate loop_rate(1);
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     auto container1 = createTracklet("Std", 0, 0, 100, 100, static_cast<std::uint8_t>(4), 0);
     auto container2 = createTracklet("Hero", 900, 900, 100, 100, static_cast<std::uint8_t>(5), 0);
 
-    auto message = std::make_unique<tracking::msg::Tracklets>();
+    auto message = std::make_unique<polystar_msgs::msg::Tracklets>();
     message->tracklets.push_back(contained1);
     message->tracklets.push_back(contained2);
     message->tracklets.push_back(contained3);

@@ -11,36 +11,30 @@
 
 // ROS 2 includes
 #include <rclcpp/rclcpp.hpp>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
-#include <tf2_ros/transform_listener.h>
 #include <tf2_ros/buffer.h>
 
-#include "polystar_msgs/msg/Target.h"
-#include "tracking/msg/Tracklets.h"
+#include <tf2_ros/transform_listener.h>
 
-#include "decision/DecisionConfig.h"
-#include <dynamic_reconfigure/server.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+
+#include "polystar_msgs/msg/target.hpp"
+#include "polystar_msgs/msg/tracklets.hpp"
+
 
 class SimpleTracker : public rclcpp::Node {
   public:
-    SimpleTracker(int _enemy_color)
-        : Node("simple_tracker"), enemy_color(_enemy_color), tBuffer(std::make_shared<tf2_ros::Buffer>(this->get_clock())), tListener(tBuffer) {
-        
-        // Declare parameters using constructor value as default
-        this->declare_parameter("enemy_color", _enemy_color);
-        this->declare_parameter("trim_x", center_x);
-        this->declare_parameter("trim_y", center_y);
-        
+    SimpleTracker()
+        : Node("simple_tracker"), tBuffer(std::make_shared<tf2_ros::Buffer>(this->get_clock())), tListener(*tBuffer) {
         // Set initial values from parameters
-        enemy_color = this->get_parameter("enemy_color").as_int();
-        center_x = this->get_parameter("trim_x").as_double();
-        center_y = this->get_parameter("trim_y").as_double();
+        enemy_color = get_parameter("enemy_color").as_int();
+        center_x = get_parameter("trim_x").as_double();
+        center_y = get_parameter("trim_y").as_double();
 
         // Create parameter callback
         param_callback_handle = this->add_on_set_parameters_callback(
             std::bind(&SimpleTracker::parametersCallback, this, std::placeholders::_1));
 
-        sub_tracklets = this->create_subscription<tracking::msg::Tracklets>(
+        sub_tracklets = this->create_subscription<polystar_msgs::msg::Tracklets>(
             "tracklets", 1,
             std::bind(&SimpleTracker::callbackTracklets, this, std::placeholders::_1));
 
@@ -50,7 +44,7 @@ class SimpleTracker : public rclcpp::Node {
                     (enemy_color == 0 ? "red" : "blue"));
     }
 
-    void callbackTracklets(const tracking::msg::Tracklets::SharedPtr trks) {
+    void callbackTracklets(const polystar_msgs::msg::Tracklets::SharedPtr trks) {
         auto distance = [](auto d1, auto d2) {
             return std::sqrt(std::pow(d1.x - d2.x, 2) +
                              std::pow(d1.y - d2.y, 2));
@@ -75,7 +69,7 @@ class SimpleTracker : public rclcpp::Node {
         }
     }
 
-    polystar_msgs::msg::Target toTarget(const tracking::msg::Tracklet& trk) {
+    polystar_msgs::msg::Target toTarget(const polystar_msgs::msg::Tracklet& trk) {
         polystar_msgs::msg::Target target;
 
         RCLCPP_DEBUG(this->get_logger(), "Det : %f ( %f ) %f ( %f )", 
@@ -144,12 +138,12 @@ class SimpleTracker : public rclcpp::Node {
     }
 
   private:
-    rclcpp::Subscription<tracking::msg::Tracklets>::SharedPtr sub_tracklets;
+    rclcpp::Subscription<polystar_msgs::msg::Tracklets>::SharedPtr sub_tracklets;
     rclcpp::Publisher<polystar_msgs::msg::Target>::SharedPtr pub_target;
     OnSetParametersCallbackHandle::SharedPtr param_callback_handle;
     int enemy_color;
 
-    tracking::msg::Tracklet last_trk;
+    polystar_msgs::msg::Tracklet last_trk;
 
     float center_x = 416.f / 2.f;
     float center_y = 416.f / 2.f;
@@ -165,10 +159,7 @@ class SimpleTracker : public rclcpp::Node {
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
     
-    auto node = std::make_shared<SimpleTracker>(0); // Default to red enemy
-    
-    // TODO: Replace dynamic reconfigure with ROS 2 parameters
-    // For now, we'll use the default values
+    auto node = std::make_shared<SimpleTracker>(); // Default to red enemy
     
     rclcpp::spin(node);
     rclcpp::shutdown();

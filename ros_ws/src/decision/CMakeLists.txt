@@ -10,15 +10,10 @@ find_package(detection REQUIRED)
 find_package(polystar_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(tracking REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(dynamic_reconfigure REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
-
-generate_dynamic_reconfigure_options(
-  cfg/decision.cfg
-)
 
 ###################################
 ## ament specific configuration ##
@@ -27,10 +22,8 @@ generate_dynamic_reconfigure_options(
 ament_export_dependencies(
   detection
   polystar_msgs
-  tracking
   tf2
   tf2_ros
-  dynamic_reconfigure
 )
 
 ###########
@@ -51,15 +44,16 @@ target_link_libraries(simple_tracker PRIVATE
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
-  ${tracking_TARGETS}
   ${polystar_msgs_TARGETS}
   tf2::tf2
   tf2_ros::tf2_ros
-  dynamic_reconfigure::dynamic_reconfigure
+  tf2_geometry_msgs::tf2_geometry_msgs
+  ${OpenCV_LIBRARIES}
 )
 
-# dyn_reconf dependencies
-add_dependencies(simple_tracker ${PROJECT_NAME}_gencfg)
+target_include_directories(simple_tracker PRIVATE
+  ${ament_INCLUDE_DIRS}
+)
 
 # Weighted tracker
 
@@ -72,7 +66,6 @@ add_executable(weighted_tracker
 target_include_directories(weighted_tracker PRIVATE
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
   ${ament_INCLUDE_DIRS}
-  #${OpenCV_INCLUDE_DIRS}
   /usr/include/opencv4
 )
 
@@ -80,11 +73,11 @@ target_link_libraries(weighted_tracker PRIVATE
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
-  ${tracking_TARGETS}
   ${polystar_msgs_TARGETS}
   tf2::tf2
   tf2_ros::tf2_ros
-  OpenCV::OpenCV
+  tf2_geometry_msgs::tf2_geometry_msgs
+  ${OpenCV_LIBRARIES}
 )
 
 # Publisher 
@@ -93,11 +86,18 @@ add_executable(publisher
   src/publisher.cpp
 )
 
+target_include_directories(publisher PRIVATE
+  ${ament_INCLUDE_DIRS}
+)
+
 target_link_libraries(publisher PRIVATE
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
-  ${tracking_TARGETS}
+  ${polystar_msgs_TARGETS}
+  tf2::tf2
+  tf2_ros::tf2_ros
+  tf2_geometry_msgs::tf2_geometry_msgs
 )
 #############
 ## Testing ##
