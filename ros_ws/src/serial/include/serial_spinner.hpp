@@ -16,9 +16,9 @@
 
 // ROS includes
 
-#include "polystar_msgs/msg/game_stage.hpp"
 #include "rclcpp/rclcpp.hpp"
 
+#include "polystar_msgs/msg/game_stage.hpp"
 #include "polystar_msgs/msg/game_status.hpp"
 #include "polystar_msgs/msg/movement.hpp"
 #include "polystar_msgs/msg/position_feedback.hpp"
