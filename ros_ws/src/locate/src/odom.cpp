@@ -9,22 +9,22 @@
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
 
-boost::array<double, 36> unknown_covariance;
+std::array<double, 36> unknown_covariance;
 
 double toRadiants(int64_t enc, int64_t resolution) {
     return static_cast<double>(enc) * 2 * M_PI /
            static_cast<double>(resolution);
 }
 
-Odom::Odom(ros::NodeHandle& n) : nh(n) {
-    pub_pos = nh.advertise<nav_msgs::Odometry>("odom", 1);
-    pub_speed = nh.advertise<nav_msgs::Odometry>("odom_speed", 1);
+Odom::Odom() : Node("odom") {
+    pub_pos = this->create_publisher<nav_msgs::msg::Odometry>("odom", 1);
+    pub_speed = this->create_publisher<nav_msgs::msg::Odometry>("odom_speed", 1);
 
-    wheel_radius = nh.param("/robot/wheel_radius", 0.08);
-    length_x = nh.param("/robot/l_x", 1.);
-    length_y = nh.param("/robot/l_y", 1.);
-    encoder_resolution = nh.param<int>("/robot/encoder_resolution", 8192u);
-
+    this->get_parameter("robot.wheel_radius", wheel_radius);
+    this->get_parameter("robot.l_x", length_x);
+    this->get_parameter("robot.l_y", length_y);
+    this->get_parameter("robot.encoder_resolution", encoder_resolution);
+    
     unknown_covariance.fill(-1.);
 }
 
@@ -38,11 +38,10 @@ void Odom::handlePos(int64_t enc1, int64_t enc2, int64_t enc3, int64_t enc4) {
     auto robot_pose = cinematic(enc);
 
     // Generate Odom message
-    nav_msgs::Odometry odom;
+    nav_msgs::msg::Odometry odom;
 
-    odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom";
-    odom.header.stamp = ros::Time::now();
+    odom.header.stamp = this->now();
 
     odom.child_frame_id = "base_link";
 
@@ -62,7 +61,7 @@ void Odom::handlePos(int64_t enc1, int64_t enc2, int64_t enc3, int64_t enc4) {
 
     odom.twist.covariance = unknown_covariance;
 
-    pub_pos.publish(odom);
+    pub_pos->publish(odom);
 
     last_enc = enc;
 }
@@ -100,11 +99,10 @@ void Odom::handleSpeed(float v1, float v2, float v3, float v4) {
     auto robot_speed = cinematic(speed);
 
     // Generate Odom message
-    nav_msgs::Odometry odom;
+    nav_msgs::msg::Odometry odom;
 
-    odom.header.seq = seq_odom++;
     odom.header.frame_id = "odom_speed";
-    odom.header.stamp = ros::Time::now();
+    odom.header.stamp = this->now();
 
     odom.child_frame_id = "odom_speed";
 

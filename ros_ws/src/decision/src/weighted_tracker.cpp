@@ -11,8 +11,10 @@
 
 // ROS includes
 
-#include <ros/ros.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include "rclcpp/rclcpp.hpp"
+#include <tf2_ros/buffer.h>
+
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_ros/transform_listener.h>
 
 // OpenCV Includes
@@ -23,46 +25,40 @@
 // Project includes
 
 #include "tracker.h"
-#include "serial/Target.h"
+#include "polystar_msgs/msg/target.h"
 #include "bounding_box.h"
 
 int16_t radToMillirad(float rad) { return static_cast<int16_t>(rad * 1000); }
 
-class WeightedTracker : Tracker {
+class WeightedTracker : public Tracker {
 
   public:
-    WeightedTracker(ros::NodeHandle& n, int _enemy_color)
-        : Tracker(n, _enemy_color), tListener(tBuffer) {
+    WeightedTracker()
+        : Tracker(), tBuffer(std::make_shared<tf2_ros::Buffer>(this->get_clock())), tListener(*tBuffer) {
 
 
         // Init weights
-        BoundingBox::weightBase = nh.param("weights/base", 20.f);
-        BoundingBox::weightStandard = nh.param("weights/std", 40.f);
-        BoundingBox::weightHero = nh.param("weights/hro", 100.f);
-        BoundingBox::weightSentry = nh.param("weights/sty", 30.f);
-        BoundingBox::weightSize = nh.param("weights/size", 0.01);
-        BoundingBox::weightDist = nh.param("weights/dist", 1.f);
+        BoundingBox::weightBase = get_parameter("weights/base").as_double();
+        BoundingBox::weightStandard = get_parameter("weights/std").as_double();
+        BoundingBox::weightHero = get_parameter("weights/hro").as_double();
+        BoundingBox::weightSentry = get_parameter("weights/sty").as_double();
+        BoundingBox::weightSize = get_parameter("weights/size").as_double();
+        BoundingBox::weightDist = get_parameter("weights/dist").as_double();
 
         // Init camera matrix and distortion coefficients
-        bool cam_param = true;
-        cam_param &= nh.getParam("/camera/camera_matrix/data", camera_matrix);
-        cam_param &= nh.getParam("/camera/distortion_coefficients/data",
-                                 distorsion_coeffs);
-        cam_param &= nh.getParam("/camera/image_width", im_w);
-        cam_param &= nh.getParam("/camera/image_height", im_h);
+        
+        camera_matrix = get_parameter("/camera/camera_matrix/data").as_double_array();
+        distorsion_coeffs = get_parameter("/camera/distortion_coefficients/data").as_double_array();
+        im_w = get_parameter("/camera/image_width").as_int();
+        im_h = get_parameter("/camera/image_height").as_int();
 
-        if (!cam_param) {
-            throw std::runtime_error("WeightedTracker::WeightedTracker() : "
-                                     "Could not fetch camera parameters");
-        }
-
-        focal_length = nh.param("focal_length", 3.04e-3f);
-        pixel_size = nh.param("pixel_size", 1.2e-6f);
+        focal_length = get_parameter("focal_length").as_double();
+        pixel_size = get_parameter("pixel_size").as_double();
 
         initMap();
     }
 
-    void callbackTracklets(const tracking::TrackletsConstPtr& trks) override {
+    void callbackTracklets(const polystar_msgs::msg::Tracklets::SharedPtr trks) override {
         BoundingBox basic;
         BoundingBox* best_target = &basic;
 
@@ -137,7 +133,7 @@ class WeightedTracker : Tracker {
         }
         
         // Publish the best tracklet
-        tracking::Tracklet target;
+        polystar_msgs::msg::Tracklet target;
         target.id = best_target->id;
         target.x = best_target->x;
         target.y = best_target->y;
@@ -149,12 +145,12 @@ class WeightedTracker : Tracker {
         std::cout << "\nPublished Tracklet. \n" << "id: " << target.id << 
         " x: "<< target.x << " y: "<< target.y << " w: "<< target.w << " h: "<< 
         target.h << " class: "<< static_cast<int>(target.clss) << " score: "<< target.score << "\n";
-        pub_target.publish(toTarget(target));
+        pub_target->publish(toTarget(target));
         
     };
 
-    serial::Target toTarget(tracking::Tracklet& trk) override {
-        serial::Target target;
+    polystar_msgs::msg::Target toTarget(polystar_msgs::msg::Tracklet& trk) override {
+        polystar_msgs::msg::Target target;
 
         std::cout << "Det : " << trk.x << " ( " << trk.w << " ) " << trk.y
                   << " ( " << trk.h << " )\n";
@@ -181,7 +177,7 @@ class WeightedTracker : Tracker {
                        std::atan(y.at<float>(0)));
 
         auto transformTurret =
-            tBuffer.lookupTransform("base_link", "turret", ros::Time(0));
+            tBuffer->lookupTransform("base_link", "turret", rclcpp::Time(0));
         tf2::convert(transformTurret.transform.rotation, qTurret);
 
         //qTarget *= qTurret;
@@ -204,7 +200,7 @@ class WeightedTracker : Tracker {
         target.phi = phi;
         target.dist = 2000u; // 2 m
         target.located = true;
-        target.stamp = ros::Time::now();
+        target.stamp = now();
 
         return target;
     }
@@ -229,11 +225,11 @@ class WeightedTracker : Tracker {
     }
 
   private:
-    tf2_ros::Buffer tBuffer;
+    std::shared_ptr<tf2_ros::Buffer> tBuffer;
     tf2_ros::TransformListener tListener;
 
-    std::vector<float> camera_matrix;
-    std::vector<float> distorsion_coeffs;
+    std::vector<double> camera_matrix;
+    std::vector<double> distorsion_coeffs;
 
     cv::Mat new_c, mat1, mat2, im_center;
 
@@ -242,21 +238,12 @@ class WeightedTracker : Tracker {
 };
 
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "decision");
-    ros::NodeHandle nh("~");
+    rclcpp::init(argc, argv);
 
-    int enemy_color;
-
-    if (!nh.getParam("enemy_color", enemy_color)) {
-        throw std::runtime_error("Enemy color not specified");
-    }
-    if (enemy_color != 0 and enemy_color != 1) {
-        throw std::runtime_error("Enemy color should be 0 (red) or 1 (blue)");
-    }
-
-    WeightedTracker tracker(nh, enemy_color);
-
-    ros::spin();
+    auto tracker = std::make_shared<WeightedTracker>();
+    
+    rclcpp::spin(tracker);
+    rclcpp::shutdown();
 }
 
 float BoundingBox::weightBase;

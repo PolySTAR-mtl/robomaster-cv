@@ -10,11 +10,11 @@
 
 // ROS includes
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 // Local includes
 
-#include "serial/Target.h"
+#include "polystar_msgs/msg/target.hpp"
 
 constexpr uint16_t rewrap_pi_millirad(uint16_t angle) {
     uint16_t circle_millirad = 2 * M_PI * 1000;
@@ -29,23 +29,24 @@ constexpr uint16_t rewrap_pi_millirad(uint16_t angle) {
  * frequency
  */
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "serial_testing");
-    ros::NodeHandle nh("serial_testing");
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<rclcpp::Node>("serial_testing");
 
     constexpr float amplitude = M_PI / 3.f;
     constexpr uint16_t dist = 100u;
     float freq, increment;
 
-    nh.param("freq", freq, 10.f);
-    nh.param("increment", increment, .05f);
+    node->get_parameter("freq", freq);
+    node->get_parameter("increment", increment);
 
-    auto pub = nh.advertise<serial::Target>("target", 1);
+    auto pub = node->create_publisher<polystar_msgs::msg::Target>("target", 1);
 
-    ros::Rate rate(freq);
+    rclcpp::Rate rate(freq);
 
-    while (ros::ok()) {
+    while (rclcpp::ok()) {
         for (float alpha = 0.f; alpha < 2 * M_PI; alpha += increment) {
-            serial::Target msg;
+            polystar_msgs::msg::Target msg;
 
             int16_t theta = std::floor(std::sin(alpha) * amplitude * 1000.f);
             int16_t phi = std::floor(std::cos(alpha) * amplitude * 1000.f);
@@ -55,10 +56,10 @@ int main(int argc, char** argv) {
             msg.phi = phi;
             msg.dist = dist;
 
-            pub.publish(msg);
+            pub->publish(msg);
 
             rate.sleep();
-            ros::spinOnce();
+            rclcpp::spin_some(node);
         }
     }
 }

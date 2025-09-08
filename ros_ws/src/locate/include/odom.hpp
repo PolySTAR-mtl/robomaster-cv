@@ -6,15 +6,15 @@
 
 #pragma once
 
-#include "ros/ros.h"
+#include "rclcpp/rclcpp.hpp"
 
 #include "Eigen/Core"
 
-#include "nav_msgs/Odometry.h"
+#include "nav_msgs/msg/odometry.hpp"
 
-class Odom {
+class Odom : public rclcpp::Node {
   public:
-    Odom(ros::NodeHandle& n);
+    Odom();
 
     /** \fn handlePos
      * \brief Handle a position message by derivating speed, applying the
@@ -38,17 +38,14 @@ class Odom {
     Eigen::Vector3d integrate(Eigen::Vector3d& robot_speed, double dt);
 
   private:
-    ros::NodeHandle nh;
-    ros::Publisher pub_pos, pub_speed;
-
-    nav_msgs::Odometry last_estimation;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pub_pos;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pub_speed;
+  
+    nav_msgs::msg::Odometry last_estimation;
 
     double wheel_radius;
     double length_x, length_y;
     int64_t encoder_resolution;
 
     Eigen::Vector4d last_enc;
-
-    uint32_t seq_odom = 0u;
-    uint32_t seq_speed = 0u;
 };

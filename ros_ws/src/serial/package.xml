@@ -1,19 +1,25 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>serial</name>
   <version>0.1.0</version>
   <description>Serial interface to the Control and Systems team board A</description>
 
-  <maintainer email="sebastien.darche@polymtl.ca">Sébastien Darche</maintainer>
+  <maintainer email="thomas.petrie@etud.polymtl.ca">Sébastien Darche</maintainer>
 
   <license>MIT</license>
 
   <author email="sebastien.darche@polymtl.ca">Sébastien Darche</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>message_generation</build_depend>
-  <test_depend>rosunit</test_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
-  <export></export>
+  <build_depend>polystar_msgs</build_depend>
+  <exec_depend>polystar_msgs</exec_depend>
+  
+  <test_depend>rosunit</test_depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

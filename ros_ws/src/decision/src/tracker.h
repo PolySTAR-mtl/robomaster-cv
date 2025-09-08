@@ -1,23 +1,27 @@
 #pragma once
-#include <ros/ros.h>
-#include "serial/Target.h"
-#include "tracking/Tracklets.h"
+#include "rclcpp/rclcpp.hpp"
+#include "polystar_msgs/msg/target.hpp"
+#include "polystar_msgs/msg/tracklets.hpp"
 
-class Tracker {
-    public: 
-    Tracker(ros::NodeHandle& n, int _enemy_color);
+class Tracker : public rclcpp::Node {
+  public: 
+    Tracker();
 
-    virtual serial::Target toTarget(tracking::Tracklet& trk) = 0;
-    virtual void callbackTracklets(const tracking::TrackletsConstPtr& trks) = 0;
+    virtual polystar_msgs::msg::Target toTarget(polystar_msgs::msg::Tracklet& trk) = 0;
+    virtual void callbackTracklets(const polystar_msgs::msg::Tracklets::SharedPtr trks) = 0;
 
-    protected:    
-    ros::Subscriber sub_tracklets;
-    ros::Publisher pub_target;
-    ros::NodeHandle& nh;
+
+    rcl_interfaces::msg::SetParametersResult parametersCallback(
+        const std::vector<rclcpp::Parameter>& parameters);
+
+  protected:    
+    rclcpp::Subscription<polystar_msgs::msg::Tracklets>::SharedPtr sub_tracklets;
+    rclcpp::Publisher<polystar_msgs::msg::Target>::SharedPtr pub_target;
+    OnSetParametersCallbackHandle::SharedPtr param_callback_handle;
 
     int enemy_color;
     
-    tracking::Tracklet last_trk;
+    polystar_msgs::msg::Tracklet last_trk;
 
     int im_w = 416/2;
     int im_h = 416/2;

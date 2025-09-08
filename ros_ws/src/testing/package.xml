@@ -4,20 +4,25 @@
   <version>0.1.0</version>
   <description>Dummy nodes to test interfaces</description>
 
-  <maintainer email="sebastien.darche@polymtl.ca">Sébastien Darche</maintainer>
+  <maintainer email="thomas.petrie@etud.polymtl.ca">Sébastien Darche</maintainer>
 
   <license>MIT</license>
 
   <author email="sebastien.darche@polymtl.ca">Sébastien Darche</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
-  <build_depend>serial</build_depend>
-  <build_depend>detection</build_depend>
-  <build_export_depend>serial</build_export_depend>
-  <exec_depend>serial</exec_depend>
-  <exec_depend>detection</exec_depend>
+  <depend>polystar_msgs</depend>
+  <depend>rclcpp</depend>
 
-  <export></export>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

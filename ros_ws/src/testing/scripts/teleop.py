@@ -11,7 +11,7 @@
 
 import rospy
 
-from serial.msg import Movement
+from polystar_msgs.msg import Movement
 
 import sys
 import select
@@ -49,7 +49,7 @@ def get_key():
 
 def main():
     rospy.init_node("teleop")
-    pub = rospy.Publisher('/serial/movement', Movement, queue_size=1)
+    pub = rospy.Publisher('/polystar_msgs/movement', Movement, queue_size=1)
 
     order = np.array([0., 0., 0.])
 

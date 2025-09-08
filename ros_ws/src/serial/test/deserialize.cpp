@@ -28,7 +28,7 @@ TEST(Deserialize, Status) {
                                    0,    0,    0,  0, 0, 0, 0, 0};
     auto msg = SerialSpinner::deseralizeMessage(buffer);
 
-    EXPECT_EQ(msg.status.cmd_id, serial::msg::Status::ID);
+    EXPECT_EQ(msg.status.cmd_id, serial::Status::ID);
     EXPECT_EQ(msg.status.robot_type, 0u);
     EXPECT_EQ(msg.status.red_std_hp, 0u);
     EXPECT_EQ(msg.status.red_hro_hp, 0u);
@@ -42,7 +42,7 @@ TEST(Deserialize, Status) {
                                     0,    0,    0,  0,    0, 0, 0, 0xFF};
     auto msg2 = SerialSpinner::deseralizeMessage(buffer2);
 
-    EXPECT_EQ(msg2.status.cmd_id, serial::msg::Status::ID);
+    EXPECT_EQ(msg2.status.cmd_id, serial::Status::ID);
     EXPECT_EQ(msg2.status.robot_type, 0xFF);
     EXPECT_EQ(msg2.status.red_std_hp, 0u);
     EXPECT_EQ(msg2.status.red_hro_hp, 0u);

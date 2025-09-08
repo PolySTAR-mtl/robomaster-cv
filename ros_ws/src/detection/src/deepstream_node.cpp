@@ -9,17 +9,12 @@
 #include "deepstream_detector.hpp"
 
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "detector");
-    ros::NodeHandle nh("~");
+    rclcpp::init(argc, argv);
 
-    std::string deepstream_conf;
-    if (!nh.getParam("net/deepstream", deepstream_conf)) {
-        throw std::runtime_error("Deepstream configuration path not specified");
-    }
+    auto detector = std::make_shared<DeepstreamDetector>();
 
-    DeepstreamDetector detector(nh, deepstream_conf);
-
-    detector.run();
+    rclcpp::spin(detector);
+    rclcpp::shutdown();
 
     return 0;
 }

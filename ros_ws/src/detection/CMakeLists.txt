@@ -1,20 +1,25 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.22.1)
 project(detection)
 
 set(CMAKE_CXX_STANDARD 17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  sensor_msgs
-  message_generation
-  cv_bridge
-)
-
-
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(polystar_msgs REQUIRED)
 find_package(OpenCV)
+
+###################################
+## ament specific configuration ##
+###################################
+
+ament_export_dependencies(
+  polystar_msgs
+)
 
 if(DARKNET_CMAKE_PATH)
   set(CMAKE_CUDA_ARCHITECTURES 72)
@@ -63,17 +68,17 @@ if(DEEPSTREAM)
     ${Deepstream_common}
   )
 
-  target_link_libraries(deepstream-runner
-    nvdsgst_meta
-    nvds_meta
-    nvdsgst_helper
-    nvdsgst_smartrecord
-    nvds_utils
-    nvds_msgbroker
-    nvbufsurftransform
-    m
-    gstrtspserver-1.0
-    dl
+  target_link_libraries(deepstream-runner PRIVATE
+    nvdsgst_meta::nvdsgst_meta
+    nvds_meta::nvds_meta
+    nvdsgst_helper::nvdsgst_helper
+    nvdsgst_smartrecord::nvdsgst_smartrecord
+    nvds_utils::nvds_utils
+    nvds_msgbroker::nvds_msgbroker
+    nvbufsurftransform::nvbufsurftransform
+    m::m
+    gstrtspserver-1.0::gstrtspserver-1.0
+    dl::dl
     ${GSTREAMER_LIBRARIES}
     ${GST_VIDEO_LIBRARIES}
     ${GST_RTSP_LIBRARIES}
@@ -95,26 +100,9 @@ endif()
 
 ## ----- Messages ----- ##
 
-## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Detection.msg
-  Detections.msg
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
-
-
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
-
-catkin_package(
-  INCLUDE_DIRS include
-)
 
 ###########
 ## Build ##
@@ -122,40 +110,61 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${Deepstream_INCLUDE_DIRS}
-  ${catkin_INCLUDE_DIRS}
-  ${Darknet_INCLUDE_DIRS}
-)
 
 if(DEEPSTREAM)
 
-add_executable(deepstream_detection
-  src/deepstream_node.cpp
-  src/deepstream_detector.cpp
-)
+  add_executable(deepstream_detection
+    src/deepstream_node.cpp
+    src/deepstream_detector.cpp
+  )
 
-target_link_libraries(deepstream_detection
-  ${catkin_LIBRARIES}
-  deepstream-runner
-)
+  target_include_directories(deepstream_detection PRIVATE
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    ${Deepstream_INCLUDE_DIRS}
+    ${ament_INCLUDE_DIRS}
+    ${Darknet_INCLUDE_DIRS}
+  )
 
-add_dependencies(deepstream_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
+  target_link_libraries(deepstream_detection PRIVATE
+    rclcpp::rclcpp
+    ${detection_TARGETS}
+    ${sensor_msgs_TARGETS}
+    deepstream-runner
+  )
+  
+  ament_target_dependencies(deepstream_detection
+    rclcpp
+    polystar_msgs
+    sensor_msgs
+  )
+
+  add_dependencies(deepstream_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
 else()
 
-add_executable(detection
-  src/detection_node.cpp
-  src/detector.cpp
-)
+  add_executable(darknet_detection
+    src/detection_node.cpp
+    src/detector.cpp
+  )
 
-target_link_libraries(detection
-  ${catkin_LIBRARIES}
-  ${Darknet_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-)
+  target_include_directories(darknet_detection PRIVATE
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    ${Deepstream_INCLUDE_DIRS}
+    ${ament_INCLUDE_DIRS}
+    ${Darknet_INCLUDE_DIRS}
+  )
 
-add_dependencies(detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
+  ament_target_dependencies(darknet_detection
+    rclcpp
+    polystar_msgs
+    sensor_msgs
+    cv_bridge
+  )
+
+  target_link_libraries(darknet_detection
+    ${Darknet_LIBRARIES}
+  )
+
+  #add_dependencies(darknet_detection ${${PROJECT_NAME}_EXPORTED_TARGETS})
 endif()
 
 #############
@@ -170,3 +179,5 @@ endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+ament_package()

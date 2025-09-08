@@ -1,6 +1,10 @@
 #pragma once
-#include "tracking/Tracklets.h"
 
+#include "polystar_msgs/msg/tracklet.hpp"
+#include "polystar_msgs/msg/tracklets.hpp"
+
+#include <string>
+#include <cstddef>
 
 enum class RoboType : int { Base = 3, Standard = 4, Hero = 5, Sentry = 6 };
 
@@ -31,11 +35,11 @@ class BoundingBox {
 
     BoundingBox(float x = 0.f, float y = 0.f, float upper_edge = 0.f, float lower_edge = 0.f, 
                 float left_edge = 0.f, float right_edge = 0.f, std::uint8_t clss = 0, std::string id = "Basic", float score = 0);
-    BoundingBox(tracking::Tracklet& bbox);
+    BoundingBox(polystar_msgs::msg::Tracklet& bbox);
 
     float getSize();
     float getDistance(BoundingBox other);
-    float roboType(int enemy_color, const tracking::TrackletsConstPtr& trks);
-    float scoreToReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks);
+    float roboType(int enemy_color, const polystar_msgs::msg::Tracklets::SharedPtr& trks);
+    float scoreToReturn(int enemy_color, float scoreToReturn, const polystar_msgs::msg::Tracklets::SharedPtr& trks);
     bool contains(BoundingBox* inner);
 };

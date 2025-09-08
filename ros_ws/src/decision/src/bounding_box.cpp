@@ -7,6 +7,8 @@
 
 #include "bounding_box.h"
 
+#include <cmath>
+
  //Default Constructor 
 BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
     float left_edge, float right_edge, std::uint8_t clss, const std::string id, float score) 
@@ -17,7 +19,7 @@ BoundingBox::BoundingBox(float x, float y, float upper_edge, float lower_edge,
       } 
 
 // Construction from tracklet
-BoundingBox::BoundingBox(tracking::Tracklet& bbox) 
+BoundingBox::BoundingBox(polystar_msgs::msg::Tracklet& bbox) 
     : x(bbox.x), y(bbox.y), upper_edge(bbox.y),
       lower_edge(bbox.y + bbox.h), left_edge(bbox.x),
       right_edge(bbox.x + bbox.w), clss(bbox.clss), width(bbox.w),
@@ -31,7 +33,7 @@ float BoundingBox::getDistance(BoundingBox other) {
 
 // If the bounding box is not a container but an armor module, its type score will be 0
 // If it is a container, we enter the scoreToReturn function with the correct score type
-float BoundingBox::roboType(int enemy_color, const tracking::TrackletsConstPtr& trks) {
+float BoundingBox::roboType(int enemy_color, const polystar_msgs::msg::Tracklets::SharedPtr& trks) {
     switch (this->clss) {  
     case static_cast<int>(RoboType::Base):
         return scoreToReturn(enemy_color, weightBase, trks); 
@@ -47,7 +49,7 @@ float BoundingBox::roboType(int enemy_color, const tracking::TrackletsConstPtr& 
 }
 
 // If we found an enemy armor module, we return the correct type score.
-float BoundingBox::scoreToReturn(int enemy_color, float scoreToReturn, const tracking::TrackletsConstPtr& trks) {
+float BoundingBox::scoreToReturn(int enemy_color, float scoreToReturn, const polystar_msgs::msg::Tracklets::SharedPtr& trks) {
     bool found = false;
 
     for (auto trk : trks->tracklets) {

@@ -4,27 +4,34 @@
   <version>0.1.0</version>
   <description>Targeting system decision</description>
 
-  <maintainer email="sebastien.darche@polymtl.ca">Sébastien Darche</maintainer>
+  <maintainer email="thomas.petrie@etud.polymtl.ca">Sébastien Darche</maintainer>
 
   <license>MIT</license>
 
   <author email="sebastien.darche@polymtl.ca">Sébastien Darche</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  
+  <depend>rclcpp</depend>
+
   <build_depend>detection</build_depend>
-  <build_depend>serial</build_depend>
+  <build_depend>polystar_msgs</build_depend>
   <build_depend>tracking</build_depend>
   <build_depend>tf2</build_depend>
   <build_depend>tf2_ros</build_depend>
-  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>tf2_geometry_msgs</build_depend>
+  <build_depend>OpenCV</build_depend>
 
   <exec_depend>detection</exec_depend>
-  <exec_depend>serial</exec_depend>
+  <exec_depend>polystar_msgs</exec_depend>
   <exec_depend>tracking</exec_depend>
   <exec_depend>tf2</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
-  <exec_depend>dynamic_reconfigure</exec_depend>
+  <exec_depend>tf2_geometry_msgs</exec_depend>
+  <exec_depend>OpenCV</exec_depend>
 
-  <export></export>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

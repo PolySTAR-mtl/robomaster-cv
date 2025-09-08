@@ -1,5 +1,5 @@
 # GameStage.msg
 ## Current game stage (begin & end)
 
-time stamp
+builtin_interfaces/Time stamp
 uint16 gamestage

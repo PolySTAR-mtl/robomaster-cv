@@ -1,5 +1,5 @@
 # Shoot.msg
 ## Shoot order
 
-time stamp
+builtin_interfaces/Time stamp
 bool shoot

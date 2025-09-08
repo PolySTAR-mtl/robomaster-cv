@@ -12,7 +12,7 @@
 
 // ROS Includes
 
-#include "detection/Detections.h"
+#include "detection/msg/Detections.h"
 
 // Deepstream includes
 
@@ -20,7 +20,7 @@
 #include "gst/gst.h"
 
 namespace {
-std::function<void(detection::Detections&)> det_callback;
+std::function<void(detection::msg::Detections&)> det_callback;
 }
 
 extern "C" {
@@ -34,7 +34,7 @@ void deepstreamCallback(void* appCtx_v, void* batch_meta_v) {
     NvDsBatchMeta* batch_meta = (NvDsBatchMeta*)batch_meta_v;
     AppCtx* appCtx = (AppCtx*)appCtx_v;
 
-    detection::Detections dets;
+    detection::msg::Detections dets;
 
     for (NvDsMetaList* l_frame = (NvDsMetaList*)batch_meta->frame_meta_list;
          l_frame != NULL; l_frame = l_frame->next) {
@@ -44,7 +44,7 @@ void deepstreamCallback(void* appCtx_v, void* batch_meta_v) {
              l_obj = l_obj->next) {
             NvDsObjectMeta* obj = (NvDsObjectMeta*)l_obj->data;
 
-            detection::Detection det;
+            detection::msg::Detection det;
 
             det.clss = obj->class_id;
             det.score = obj->confidence;
@@ -60,10 +60,10 @@ void deepstreamCallback(void* appCtx_v, void* batch_meta_v) {
 }
 }
 
-DeepstreamDetector::DeepstreamDetector(ros::NodeHandle& n,
-                                       const std::string& deepstream_config)
-    : nh(n) {
-    pub_detections = nh.advertise<detection::Detections>("detections", 1);
+DeepstreamDetector::DeepstreamDetector() {
+    pub_detections = create_publisher<polystar_msgs::msg::Detections>()
+
+    auto deepstream_config = get_parameter("net.deepstream").as_string("detections", 1);
 
     setupNet(deepstream_config);
 }
@@ -81,6 +81,6 @@ void DeepstreamDetector::run() {
     deepstream_app_main(fake_argc, fake_argv.data());
 }
 
-void DeepstreamDetector::callback(detection::Detections& dets) {
-    pub_detections.publish(dets);
+void DeepstreamDetector::callback(polystar_msgs::msg::Detections& dets) {
+    pub_detections->publish(dets);
 }

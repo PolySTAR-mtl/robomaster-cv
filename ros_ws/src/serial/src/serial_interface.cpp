@@ -6,7 +6,7 @@
 
 // ROS includes
 
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 
 // Local includes
 
@@ -15,22 +15,11 @@
 /** \brief This node serves as the main interface to the serial port
  */
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "serial");
-    ros::NodeHandle nh("serial");
+    rclcpp::init(argc, argv);
 
-    std::string device;
-    int baud, length, stop;
-    bool parity;
+    rclcpp::spin(std::make_shared<SerialSpinner>());
 
-    if (!nh.getParam("device", device)) {
-        throw std::runtime_error("No serial device specified");
-    }
-    nh.param("length", length, 8);
-    nh.param("baud", baud, 115200);
-    nh.param("stop", stop, 1);
-    nh.param("parity", parity, false);
+    rclcpp::shutdown();
 
-    SerialSpinner ser(nh, device, baud, length, stop, parity);
-
-    ser.spin();
+    return 0;
 }

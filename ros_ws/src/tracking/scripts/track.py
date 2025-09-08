@@ -7,7 +7,10 @@
 
 import os
 import numpy as np
-import rospy
+import threading
+import rclpy
+from rclpy.node import Node
+from rclpy.executors import ExternalShutdownException
 from collections import defaultdict
 
 from sensor_msgs.msg import Image
@@ -19,12 +22,19 @@ from motpy import MultiObjectTracker, Track
 from motpy import Detection as DetectionMOT
 from motpy.tracker import Tracker as TrackerMOT
 
-class Tracking:
+def spin_in_background():
+    executor = rclpy.get_global_executor()
+    try:
+        executor.spin()
+    except ExternalShutdownException:
+        pass
+
+class Tracking():
     def __init__(self, rate=24):
         # ROS
-        rospy.init_node('tracking', anonymous=False)
-        self.pub = rospy.Publisher('tracking/tracklets', Tracklets, 
-                                    queue_size=1)
+        node = rclpy.create_node('tracking', anonymous=False)
+        rclpy.get_global_executor().add_node(node)
+        self.pub = node.create_publisher( Tracklets, 'tracking/tracklets', queue_size=1)
 
         # motpy - no confidence with the motion model (0.1)
         #       - more confidence with detections (5000)
@@ -83,16 +93,20 @@ class Tracking:
         return tracklet
 
 def main():
+    rclpy.init()
+    t = threading.Thread(target=spin_in_background)
+    t.start()
+
     tracking = Tracking()
-    rospy.Subscriber('detection/detections', Detections, 
-                        tracking.detections_callback)
-    r = rospy.Rate(tracking.rate)
-    while not rospy.is_shutdown():
-        r.sleep()
+    node = rclpy.create_node('talker')
+    rclpy.get_global_executor().add_node(node)
+    sub = node.create_subscriber(Detections, 'detection/detections', tracking.detections_callback)
+    rate = node.createRate(tracking.rate)
+    while rclpy.ok():
+        rate.sleep()
         if tracking.no_detection:
             tracking.detections_callback(Detections(detections=[]))
         else:
             tracking.no_detection = True
 
-if __name__ == '__main__':
-    main()
+    t.join()

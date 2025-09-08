@@ -16,19 +16,21 @@
 
 // ROS includes
 
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 
-#include "serial/Movement.h"
-#include "serial/Shoot.h"
-#include "serial/Target.h"
+#include "polystar_msgs/msg/game_stage.hpp"
+#include "polystar_msgs/msg/game_status.hpp"
+#include "polystar_msgs/msg/movement.hpp"
+#include "polystar_msgs/msg/position_feedback.hpp"
+#include "polystar_msgs/msg/shoot.hpp"
+#include "polystar_msgs/msg/target.hpp"
+#include "polystar_msgs/msg/turret_feedback.hpp"
 
-class SerialSpinner {
+class SerialSpinner : public rclcpp::Node {
   public:
     /** \brief Constructor
      */
-    SerialSpinner(ros::NodeHandle& nh, const std::string& device, int baud_rate,
-                  int length, int stop_bits, bool parity,
-                  double frequency = 500.);
+    SerialSpinner(double frequency = 500.);
 
     /** \brief Destructor
      */
@@ -37,17 +39,17 @@ class SerialSpinner {
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackTarget(const serial::TargetConstPtr&);
+    void callbackTarget(const polystar_msgs::msg::Target::SharedPtr);
 
     /** \fn callbackTarget
      * \brief Callback for new target coordinates
      */
-    void callbackMovement(const serial::MovementConstPtr&);
+    void callbackMovement(const polystar_msgs::msg::Movement::SharedPtr);
 
     /** \fn callbackShoot
      * \brief Callback for shoot orders
      */
-    void callbackShoot(const serial::ShootConstPtr&);
+    void callbackShoot(const polystar_msgs::msg::Shoot::SharedPtr);
 
     /** \fn spin
      * \brief Spins, waiting for requests and listens to the serial port
@@ -91,9 +93,16 @@ class SerialSpinner {
      */
     void sendMessage(const serial::msg::OutgoingMessage& message);
 
-    ros::NodeHandle& nh;
-    ros::Publisher pub_status, pub_stage, pub_turret, pub_position;
-    ros::Subscriber sub_target, sub_movement, sub_shoot;
+    rclcpp::Publisher<polystar_msgs::msg::GameStatus>::SharedPtr pub_status;
+    rclcpp::Publisher<polystar_msgs::msg::GameStage>::SharedPtr pub_stage;
+    rclcpp::Publisher<polystar_msgs::msg::TurretFeedback>::SharedPtr pub_turret;
+    rclcpp::Publisher<polystar_msgs::msg::PositionFeedback>::SharedPtr
+        pub_position;
+    rclcpp::Subscription<polystar_msgs::msg::Target>::SharedPtr sub_target;
+    rclcpp::Subscription<polystar_msgs::msg::Movement>::SharedPtr sub_movement;
+    rclcpp::Subscription<polystar_msgs::msg::Shoot>::SharedPtr sub_shoot;
+
+    rclcpp::TimerBase::SharedPtr timer;
 
     int fd = -1;
     int baud_rate, length, stop_bits;

@@ -8,11 +8,11 @@
 #include "odom.hpp"
 #include "turret.hpp"
 
-#include "ros/ros.h"
+#include "rclcpp/rclcpp.hpp"
 
-#include "serial/PositionFeedback.h"
+#include "polystar_msgs/msg/position_feedback.hpp"
 
-void handleMessage(const serial::PositionFeedbackConstPtr& pos, IMU& imu,
+void handleMessage(const std::shared_ptr<const polystar_msgs::msg::PositionFeedback>& pos, IMU& imu,
                    Odom& odom) {
     imu.handle(pos->imu_ax, pos->imu_ay, pos->imu_az, pos->imu_rx, pos->imu_ry,
                pos->imu_rz);
@@ -20,22 +20,27 @@ void handleMessage(const serial::PositionFeedbackConstPtr& pos, IMU& imu,
 }
 
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "locate");
+    rclcpp::init(argc, argv);
 
-    ros::NodeHandle nh;
-    IMU imu{nh};
-    Odom odom{nh};
-    Turret turret{nh};
+    auto node = std::make_shared<rclcpp::Node>("locate");
 
-    auto sub_pos = nh.subscribe<serial::PositionFeedback>(
-        "/serial/position", 1, [&imu, &odom](const auto& pos) -> void {
+    IMU imu;
+    Odom odom;
+    Turret turret;
+
+    auto sub_pos = node->create_subscription<polystar_msgs::msg::PositionFeedback>(
+        "polystar_msgs.position", 1, [&imu, &odom](const std::shared_ptr<const polystar_msgs::msg::PositionFeedback>& pos) -> void {
             handleMessage(pos, imu, odom);
         });
 
-    auto sub_turret =
-        nh.subscribe("/serial/turret", 1, &Turret::callbackTurret, &turret);
+    auto sub_turret = node->create_subscription<polystar_msgs::msg::TurretFeedback>(
+        "polystar_msgs.turret", 1, [&turret](const std::shared_ptr<const polystar_msgs::msg::TurretFeedback>& msg) {
+            turret.callbackTurret(msg);
+        });
 
-    ros::spin();
+    while (rclcpp::ok()) {
+        rclcpp::spin_some(node);
+    }
 
     return 0;
 }

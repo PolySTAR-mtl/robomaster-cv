@@ -15,8 +15,8 @@
 
 #include <ros/ros.h>
 
-#include "serial/Rune.h"
-#include "serial/Target.h"
+#include "serial/msg/Rune.h"
+#include "serial/msg/Target.h"
 
 namespace legacy {
 

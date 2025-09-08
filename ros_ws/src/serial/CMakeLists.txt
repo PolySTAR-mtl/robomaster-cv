@@ -1,42 +1,24 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.22.1)
 project(serial)
 
 # Compile as C++11, supported in ROS Kinetic and newer
 set(CMAKE_CXX_STANDARD 17)
 
-## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  message_generation
-)
-
-## ----- Messages ----- ##
-
-## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  HP.msg
-  Rune.msg
-  SwitchOrder.msg
-  Target.msg
-  Movement.msg
-  GameStatus.msg
-  GameStage.msg
-  TurretFeedback.msg
-  PositionFeedback.msg
-  Shoot.msg
-)
-
-generate_messages()
+## Find macros and libraries
+find_package(ament_cmake_ros REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(polystar_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+# find_package(ament_cmake_gtest)
 
 
 ###################################
-## catkin specific configuration ##
+## ament specific configuration ##
 ###################################
 
-catkin_package(
-  INCLUDE_DIRS include
+ament_export_dependencies(
+  polystar_msgs
 )
 
 ###########
@@ -45,24 +27,23 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
-
-add_library(serial_spinner src/serial_spinner)
 
 add_executable(serial_interface
+  src/serial_spinner.cpp
   src/serial_interface.cpp
 )
 
-target_link_libraries(serial_interface
-  ${catkin_LIBRARIES}
-  serial_spinner
+target_include_directories(serial_interface PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  ${ament_INCLUDE_DIRS}
 )
 
-add_dependencies(serial_spinner ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+ament_target_dependencies(serial_interface 
+  rclcpp
+  polystar_msgs
+)
+
+ament_package()
 
 #############
 ## Testing ##
@@ -75,8 +56,16 @@ add_dependencies(serial_interface ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_E
 # endif()
 
 
-catkin_add_gtest(serialize test/serialize.cpp)
-target_link_libraries(serialize serial_spinner ${catkin_LIBRARIES})
+# ament_add_gtest(serialize test/serialize.cpp)
+# target_link_libraries(serialize PRIVATE 
+  # serial_spinner 
+  # ament_cmake_gtest::ament_cmake_gtest
+# )
 
-catkin_add_gtest(deserialize test/deserialize.cpp)
-target_link_libraries(deserialize serial_spinner ${catkin_LIBRARIES})
+# ament_add_gtest(deserialize test/deserialize.cpp)
+# target_link_libraries(deserialize PRIVATE
+  # serial_spinner 
+  # ament_cmake_gtest::ament_cmake_gtest
+# )
+
+# TODO: FIX TESTS

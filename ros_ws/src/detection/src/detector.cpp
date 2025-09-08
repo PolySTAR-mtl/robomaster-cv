@@ -24,8 +24,8 @@
 
 // ROS Includes
 
-#include "detection/Detections.h"
-#include <cv_bridge/cv_bridge.h>
+#include "polystar_msgs/msg/detections.hpp"
+#include "cv_bridge/cv_bridge.hpp"
 
 namespace {
 // Darknet interface functions
@@ -56,15 +56,19 @@ struct Detector::impl {
     network net;
 };
 
-Detector::Detector(ros::NodeHandle& n, const std::string& datacfg,
-                   const std::string& config_path,
-                   const std::string& weights_path)
-    : nh(n), p(std::make_unique<impl>()) {
+Detector::Detector() : Node("detection"), p(std::make_unique<impl>()) {
+    auto datacfg = get_parameter("net.datacfg").as_string();
+    auto config_path = get_parameter("net.config_path").as_string();
+    auto weights_path = get_parameter("net.weights").as_string();
+
     setupNet(datacfg, config_path, weights_path);
 
-    sub_img = nh.subscribe("image_in", 1, &Detector::imageCallback, this);
+    pub_detections_ = create_publisher<polystar_msgs::msg::Detections>("detections", 1);
 
-    pub_detections = nh.advertise<detection::Detections>("detections", 1);
+    sub_img_ = create_subscription<sensor_msgs::msg::Image>(
+        "image_in", 1, [this](const std::shared_ptr<const sensor_msgs::msg::Image>& msg){
+        imageCallback(msg);
+    });
 }
 
 Detector::~Detector() = default;
@@ -92,7 +96,7 @@ void Detector::setupNet(const std::string& datacfg,
 
 void Detector::loadLabels() {
     std::string path;
-    if (!nh.getParam("net/labels", path)) {
+    if (!this->get_parameter("net.labels", path)) {
         return;
     }
 
@@ -128,10 +132,10 @@ image matToImage(cv::Mat& mat) {
     return im;
 }
 
-void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
+void Detector::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr& img) {
     constexpr float ratio = 1.f / 256.f;
 
-    std::cout << "Incoming frame : " << img->header.seq << '\n';
+    std::cout << "Incoming frame : " << img->header.frame_id << '\n';
 
     auto img_opencv = cv_bridge::toCvCopy(img);
 
@@ -154,7 +158,7 @@ void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
     detection_darknet* dets = get_network_boxes(
         &p->net, im.w, im.h, p->tresh, p->hier_tresh, 0, 1, &nboxes, 0);
 
-    detection::Detections msg;
+    polystar_msgs::msg::Detections msg;
     // Construct ROS message
     for (auto i = 0; i < nboxes; ++i) {
         auto& d = dets[i];
@@ -172,7 +176,7 @@ void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
 
         std::cout << ", best " << p->labels[d.best_class_idx] << '\n';
 
-        detection::Detection det;
+        polystar_msgs::msg::Detection det;
         det.x = d.bbox.x * im.w;
         det.y = d.bbox.y * im.h;
         det.w = d.bbox.w * im.w;
@@ -185,7 +189,7 @@ void Detector::imageCallback(const sensor_msgs::ImagePtr& img) {
 
     std::cout << '\n';
 
-    pub_detections.publish(msg);
+    pub_detections_->publish(msg);
 
     free_detections(dets, nboxes);
     free_image(sized);

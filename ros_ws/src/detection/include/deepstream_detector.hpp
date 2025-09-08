@@ -9,10 +9,11 @@
 
 // ROS includes
 
-#include <ros/ros.h>
+
+#include "rclcpp/rclcpp.hpp"
 #include <sensor_msgs/Image.h>
 
-#include "detection/Detections.h"
+#include "polystar_msgs/msg/detections.h"
 
 extern "C" {
 void deepstreamCallback(void*, void*);
@@ -20,15 +21,12 @@ void deepstreamCallback(void*, void*);
 
 /** \class Detector
  */
-class DeepstreamDetector {
+class DeepstreamDetector : public rclcpp::Node {
   public:
     /** ctor
      * \brief Main constructor. Loads the weights
      */
-    DeepstreamDetector(ros::NodeHandle& nh,
-                       const std::string& deepstream_config);
-
-    ~DeepstreamDetector() = default;
+    DeepstreamDetector();
 
     /** \fn run
      * \brief Launch the gstreamer pipeline
@@ -38,14 +36,12 @@ class DeepstreamDetector {
     /** \fn callback
      * \brief Function to call to publish detections
      */
-    void callback(detection::Detections&);
+    void callback(polystar_msgs::msg::Detections&);
 
   private:
     void setupNet(const std::string& deepstream_config);
 
-    ros::NodeHandle& nh;
-
-    ros::Publisher pub_detections;
+    rclcpp::Publisher<polystar_msgs::msg::Detections>::SharedPtr pub_detections;
 
     int fake_argc;
     std::vector<const char*> fake_argv;
