@@ -1,10 +1,10 @@
-# PolySTAR - CV Robomaster 2025
+# PolySTAR - CV Robomaster 2026
 
 Work repository for the Computer Vision team
 
 ## Introduction
 
-This repository contains the work of PolySTAR's computer vision team for the 2023 RoboMaster
+This repository contains the work of PolySTAR's computer vision team for the 2026 RoboMaster
 competition, organized by DJI. Based on last year's repo.
 
 For a step by step example of how to run the code on Jetson, please check [here](https://github.com/PolySTAR-mtl/robomaster-2022-cv/blob/main/doc/pipeline_on_jetson_from_scratch.md)
@@ -19,13 +19,7 @@ For a step by step example of how to run the code on Jetson, please check [here]
 
 ### ROS
 
-- ROS melodic / noetic
-- ROS packages
-  - `ros-<ros-distribution>-cv-bridge`
-  - `ros-<ros-distribution>-image-view`
-  - `ros-<ros-distribution>-vision-opencv`
-  - `ros-<ros-distribution>-camera-info-manager`
-  - `ros-<ros-distribution>-video-stream-opencv`
+- ROS 2 Iron
 - OpenCV & Python bindings
 
 ### Detection
