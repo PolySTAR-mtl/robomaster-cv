@@ -16,26 +16,25 @@
 
 #include <opencv2/core/core.hpp>
 
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 
 #include "detection/msg/Detections.h"
-#include "sensor_msgs/Image.h"
+#include "sensor_msgs/msg/image.hpp"
 
-class VideoMonitor {
+class VideoMonitor : public rclcpp::Node {
   public:
-    VideoMonitor(ros::NodeHandle& n,
-                 const std::string& default_class = "Error class");
+    VideoMonitor(const std::string& default_class = "Error class");
 
     // ----- ROS Callbacks ----- //
     /** \fn callbackImage
      * \brief Callback for images from the camera
      */
-    void callbackImage(const sensor_msgs::msg::ImageConstPtr&);
+    void callbackImage(const std::shared_ptr<const sensor_msgs::msg::Image>& im);
 
     /** \fn callbackDetections
      * \brief Callback for detections coming from the detection node (NN)
      */
-    void callbackDetections(const detection::DetectionsConstPtr&);
+    void callbackDetections(const std::shared_ptr<detection::msg::Detections>& dets);
 
   private:
     /** \fn getColor
@@ -56,9 +55,9 @@ class VideoMonitor {
     const std::string& getClassName(uint8_t cls);
 
     // ROS
-    ros::NodeHandle& nh;
-    ros::Publisher pub_im;
-    ros::Subscriber sub_cam, sub_detections;
+    rclcpp::Subscription<VideoMonitor::callbackDetections>::SharedPtr sub_detections;
+    rclcpp::Subscription<VideoMonitor::callbackImage>::SharedPtr sub_cam;
+    rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr pub_im;
 
     // Internals
     cv::Mat curr_image;

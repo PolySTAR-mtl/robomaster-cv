@@ -22,8 +22,8 @@ constexpr int MONITOR_FONT_PADDING = 5;
 
 // ----- Methods ----- //
 
-VideoMonitor::VideoMonitor(ros::NodeHandle& n, const std::string& class_name)
-    : nh(n), default_name(class_name) {
+VideoMonitor::VideoMonitor(const std::string& class_name)
+    : : Node("video_monitor"), default_name(class_name) {
     pub_im = nh.advertise<sensor_msgs::msg::Image>("image_out", 1);
 
     sub_cam = nh.subscribe("image_in", 1, &VideoMonitor::callbackImage, this);

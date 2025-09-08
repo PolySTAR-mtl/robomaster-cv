@@ -28,7 +28,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/Detections.msg
   msg/Tracklet.msg
   msg/Tracklets.msg
-  msg/Target.msg
   DEPENDENCIES builtin_interfaces std_msgs
 )
 
