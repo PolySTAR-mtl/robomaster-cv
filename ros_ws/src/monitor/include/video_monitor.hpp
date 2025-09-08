@@ -18,7 +18,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 
-#include "detection/msg/Detections.h"
+#include "polystar_msgs/msg/detections.hpp"
 #include "sensor_msgs/msg/image.hpp"
 
 class VideoMonitor : public rclcpp::Node {
@@ -34,7 +34,7 @@ class VideoMonitor : public rclcpp::Node {
     /** \fn callbackDetections
      * \brief Callback for detections coming from the detection node (NN)
      */
-    void callbackDetections(const std::shared_ptr<detection::msg::Detections>& dets);
+    void callbackDetections(const std::shared_ptr<const polystar_msgs::msg::Detections>& dets);
 
   private:
     /** \fn getColor
@@ -55,8 +55,8 @@ class VideoMonitor : public rclcpp::Node {
     const std::string& getClassName(uint8_t cls);
 
     // ROS
-    rclcpp::Subscription<VideoMonitor::callbackDetections>::SharedPtr sub_detections;
-    rclcpp::Subscription<VideoMonitor::callbackImage>::SharedPtr sub_cam;
+    rclcpp::Subscription<polystar_msgs::msg::Detections>::SharedPtr sub_detections;
+    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr sub_cam;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr pub_im;
 
     // Internals

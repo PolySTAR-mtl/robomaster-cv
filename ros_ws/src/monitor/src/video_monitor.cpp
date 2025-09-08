@@ -10,7 +10,7 @@
 
 // Ros includes
 
-#include <cv_bridge/cv_bridge.h>
+#include <cv_bridge/cv_bridge.hpp>
 
 // ----- Consts ----- //
 // TODO : Move to parameters
@@ -23,21 +23,26 @@ constexpr int MONITOR_FONT_PADDING = 5;
 // ----- Methods ----- //
 
 VideoMonitor::VideoMonitor(const std::string& class_name)
-    : : Node("video_monitor"), default_name(class_name) {
-    pub_im = nh.advertise<sensor_msgs::msg::Image>("image_out", 1);
+    : Node("video_monitor"), default_name(class_name) {
+    pub_im = create_publisher<sensor_msgs::msg::Image>("image_out", 1); 
 
-    sub_cam = nh.subscribe("image_in", 1, &VideoMonitor::callbackImage, this);
-    sub_detections =
-        nh.subscribe("detections", 1, &VideoMonitor::callbackDetections, this);
+    sub_cam = create_subscription<sensor_msgs::msg::Image>("image_in", 1, 
+        [this](sensor_msgs::msg::Image::ConstSharedPtr im) { callbackImage(im); });
+    sub_detections = create_subscription<polystar_msgs::msg::Detections>("detections", 1, 
+        [this](polystar_msgs::msg::Detections::ConstSharedPtr dets) { callbackDetections(dets); });
 
-    // Load classmap from parameter server
-    if (!nh.getParam("/classmap", classmap)) {
-        std::cout << "No classmap found, using default name " << default_name
-                  << '\n';
+    classmap = this->declare_parameter<std::vector<std::string>>("classmap", std::vector<std::string>{});
+
+    if (classmap.empty()) {
+        RCLCPP_INFO(
+            this->get_logger(),
+            "No classmap found, using default name %s",
+            default_name.c_str()
+        );
     }
 }
 
-void VideoMonitor::callbackImage(const sensor_msgs::msg::ImageConstPtr& im) {
+void VideoMonitor::callbackImage(const std::shared_ptr<const sensor_msgs::msg::Image>& im) {
     auto img_bridged = cv_bridge::toCvShare(im);
 
     // Saving the last image to draw on top when receiving detections
@@ -64,7 +69,7 @@ const std::string& VideoMonitor::getClassName(uint8_t cls) {
 }
 
 void VideoMonitor::callbackDetections(
-    const detection::DetectionsConstPtr& dets) {
+    const std::shared_ptr<const polystar_msgs::msg::Detections>& dets) {
     if (curr_image.empty()) {
         // No image saved yet
         return;
@@ -91,9 +96,9 @@ void VideoMonitor::callbackDetections(
                     cv::Scalar(MONITOR_FONT_COLOR));
     }
 
-    auto out_msg =
-        cv_bridge::CvImage(dets->header, sensor_msgs::msg::image_encodings::BGR8,
+    std::shared_ptr<sensor_msgs::msg::Image> out_msg =
+        cv_bridge::CvImage(dets->header, sensor_msgs::image_encodings::BGR8,
                            img_rects)
             .toImageMsg();
-    pub_im.publish(out_msg);
+    pub_im->publish(*out_msg);
 }

@@ -16,10 +16,11 @@
  * bounding boxes, tracklets and current target
  */
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "monitor_video");
-    ros::NodeHandle nh("~");
+    rclcpp::init(argc, argv);
 
-    VideoMonitor monitor(nh);
+    auto monitor = std::make_shared<VideoMonitor>("monitor_video");
 
-    ros::spin();
+    rclcpp::spin(monitor);
+    rclcpp::shutdown();
+    return 0;
 }

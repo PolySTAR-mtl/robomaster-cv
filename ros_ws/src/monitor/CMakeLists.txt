@@ -8,6 +8,7 @@ find_package(ament_cmake_ros REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(polystar_msgs REQUIRED)
 find_package(detection REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV)
@@ -42,6 +43,7 @@ target_link_libraries(monitor_video PRIVATE
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
+  ${polystar_msgs_TARGETS}
   ${detection_TARGETS}
   cv_bridge::cv_bridge
   ${OpenCV_LIBRARIES}

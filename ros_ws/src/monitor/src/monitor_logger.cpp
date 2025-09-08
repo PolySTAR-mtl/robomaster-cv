@@ -11,8 +11,11 @@
 /** \brief This node prints every relevant informations and serves as a watchdog
  */
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "monitor_logger");
-    ros::NodeHandle nh;
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<rclcpp::Node>("monitor_logger");
 
-    ros::spin();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+
+    return 0;
 }
