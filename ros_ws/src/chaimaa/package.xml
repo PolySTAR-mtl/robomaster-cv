@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chaimaa</name>
+  <version>0.1.0</version>
+  <description>ROS Practice</description>
+
+  <maintainer email="thomas.petrie@etud.polymtl.ca">Thomas Petrie</maintainer>
+
+  <license>MIT</license>
+  
+  <author email="thomas.petrie@etud.polymtl.ca">Thomas Petrie</author>
+
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  
+  <depend>rclcpp</depend>
+
+  <build_depend>polystar_msgs</build_depend>
+
+  <exec_depend>polystar_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>
