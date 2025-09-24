@@ -1,8 +1,10 @@
-enemy_color: 0
-weights:
-  base: 20
-  std: 40
-  hro: 100
-  sty: 30
-  size: 0.05
-  dist: 1
+/**:
+  ros__parameters:
+    enemy_color: 0
+    weights:
+      base: 20
+      std: 40
+      hro: 100
+      sty: 30
+      size: 0.05
+      dist: 1

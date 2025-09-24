@@ -99,6 +99,20 @@ target_link_libraries(publisher PRIVATE
   tf2_ros::tf2_ros
   tf2_geometry_msgs::tf2_geometry_msgs
 )
+
+
+install(
+  DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}/launch
+)
+
+install(TARGETS
+  simple_tracker
+  weighted_tracker
+  publisher
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 #############
 ## Testing ##
 #############

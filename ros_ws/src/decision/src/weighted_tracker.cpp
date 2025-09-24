@@ -36,27 +36,43 @@ class WeightedTracker : public Tracker {
     WeightedTracker()
         : Tracker(), tBuffer(std::make_shared<tf2_ros::Buffer>(this->get_clock())), tListener(*tBuffer) {
 
+            
+            // Declare default values        
+            declare_parameter<double>("weights/base", 20.0);
+            declare_parameter<double>("weights/std", 40.0);
+            declare_parameter<double>("weights/hro", 100.0);
+            declare_parameter<double>("weights/sty", 30.0);
+            declare_parameter<double>("weights/size", 0.01);
+            declare_parameter<double>("weights/dist", 1.0);
 
-        // Init weights
-        BoundingBox::weightBase = get_parameter("weights/base").as_double();
-        BoundingBox::weightStandard = get_parameter("weights/std").as_double();
-        BoundingBox::weightHero = get_parameter("weights/hro").as_double();
-        BoundingBox::weightSentry = get_parameter("weights/sty").as_double();
-        BoundingBox::weightSize = get_parameter("weights/size").as_double();
-        BoundingBox::weightDist = get_parameter("weights/dist").as_double();
+            declare_parameter<double>("focal_length", 3.04e-3f);
+            declare_parameter<double>("pixel_size", 1.2e-6f);
+            declare_parameter<std::vector<double>>("camera/camera_matrix/data", std::vector<double>{});
+            declare_parameter<std::vector<double>>("camera/distortion_coefficients/data", std::vector<double>{});
+            declare_parameter<int>("camera/image_width", 640);
+            declare_parameter<int>("camera/image_height", 480);
 
-        // Init camera matrix and distortion coefficients
-        
-        camera_matrix = get_parameter("/camera/camera_matrix/data").as_double_array();
-        distorsion_coeffs = get_parameter("/camera/distortion_coefficients/data").as_double_array();
-        im_w = get_parameter("/camera/image_width").as_int();
-        im_h = get_parameter("/camera/image_height").as_int();
 
-        focal_length = get_parameter("focal_length").as_double();
-        pixel_size = get_parameter("pixel_size").as_double();
+            // Init weights
+            BoundingBox::weightBase = get_parameter("weights/base").as_double();
+            BoundingBox::weightStandard = get_parameter("weights/std").as_double();
+            BoundingBox::weightHero = get_parameter("weights/hro").as_double();
+            BoundingBox::weightSentry = get_parameter("weights/sty").as_double();
+            BoundingBox::weightSize = get_parameter("weights/size").as_double();
+            BoundingBox::weightDist = get_parameter("weights/dist").as_double();
 
-        initMap();
-    }
+            // Init camera matrix and distortion coefficients
+            
+            camera_matrix = get_parameter("camera/camera_matrix/data").as_double_array();
+            distorsion_coeffs = get_parameter("camera/distortion_coefficients/data").as_double_array();
+            im_w = get_parameter("camera/image_width").as_int();
+            im_h = get_parameter("camera/image_height").as_int();
+
+            focal_length = get_parameter("focal_length").as_double();
+            pixel_size = get_parameter("pixel_size").as_double();
+
+            initMap();
+        }
 
     void callbackTracklets(const polystar_msgs::msg::Tracklets::SharedPtr trks) override {
         BoundingBox basic;

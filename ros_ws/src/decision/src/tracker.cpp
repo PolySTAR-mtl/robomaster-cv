@@ -11,17 +11,19 @@ Tracker::Tracker() : Node("tracker") {
     sub_tracklets = create_subscription<polystar_msgs::msg::Tracklets>("tracklets", 1,
         [this](const polystar_msgs::msg::Tracklets::SharedPtr m) { callbackTracklets(m); });
 
-    enemy_color = get_parameter("enemy_color").as_int();
+        declare_parameter<int>("enemy_color", 0);
+        
+        enemy_color = get_parameter("enemy_color").as_int();
 
-    pub_target = create_publisher<polystar_msgs::msg::Target>("target", 1);
+        pub_target = create_publisher<polystar_msgs::msg::Target>("target", 1);
 
-    // Create parameter callback
-    param_callback_handle = add_on_set_parameters_callback(
-            std::bind(&Tracker::parametersCallback, this, std::placeholders::_1));
+        // Create parameter callback
+        param_callback_handle = add_on_set_parameters_callback(
+                std::bind(&Tracker::parametersCallback, this, std::placeholders::_1));
 
-    std::cout << "Enemy color set to be: "
-              << (enemy_color == 0 ? "red" : "blue") << "\n";
-}
+        std::cout << "Enemy color set to be: "
+                << (enemy_color == 0 ? "red" : "blue") << "\n";
+    }
 
 
 rcl_interfaces::msg::SetParametersResult Tracker::parametersCallback(
